@@ -26,8 +26,8 @@ const NavBar = () => {
                     </a>
                 </div>
             </div>
-            <div className={`p-5 lg:p-0 absolute bg-zinc-800 bottom-[-280px] right-0 left-0 flex-col-reverse lg:static lg:flex-row items-center ${isActive ? 'flex' : 'hidden lg:flex'}`}>
-                <nav className='text-white lg:mr-8'>
+            <div className={`transition-all duration-500 overflow-hidden flex lg:p-0 absolute bg-zinc-800 top-[90px] right-0 left-0 flex-col lg:static lg:flex-row items-center lg:max-h-none ${isActive ? 'max-h-96' : 'max-h-0'}`}>
+                <nav className='text-white lg:mr-8 p-5'>
                     <ul className='flex flex-col lg:flex-row items-center gap-5'>
                         <li>
                             <a>
