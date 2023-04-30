@@ -571,6 +571,82 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.bottom-\[-50px\] {
+  bottom: -50px;
+}
+
+.bottom-\[50px\] {
+  bottom: 50px;
+}
+
+.bottom-\[-100px\] {
+  bottom: -100px;
+}
+
+.top-\[-100px\] {
+  top: -100px;
+}
+
+.bottom-\[-\=00px\] {
+  bottom: -=00px;
+}
+
+.bottom-\[-200px\] {
+  bottom: -200px;
+}
+
+.bottom-\[-300px\] {
+  bottom: -300px;
+}
+
+.bottom-\[-250px\] {
+  bottom: -250px;
+}
+
+.bottom-\[-260px\] {
+  bottom: -260px;
+}
+
+.bottom-\[-270px\] {
+  bottom: -270px;
+}
+
+.bottom-\[-265px\] {
+  bottom: -265px;
+}
+
+.bottom-\[-240px\] {
+  bottom: -240px;
+}
+
+.bottom-\[-290px\] {
+  bottom: -290px;
+}
+
+.bottom-\[-280px\] {
+  bottom: -280px;
+}
+
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -583,8 +659,16 @@ video {
   margin-right: 2rem;
 }
 
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-14 {
@@ -593,6 +677,30 @@ video {
 
 .h-16 {
   height: 4rem;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
 }
 
 .items-center {
@@ -635,6 +743,18 @@ video {
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
 
+.object-contain {
+  object-fit: contain;
+}
+
+.object-center {
+  object-position: center;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -658,6 +778,11 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-red-600 {
@@ -686,4 +811,34 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media (min-width: 1024px) {
+  .lg\:static {
+    position: static;
+  }
+
+  .lg\:mr-8 {
+    margin-right: 2rem;
+  }
+
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:p-0 {
+    padding: 0px;
+  }
 }
