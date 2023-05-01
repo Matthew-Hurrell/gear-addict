@@ -1,0 +1,8 @@
+.Active {
+    color: #fbbf24;
+    transform: scale(1.05);
+}
+
+.Active span {
+    text-decoration: underline;
+}
