@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../assets/gear-addict-test-logo.png';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import styles from '../styles/NavBar.module.css';
 
 const NavBar = () => {
 
@@ -12,9 +14,11 @@ const NavBar = () => {
     return (
         <div className='bg-zinc-800 flex items-center justify-between px-5 py-2.5 relative'>
             <div className='flex items-center gap-8'>
-                <div className='h-20'>
-                    <img src={logo} alt="Gear Addict Logo" className='object-center object-contain h-full w-full' />
-                </div>
+                <NavLink to="/">
+                    <div className='h-20'>
+                        <img src={logo} alt="Gear Addict Logo" className='object-center object-contain h-full w-full' />
+                    </div>
+                </NavLink>
                 <div className='flex items-center gap-8 tracking-wide text-white'>
                     <a className='text-white flex items-center hover:text-amber-400 hover:scale-105'>
                         <i className="fa-solid fa-circle-plus text-2xl mr-2"></i>
@@ -30,10 +34,15 @@ const NavBar = () => {
                 <nav className='text-white lg:mr-8 p-5'>
                     <ul className='flex flex-col lg:flex-row items-center gap-5 tracking-wide'>
                         <li>
-                            <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
+                            <NavLink 
+                                to="/"
+                                exact
+                                className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                                activeClassName={styles.Active}
+                            >
                                 <i className="fa-solid fa-house-chimney text-xl mr-2 lg:mr-0"></i>
                                 <span className='group-hover:underline underline-offset-8 decoration-2'>Home</span>
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
                             <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
@@ -66,10 +75,15 @@ const NavBar = () => {
                             </a>
                         </li>
                         <li>
-                            <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
+                            <NavLink 
+                                to="/signin"
+                                exact
+                                className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                                activeClassName={styles.Active}
+                            >
                                 <i class="fa-solid fa-right-to-bracket text-xl mr-2 lg:mr-0"></i>
                                 <span className='group-hover:underline underline-offset-8 decoration-2'>Sign In</span>
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
                             <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
