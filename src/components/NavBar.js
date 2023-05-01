@@ -86,10 +86,15 @@ const NavBar = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
+                            <NavLink 
+                                to="/signup"
+                                exact
+                                className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                                activeClassName={styles.Active}
+                            >
                                 <i class="fa-solid fa-user-plus text-xl mr-2 lg:mr-0"></i>
                                 <span className='group-hover:underline underline-offset-8 decoration-2'>Sign Up</span>
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
