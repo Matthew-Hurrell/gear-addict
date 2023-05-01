@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import "./api/axiosDefaults";
 import SignUpForm from './pages/auth/SignUpForm';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </div>
+      <Footer />
     </div>
   );
 }
