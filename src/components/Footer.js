@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Footer = () => {
   return (
-    <section className='bg-zinc-800 flex items-center justify-center relative text-white border-t border-amber-400 mt-auto'>
+    <section className='bg-zinc-800 flex flex-col items-center justify-center relative text-white border-t-4 border-amber-400 mt-auto'>
 
         {/* Heading and Nav Menu */}
-        <div className='pt-14 pb-36'>
+        <div className='py-14'>
             <h3 className='text-3xl'>Gear Addict</h3>
             <nav className='text-white lg:mr-8 p-5'>
               <ul className='flex flex-col lg:flex-row items-center gap-5 tracking-wide'>
@@ -84,21 +84,23 @@ const Footer = () => {
         </div>
 
         {/* Copyright and Socials */}
-        <div className='absolute bottom-0 right-0 left-0 bg-zinc-950 flex items-center justify-end'>
-          <div className='flex px-5 py-4 gap-5'>
+        <div className='bg-zinc-950 flex items-center justify-center lg:justify-end w-full'>
+          <div className='flex px-5 py-4 gap-5 flex-col lg:flex-row'>
             <p>Copyright Gear Addict 2023 <i className="fa-regular fa-copyright ml-1"></i>
             </p>
             <p>
               Designed and Developed by Matthew Hobbs-Hurrell 
-              <a href="https://github.com/Matthew-Hurrell" target="_blank">
-                <i className="fa-brands fa-github mx-3 hover:scale-110 transition"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/matthew-hobbs-hurrell/" target="_blank">
-                <i className="fa-brands fa-linkedin mr-3 hover:scale-110 transition"></i>
-              </a>
-              <a href="https://www.facebook.com/matthewhobbshurrell" target="_blank">
-                <i className="fa-brands fa-facebook hover:scale-110 transition"></i>
-              </a>
+              <div className='lg:inline-block mt-1 lg:mt-0'>
+                <a href="https://github.com/Matthew-Hurrell" target="_blank">
+                  <i className="fa-brands fa-github mx-3 hover:scale-110 transition"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/matthew-hobbs-hurrell/" target="_blank">
+                  <i className="fa-brands fa-linkedin mr-3 hover:scale-110 transition"></i>
+                </a>
+                <a href="https://www.facebook.com/matthewhobbshurrell" target="_blank">
+                  <i className="fa-brands fa-facebook hover:scale-110 transition"></i>
+                </a>
+              </div>
             </p>
           </div>
         </div>
