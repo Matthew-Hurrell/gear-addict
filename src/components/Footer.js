@@ -80,7 +80,7 @@ const Footer = () => {
 
         {/* Flame Logo */}
         <div className='absolute right-0 right-8 bottom-15'>
-          <i class="fa-solid fa-fire-flame text-zinc-600 text-9xl"></i>
+          <i className="fa-solid fa-fire-flame text-zinc-600 text-9xl"></i>
         </div>
 
         {/* Copyright and Socials */}
