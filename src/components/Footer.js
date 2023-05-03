@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styles from '../styles/NavBar.module.css';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
-import { CurrentUserContext } from '../App';
+import { useCurrentUser } from '../contexts/CurrentUserContext';
 
 const Footer = () => {
-  const currentUser = useContext(CurrentUserContext);
+  const currentUser = useCurrentUser();
   const loggedOutIcons = (
     <>
       <li>
