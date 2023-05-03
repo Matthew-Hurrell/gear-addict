@@ -2,24 +2,28 @@ import React, { useState } from 'react';
 import logo from '../assets/gear-addict-test-logo.png';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import styles from '../styles/NavBar.module.css';
-import { useCurrentUser } from '../contexts/CurrentUserContext';
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
+import Avatar from './Avatar';
+import axios from 'axios';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
+
+    const handleSignOut = async () => {
+        try {
+          await axios.post('/dj-rest-auth/logout/');
+          setCurrentUser(null);
+        } catch(err){
+          console.log(err);
+        }
+    }
 
     const profileIcon = (
         <NavLink
             to={`/profiles/${currentUser?.profile_id}`}
         >
-            <div className='h-14 w-14'>
-                <img 
-                    className='object-center object-cover h-full w-full rounded-full' 
-                    src={currentUser?.profile_image} 
-                />
-            </div>
-            <div className='tracking-wide mt-1'>
-                Profile
-            </div>
+            <Avatar src={currentUser?.profile_image} text='Profile' />
         </NavLink>
     );
     const addGearIcon = (
@@ -117,9 +121,9 @@ const NavBar = () => {
                     to="/"
                     exact
                     className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
-                    onClick={() => {}}
+                    onClick={handleSignOut}
                 >
-                    <i className="fa-solid fa-star text-xl mr-2 lg:mr-0"></i>
+                    <i className="fa-solid fa-right-from-bracket text-xl mr-2 lg:mr-0"></i>
                     <span className='group-hover:underline underline-offset-8 decoration-2'>Sign out</span>
                 </NavLink>
             </li>
