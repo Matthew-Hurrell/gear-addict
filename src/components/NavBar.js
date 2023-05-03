@@ -1,9 +1,47 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from '../assets/gear-addict-test-logo.png';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import styles from '../styles/NavBar.module.css';
+import { CurrentUserContext } from '../App';
 
 const NavBar = () => {
+    const currentUser = useContext(CurrentUserContext);
+    const loggedOutIcons = (
+        <>
+            <li>
+                <NavLink 
+                    to="/signin"
+                    exact
+                    className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                    activeClassName={styles.Active}
+                >
+                    <i className="fa-solid fa-right-to-bracket text-xl mr-2 lg:mr-0"></i>
+                    <span className='group-hover:underline underline-offset-8 decoration-2'>Sign In</span>
+                </NavLink>
+            </li>
+            <li>
+                <NavLink 
+                    to="/signup"
+                    exact
+                    className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                    activeClassName={styles.Active}
+                >
+                    <i className="fa-solid fa-user-plus text-xl mr-2 lg:mr-0"></i>
+                    <span className='group-hover:underline underline-offset-8 decoration-2'>Sign Up</span>
+                </NavLink>
+            </li>
+        </>
+    );
+    const loggedInIcons = (
+        <>
+            <li>
+                <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
+                    <i className="fa-solid fa-star text-xl mr-2 lg:mr-0"></i>
+                    <span className='group-hover:underline underline-offset-8 decoration-2'>Sign out</span>
+                </a>
+            </li>
+        </>
+    );
 
     const [isActive, setIsActive] = useState(false);
 
@@ -75,28 +113,7 @@ const NavBar = () => {
                                     <span className='group-hover:underline underline-offset-8 decoration-2'>Saved</span>
                                 </a>
                             </li>
-                            <li>
-                                <NavLink 
-                                    to="/signin"
-                                    exact
-                                    className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
-                                    activeClassName={styles.Active}
-                                >
-                                    <i className="fa-solid fa-right-to-bracket text-xl mr-2 lg:mr-0"></i>
-                                    <span className='group-hover:underline underline-offset-8 decoration-2'>Sign In</span>
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink 
-                                    to="/signup"
-                                    exact
-                                    className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
-                                    activeClassName={styles.Active}
-                                >
-                                    <i className="fa-solid fa-user-plus text-xl mr-2 lg:mr-0"></i>
-                                    <span className='group-hover:underline underline-offset-8 decoration-2'>Sign Up</span>
-                                </NavLink>
-                            </li>
+                            {currentUser ? loggedInIcons : loggedOutIcons}
                         </ul>
                     </nav>
                     <div className='text-white hidden lg:block'>
