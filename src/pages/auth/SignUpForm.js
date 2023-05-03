@@ -123,7 +123,11 @@ const SignUpForm = () => {
 
             {/* Image */}
             <div className="2xl:w-10/12">
-              <img className='object-center object-cover w-full h-full' src={image} />
+              <img 
+                className='object-center object-cover w-full h-full' 
+                src={image} 
+                alt="Live band performing in rehearsal room and jumping in the air"
+              />
             </div>
           </div>
         </div>
