@@ -1,12 +1,12 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import image from '../../assets/gear-addict-sign-in-page.jpg';
 import axios from 'axios';
 import Hero from '../../components/Hero';
-import { SetCurrentUserContext } from '../../App';
+import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 
 const SignInForm = () => {
-  const setCurrentUser = useContext(SetCurrentUserContext);
+  const setCurrentUser = useSetCurrentUser();
 
   const [signInData, setSignInData] = useState({
     username: '',
