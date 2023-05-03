@@ -1,45 +1,107 @@
 import React from 'react'
 import styles from '../styles/NavBar.module.css';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
-import { useCurrentUser } from '../contexts/CurrentUserContext';
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
+import axios from 'axios';
 
 const Footer = () => {
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+
+  const handleSignOut = async () => {
+    try {
+      await axios.post('/dj-rest-auth/logout/');
+      setCurrentUser(null);
+    } catch(err){
+      console.log(err);
+    }
+}
+
   const loggedOutIcons = (
     <>
       <li>
-        <NavLink 
-          to="/signin"
-          exact
-          className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
-          activeClassName={styles.Active}
-        >
-          <i className="fa-solid fa-right-to-bracket text-xl mr-2 lg:mr-0"></i>
-          <span className='group-hover:underline underline-offset-8 decoration-2'>Sign In</span>
-        </NavLink>
+          <NavLink 
+            to="/signin"
+            exact
+            className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+            activeClassName={styles.Active}
+          >
+            <i className="fa-solid fa-right-to-bracket text-xl mr-2 lg:mr-0"></i>
+            <span className='group-hover:underline underline-offset-8 decoration-2'>Sign In</span>
+          </NavLink>
       </li>
       <li>
-        <NavLink 
-          to="/signup"
-          exact
-          className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
-          activeClassName={styles.Active}
-        >
-          <i className="fa-solid fa-user-plus text-xl mr-2 lg:mr-0"></i>
-          <span className='group-hover:underline underline-offset-8 decoration-2'>Sign Up</span>
-        </NavLink>
+          <NavLink 
+              to="/signup"
+              exact
+              className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+              activeClassName={styles.Active}
+          >
+              <i className="fa-solid fa-user-plus text-xl mr-2 lg:mr-0"></i>
+              <span className='group-hover:underline underline-offset-8 decoration-2'>Sign Up</span>
+          </NavLink>
       </li>
     </>
   );
+
   const loggedInIcons = (
     <>
       <li>
-        <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
-          <i className="fa-solid fa-star text-xl mr-2 lg:mr-0"></i>
+        <NavLink
+            to="/feed"
+            exact
+            className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+            activeClassName={styles.Active}
+        >
+            <i className="fa-solid fa-hand-horns text-xl mr-2 lg:mr-0"></i>
+            <span className='group-hover:underline underline-offset-8 decoration-2'>Feed</span>
+        </NavLink>
+    </li>
+    <li>
+        <NavLink
+            to="/gear"
+            exact
+            className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+            activeClassName={styles.Active}
+        >
+            <i className="fa-solid fa-guitars text-xl mr-2 lg:mr-0"></i>
+            <span className='group-hover:underline underline-offset-8 decoration-2'>Gear</span>
+        </NavLink>
+    </li>
+    <li>
+        <NavLink
+            to="/rigs"
+            exact
+            className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+            activeClassName={styles.Active}
+        > 
+            <i className="fa-solid fa-amp-guitar text-xl mr-2 lg:mr-0"></i>
+            <span className='group-hover:underline underline-offset-8 decoration-2'>Rigs</span>
+        </NavLink>
+    </li>
+    <li>
+        <NavLink
+            to="/saved"
+            exact
+            className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+            activeClassName={styles.Active}
+        >
+            <i className="fa-solid fa-star text-xl mr-2 lg:mr-0"></i>
+            <span className='group-hover:underline underline-offset-8 decoration-2'>Saved</span>
+        </NavLink>
+    </li>
+    <li>
+      <NavLink
+          to="/"
+          exact
+          className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+          onClick={handleSignOut}
+      >
+          <i className="fa-solid fa-right-from-bracket text-xl mr-2 lg:mr-0"></i>
           <span className='group-hover:underline underline-offset-8 decoration-2'>Sign out</span>
-        </a>
-      </li>
-    </>
+      </NavLink>
+    </li>
+  </>
   );
   return (
     <section className='bg-zinc-800 flex flex-col items-center justify-center relative text-white border-t-4 border-amber-400 mt-auto'>
@@ -61,34 +123,15 @@ const Footer = () => {
                       </NavLink>
                   </li>
                   <li>
-                      <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
+                      <NavLink
+                          to="/latest"
+                          exact
+                          className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                          activeClassName={styles.Active}
+                      >
                           <i className="fa-solid fa-fire-flame text-xl mr-2 lg:mr-0"></i>
                           <span className='group-hover:underline underline-offset-8 decoration-2'>Latest</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
-                          <i className="fa-solid fa-hand-horns text-xl mr-2 lg:mr-0"></i>
-                          <span className='group-hover:underline underline-offset-8 decoration-2'>Feed</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
-                      <i className="fa-solid fa-guitars text-xl mr-2 lg:mr-0"></i>
-                      <span className='group-hover:underline underline-offset-8 decoration-2'>Gear</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'> 
-                          <i className="fa-solid fa-amp-guitar text-xl mr-2 lg:mr-0"></i>
-                          <span className='group-hover:underline underline-offset-8 decoration-2'>Rigs</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
-                          <i className="fa-solid fa-star text-xl mr-2 lg:mr-0"></i>
-                          <span className='group-hover:underline underline-offset-8 decoration-2'>Saved</span>
-                      </a>
+                      </NavLink>
                   </li>
                   {currentUser ? loggedInIcons : loggedOutIcons}
               </ul>
@@ -108,13 +151,13 @@ const Footer = () => {
             <p>
               Designed and Developed by Matthew Hobbs-Hurrell 
               <div className='lg:inline-block mt-1 lg:mt-0'>
-                <a href="https://github.com/Matthew-Hurrell" target="_blank">
+                <a href="https://github.com/Matthew-Hurrell" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-github mx-3 hover:scale-110 transition"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/matthew-hobbs-hurrell/" target="_blank">
+                <a href="https://www.linkedin.com/in/matthew-hobbs-hurrell/" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-linkedin mr-3 hover:scale-110 transition"></i>
                 </a>
-                <a href="https://www.facebook.com/matthewhobbshurrell" target="_blank">
+                <a href="https://www.facebook.com/matthewhobbshurrell" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-facebook hover:scale-110 transition"></i>
                 </a>
               </div>
