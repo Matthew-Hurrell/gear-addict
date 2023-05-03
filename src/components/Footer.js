@@ -1,8 +1,46 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from '../styles/NavBar.module.css';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import { CurrentUserContext } from '../App';
 
 const Footer = () => {
+  const currentUser = useContext(CurrentUserContext);
+  const loggedOutIcons = (
+    <>
+      <li>
+        <NavLink 
+          to="/signin"
+          exact
+          className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+          activeClassName={styles.Active}
+        >
+          <i className="fa-solid fa-right-to-bracket text-xl mr-2 lg:mr-0"></i>
+          <span className='group-hover:underline underline-offset-8 decoration-2'>Sign In</span>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink 
+          to="/signup"
+          exact
+          className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+          activeClassName={styles.Active}
+        >
+          <i className="fa-solid fa-user-plus text-xl mr-2 lg:mr-0"></i>
+          <span className='group-hover:underline underline-offset-8 decoration-2'>Sign Up</span>
+        </NavLink>
+      </li>
+    </>
+  );
+  const loggedInIcons = (
+    <>
+      <li>
+        <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
+          <i className="fa-solid fa-star text-xl mr-2 lg:mr-0"></i>
+          <span className='group-hover:underline underline-offset-8 decoration-2'>Sign out</span>
+        </a>
+      </li>
+    </>
+  );
   return (
     <section className='bg-zinc-800 flex flex-col items-center justify-center relative text-white border-t-4 border-amber-400 mt-auto'>
 
@@ -52,28 +90,7 @@ const Footer = () => {
                           <span className='group-hover:underline underline-offset-8 decoration-2'>Saved</span>
                       </a>
                   </li>
-                  <li>
-                      <NavLink 
-                          to="/signin"
-                          exact
-                          className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
-                          activeClassName={styles.Active}
-                      >
-                          <i className="fa-solid fa-right-to-bracket text-xl mr-2 lg:mr-0"></i>
-                          <span className='group-hover:underline underline-offset-8 decoration-2'>Sign In</span>
-                      </NavLink>
-                  </li>
-                  <li>
-                      <NavLink 
-                          to="/signup"
-                          exact
-                          className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
-                          activeClassName={styles.Active}
-                      >
-                          <i className="fa-solid fa-user-plus text-xl mr-2 lg:mr-0"></i>
-                          <span className='group-hover:underline underline-offset-8 decoration-2'>Sign Up</span>
-                      </NavLink>
-                  </li>
+                  {currentUser ? loggedInIcons : loggedOutIcons}
               </ul>
           </nav>
         </div>
