@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import image from '../../assets/gear-addict-band-jump.jpg';
+import image from '../../assets/gear-addict-sign-in-page.jpg';
 import axios from 'axios';
 import Hero from '../../components/Hero';
 
@@ -26,7 +26,7 @@ const SignInForm = () => {
     event.preventDefault();
     try {
       await axios.post('/dj-rest-auth/login/', signInData);
-      history.push('/signin');
+      history.push('/');
     } catch(err) {
       setErrors(err.response?.data);
       console.log(err.response?.data);
@@ -49,7 +49,7 @@ const SignInForm = () => {
             {/* Sign Up Form */}
             <div className="2xl:w-10/12 2xl:ml-auto">
               <form 
-                className='bg-zinc-800 h-full pt-10 pb-8 px-8 md:pt-16 md:pb-14 md:px-16 lg:px-12 xl:px-16 border-2 border-amber-400 shadow-xl text-left flex flex-col justify-center gap-7'
+                className='bg-zinc-800 h-full pt-10 pb-8 px-8 md:pt-16 md:pb-14 md:px-16 lg:px-12 xl:px-16 border-2 border-amber-400 shadow-xl text-left flex flex-col justify-center gap-9'
                 onSubmit={handleSubmit}
               >
                 <div>
