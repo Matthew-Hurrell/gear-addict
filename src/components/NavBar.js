@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/gear-addict-test-logo.png';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import styles from '../styles/NavBar.module.css';
-import { CurrentUserContext } from '../App';
+import { useCurrentUser } from '../contexts/CurrentUserContext';
 
 const NavBar = () => {
-    const currentUser = useContext(CurrentUserContext);
+    const currentUser = useCurrentUser();
     const loggedOutIcons = (
         <>
             <li>
