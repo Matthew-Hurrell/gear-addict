@@ -6,6 +6,40 @@ import { useCurrentUser } from '../contexts/CurrentUserContext';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
+
+    const profileIcon = (
+        <NavLink
+            to={`/profiles/${currentUser?.profile_id}`}
+        >
+            <div className='h-14 w-14'>
+                <img 
+                    className='object-center object-cover h-full w-full rounded-full' 
+                    src={currentUser?.profile_image} 
+                />
+            </div>
+            <div className='tracking-wide mt-1'>
+                Profile
+            </div>
+        </NavLink>
+    );
+    const addGearIcon = (
+        <NavLink
+            to="/gear/create"
+            className='text-white flex items-center hover:text-amber-400 hover:scale-105'
+        >
+            <i className="fa-solid fa-circle-plus text-2xl mr-2"></i>
+            Add gear
+        </NavLink>
+    );
+    const addRigIcon = (
+        <NavLink
+        to="/rig/create"
+            className='text-white flex items-center hover:text-amber-400 hover:scale-105'
+        >
+            <i className="fa-solid fa-circle-plus text-2xl mr-2"></i>
+            Add rig
+        </NavLink>
+    )
     const loggedOutIcons = (
         <>
             <li>
@@ -34,11 +68,60 @@ const NavBar = () => {
     );
     const loggedInIcons = (
         <>
+             <li>
+                <NavLink
+                    to="/feed"
+                    exact
+                    className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                    activeClassName={styles.Active}
+                >
+                    <i className="fa-solid fa-hand-horns text-xl mr-2 lg:mr-0"></i>
+                    <span className='group-hover:underline underline-offset-8 decoration-2'>Feed</span>
+                </NavLink>
+            </li>
             <li>
-                <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
+                <NavLink
+                    to="/gear"
+                    exact
+                    className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                    activeClassName={styles.Active}
+                >
+                    <i className="fa-solid fa-guitars text-xl mr-2 lg:mr-0"></i>
+                    <span className='group-hover:underline underline-offset-8 decoration-2'>Gear</span>
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to="/rigs"
+                    exact
+                    className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                    activeClassName={styles.Active}
+                > 
+                    <i className="fa-solid fa-amp-guitar text-xl mr-2 lg:mr-0"></i>
+                    <span className='group-hover:underline underline-offset-8 decoration-2'>Rigs</span>
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to="/saved"
+                    exact
+                    className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                    activeClassName={styles.Active}
+                >
+                    <i className="fa-solid fa-star text-xl mr-2 lg:mr-0"></i>
+                    <span className='group-hover:underline underline-offset-8 decoration-2'>Saved</span>
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to="/"
+                    exact
+                    className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                    onClick={() => {}}
+                >
                     <i className="fa-solid fa-star text-xl mr-2 lg:mr-0"></i>
                     <span className='group-hover:underline underline-offset-8 decoration-2'>Sign out</span>
-                </a>
+                </NavLink>
             </li>
         </>
     );
@@ -59,14 +142,8 @@ const NavBar = () => {
                         </div>
                     </NavLink>
                     <div className='flex items-center gap-8 tracking-wide text-white'>
-                        <a className='text-white flex items-center hover:text-amber-400 hover:scale-105'>
-                            <i className="fa-solid fa-circle-plus text-2xl mr-2"></i>
-                            Add gear
-                        </a>
-                        <a className='text-white flex items-center hover:text-amber-400 hover:scale-105'>
-                            <i className="fa-solid fa-circle-plus text-2xl mr-2"></i>
-                            Add rig
-                        </a>
+                        {currentUser && addGearIcon}
+                        {currentUser && addRigIcon}
                     </div>
                 </div>
                 <div className={`transition-all z-50 duration-500 overflow-hidden flex lg:p-0 absolute bg-zinc-800 top-[90px] right-0 left-0 flex-col lg:static lg:flex-row items-center lg:max-h-none ${isActive ? 'max-h-[999px]' : 'max-h-0'}`}>
@@ -84,55 +161,26 @@ const NavBar = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
+                                <NavLink
+                                    to="/latest"
+                                    exact
+                                    className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
+                                    activeClassName={styles.Active}
+                                >
                                     <i className="fa-solid fa-fire-flame text-xl mr-2 lg:mr-0"></i>
                                     <span className='group-hover:underline underline-offset-8 decoration-2'>Latest</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
-                                    <i className="fa-solid fa-hand-horns text-xl mr-2 lg:mr-0"></i>
-                                    <span className='group-hover:underline underline-offset-8 decoration-2'>Feed</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
-                                <i className="fa-solid fa-guitars text-xl mr-2 lg:mr-0"></i>
-                                <span className='group-hover:underline underline-offset-8 decoration-2'>Gear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'> 
-                                    <i className="fa-solid fa-amp-guitar text-xl mr-2 lg:mr-0"></i>
-                                    <span className='group-hover:underline underline-offset-8 decoration-2'>Rigs</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'>
-                                    <i className="fa-solid fa-star text-xl mr-2 lg:mr-0"></i>
-                                    <span className='group-hover:underline underline-offset-8 decoration-2'>Saved</span>
-                                </a>
+                                </NavLink>
                             </li>
                             {currentUser ? loggedInIcons : loggedOutIcons}
                         </ul>
                     </nav>
                     <div className='text-white hidden lg:block'>
-                        <div>
-
-                        </div>
-                        <a className='tracking-wide'>
-                            Profile
-                        </a>
+                        {currentUser && profileIcon}
                     </div>
                 </div>
                 <div className='flex lg:hidden items-center'>
                     <div className='text-white mr-8'>
-                        <div>
-
-                        </div>
-                        <a className='tracking-wide'>
-                            Profile
-                        </a>
+                        {currentUser && profileIcon}
                     </div>
                     <button onClick={handleClick} className='nav-toggle'>
                         <i className="fa-solid fa-bars text-white text-3xl"></i>
