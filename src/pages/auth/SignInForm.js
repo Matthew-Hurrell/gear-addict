@@ -12,7 +12,8 @@ const SignInForm = () => {
     username: '',
     password: '',
   });
-  const { username, password} = signInData;
+
+  const { username, password } = signInData;
 
   const [errors, setErrors] = useState({});
 
@@ -69,9 +70,9 @@ const SignInForm = () => {
                     />
                   </label>
                 </div>
-                {errors.username?.map((message, idx) => 
+                {errors.username?.map((message, idx) => (
                   <p className='text-red-500' key={idx}>{message}</p>
-                )}
+                ))}
 
                 <div>
                   <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
@@ -86,9 +87,9 @@ const SignInForm = () => {
                     />
                   </label>
                 </div>
-                {errors.password?.map((message, idx) => 
+                {errors.password?.map((message, idx) => (
                   <p className='text-red-500' key={idx}>{message}</p>
-                )}
+                ))}
 
                 <div className='flex flex-col sm:flex-row items-center justify-between text-white mt-2'>
                   <p className='mb-1 text-base md:text-lg'>Don't have an account? 
@@ -101,9 +102,9 @@ const SignInForm = () => {
                     Sign in
                   </button>
                 </div>
-                {errors.non_field_errors?.map((message, idx) => 
+                {errors.non_field_errors?.map((message, idx) => (
                   <p className='text-red-500' key={idx}>{message}</p>
-                )}
+                ))}
               </form>
             </div>
 
