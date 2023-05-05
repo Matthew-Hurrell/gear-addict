@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Avatar = ({src, height = 14, width = 14, text}) => {
+const Avatar = ({src, text}) => {
 
     return (
         <>
-            <div className={`h-${height} w-${width}`}>
+            <div className='h-14 w-14'>
                 <img 
                     className='object-center object-cover h-full w-full rounded-full' 
                     src={src}
