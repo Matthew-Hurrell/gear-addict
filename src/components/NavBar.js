@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import logo from '../assets/gear-addict-test-logo.png';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import styles from '../styles/NavBar.module.css';
@@ -10,6 +10,21 @@ const NavBar = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
 
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (ref.current && !ref.current.contains(event.target)) {
+                setIsActive(false);
+            }
+        }
+
+        document.addEventListener('mouseup', handleClickOutside);
+        return () => {
+            document.removeEventListener('mouseup', handleClickOutside);
+        }
+    }, [ref]);
+
     const handleSignOut = async () => {
         try {
           await axios.post('/dj-rest-auth/logout/');
@@ -17,17 +32,26 @@ const NavBar = () => {
         } catch(err){
           console.log(err);
         }
-    }
+    };
+
+    const [isActive, setIsActive] = useState(false);
+
+    const handleClick = event => {
+      setIsActive(current => !current);
+    };
 
     const profileIcon = (
         <NavLink
+            onClick={handleClick}
             to={`/profiles/${currentUser?.profile_id}`}
         >
             <Avatar src={currentUser?.profile_image} text='Profile' />
         </NavLink>
     );
+
     const addGearIcon = (
         <NavLink
+            onClick={handleClick}
             to="/gear/create"
             className='text-white flex items-center hover:text-amber-400 hover:scale-105'
         >
@@ -35,19 +59,23 @@ const NavBar = () => {
             Add gear
         </NavLink>
     );
+
     const addRigIcon = (
         <NavLink
-        to="/rig/create"
+            onClick={handleClick}
+            to="/rig/create"
             className='text-white flex items-center hover:text-amber-400 hover:scale-105'
         >
             <i className="fa-solid fa-circle-plus text-2xl mr-2"></i>
             Add rig
         </NavLink>
-    )
+    );
+
     const loggedOutIcons = (
         <>
             <li>
                 <NavLink 
+                    onClick={handleClick}
                     to="/signin"
                     exact
                     className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
@@ -59,6 +87,7 @@ const NavBar = () => {
             </li>
             <li>
                 <NavLink 
+                    onClick={handleClick}
                     to="/signup"
                     exact
                     className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
@@ -74,6 +103,7 @@ const NavBar = () => {
         <>
              <li>
                 <NavLink
+                    onClick={handleClick}
                     to="/feed"
                     exact
                     className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
@@ -85,6 +115,7 @@ const NavBar = () => {
             </li>
             <li>
                 <NavLink
+                    onClick={handleClick}
                     to="/gear"
                     exact
                     className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
@@ -96,6 +127,7 @@ const NavBar = () => {
             </li>
             <li>
                 <NavLink
+                    onClick={handleClick}
                     to="/rigs"
                     exact
                     className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
@@ -107,6 +139,7 @@ const NavBar = () => {
             </li>
             <li>
                 <NavLink
+                    onClick={handleClick}
                     to="/saved"
                     exact
                     className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
@@ -130,17 +163,14 @@ const NavBar = () => {
         </>
     );
 
-    const [isActive, setIsActive] = useState(false);
-
-    const handleClick = event => {
-      setIsActive(current => !current);
-    };
-
     return (
-        <div>
+        <div ref={ref}>
             <div className='bg-zinc-800 flex items-center justify-between px-5 py-2.5 relative'>
                 <div className='flex items-center gap-8'>
-                    <NavLink to="/">
+                    <NavLink 
+                        onClick={handleClick}
+                        to="/"
+                    >
                         <div className='h-20'>
                             <img src={logo} alt="Gear Addict Logo" className='object-center object-contain h-full w-full' />
                         </div>
@@ -159,6 +189,7 @@ const NavBar = () => {
                                     exact
                                     className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
                                     activeClassName={styles.Active}
+                                    onClick={handleClick}
                                 >
                                     <i className="fa-solid fa-house-chimney text-xl mr-2 lg:mr-0"></i>
                                     <span className='group-hover:underline underline-offset-8 decoration-2'>Home</span>
@@ -170,6 +201,7 @@ const NavBar = () => {
                                     exact
                                     className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
                                     activeClassName={styles.Active}
+                                    onClick={handleClick}
                                 >
                                     <i className="fa-solid fa-fire-flame text-xl mr-2 lg:mr-0"></i>
                                     <span className='group-hover:underline underline-offset-8 decoration-2'>Latest</span>
@@ -186,7 +218,10 @@ const NavBar = () => {
                     <div className='text-white mr-8'>
                         {currentUser && profileIcon}
                     </div>
-                    <button onClick={handleClick} className='nav-toggle'>
+                    <button 
+                        onClick={handleClick}
+                        className='nav-toggle'
+                    >
                         <i className="fa-solid fa-bars text-white text-3xl"></i>
                     </button>
                 </div>
