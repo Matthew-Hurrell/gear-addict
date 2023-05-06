@@ -1,43 +1,26 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import logo from '../assets/gear-addict-test-logo.png';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import styles from '../styles/NavBar.module.css';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from './Avatar';
 import axios from 'axios';
+import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
 
-    const ref = useRef(null);
-
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (ref.current && !ref.current.contains(event.target)) {
-                setIsActive(false);
-            }
-        }
-
-        document.addEventListener('mouseup', handleClickOutside);
-        return () => {
-            document.removeEventListener('mouseup', handleClickOutside);
-        }
-    }, [ref]);
+    const {isActive, setIsActive, ref, handleClick} = useClickOutsideToggle();
 
     const handleSignOut = async () => {
         try {
           await axios.post('/dj-rest-auth/logout/');
           setCurrentUser(null);
+          setIsActive(false);
         } catch(err){
           console.log(err);
         }
-    };
-
-    const [isActive, setIsActive] = useState(false);
-
-    const handleClick = event => {
-      setIsActive(current => !current);
     };
 
     const profileIcon = (
