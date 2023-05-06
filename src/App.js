@@ -5,6 +5,7 @@ import "./api/axiosDefaults";
 import SignUpForm from './pages/auth/SignUpForm';
 import Footer from './components/Footer';
 import SignInForm from './pages/auth/SignInForm';
+import RigCreateForm from './pages/rigs/RigCreateForm';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" render={() => <h1>Home page</h1>} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
+          <Route exact path="/rig/create" render={() => <RigCreateForm />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </div>
