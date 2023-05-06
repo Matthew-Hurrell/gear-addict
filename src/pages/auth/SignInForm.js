@@ -4,6 +4,7 @@ import image from '../../assets/gear-addict-sign-in-page.jpg';
 import axios from 'axios';
 import Hero from '../../components/Hero';
 import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
+import Seperator from '../../components/Seperator';
 
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -45,7 +46,7 @@ const SignInForm = () => {
         <Hero title='Sign in'/>
 
         {/* Seperator */}
-        <div className='h-1 bg-amber-400'></div>
+        <Seperator />
 
         {/* Form Section */}
         <div className='px-5 py-12 lg:py-24  bg-slate-100'>
