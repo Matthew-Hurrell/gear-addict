@@ -105,8 +105,12 @@ const RigCreateForm = () => {
             {/* Rig Form */}
             <section className='px-5 py-12 lg:py-24 bg-slate-100'>
                 <div className='container mx-auto'>
-                    <div className='bg-zinc-800 h-full pt-10 pb-8 px-8 md:pt-16 md:pb-14 md:px-16 lg:px-12 xl:px-16 border-2 border-amber-400 shadow-xl text-left flex flex-col justify-center gap-9'>
-                        <form onSubmit={handleSubmit} enctype="multipart/form-data">
+                    <div className='w-7/12 mx-auto'>
+                        <form 
+                            className='bg-zinc-800 h-full pt-10 pb-8 px-8 md:pt-16 md:pb-14 md:px-16 lg:px-12 xl:px-16 2xl:px-24 border-2 border-amber-400 shadow-xl text-left flex flex-col justify-center gap-5' 
+                            onSubmit={handleSubmit} 
+                            enctype="multipart/form-data"
+                        >
 
                             {/* Name */}
                             <div>
@@ -125,32 +129,9 @@ const RigCreateForm = () => {
                                 <p className='text-red-500' key={idx}>{message}</p>
                             ))}
 
-                            {/* Budget */}
-                            <div>
-                                <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Budget:
-                                        <select 
-                                            className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
-                                            name="budget"
-                                            id="budget"
-                                            value={budget}
-                                            onChange={handleChange}
-                                        >
-                                            <option value=""></option>
-                                            <option value="£">£</option>
-                                            <option value="££">££</option>
-                                            <option value="£££">£££</option>
-                                            <option value="££££">££££</option>
-                                            <option value="£££££">£££££</option>
-                                        </select>
-                                </label>
-                            </div>
-                            {errors.budget?.map((message, idx) => (
-                                <p className='text-red-500' key={idx}>{message}</p>
-                            ))}
-
-                            {/* Category */}
-                            <div>
+                            <div className='grid grid-cols-2 gap-10'>
+                                
+                                {/* Category */}
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Category:
                                     <select 
@@ -172,13 +153,36 @@ const RigCreateForm = () => {
                                         <option value="Band">Band</option>
                                     </select>
                                 </label>
+                                {errors.category?.map((message, idx) => (
+                                    <p className='text-red-500' key={idx}>{message}</p>
+                                ))}
+
+                                {/* Budget */}
+                                <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
+                                    Budget:
+                                        <select 
+                                            className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
+                                            name="budget"
+                                            id="budget"
+                                            value={budget}
+                                            onChange={handleChange}
+                                        >
+                                            <option value=""></option>
+                                            <option value="£">£</option>
+                                            <option value="££">££</option>
+                                            <option value="£££">£££</option>
+                                            <option value="££££">££££</option>
+                                            <option value="£££££">£££££</option>
+                                        </select>
+                                </label>
+                                {errors.budget?.map((message, idx) => (
+                                    <p className='text-red-500' key={idx}>{message}</p>
+                                ))}
+
                             </div>
-                            {errors.category?.map((message, idx) => (
-                                <p className='text-red-500' key={idx}>{message}</p>
-                            ))}
 
                             {/* Attribute 1 */}
-                            <div>
+                            <div className='grid grid-cols-2 gap-10'>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Attribute 1:
                                     <select 
@@ -203,13 +207,12 @@ const RigCreateForm = () => {
                                         <option value="Portable">Portable</option>
                                     </select>
                                 </label>
-                            </div>
-                            {errors.attribute_1?.map((message, idx) => (
-                                <p className='text-red-500' key={idx}>{message}</p>
-                            ))}
+                                {errors.attribute_1?.map((message, idx) => (
+                                    <p className='text-red-500' key={idx}>{message}</p>
+                                ))}
 
-                            {/* Attribute 2 */}
-                            <div>
+                                {/* Attribute 2 */}
+                            
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Attribute 2:
                                     <select 
@@ -240,7 +243,7 @@ const RigCreateForm = () => {
                             ))}
 
                             {/* Genre 1 */}
-                            <div>
+                            <div className='grid grid-cols-2 gap-10'>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Genre 1:
                                     <select 
@@ -290,13 +293,12 @@ const RigCreateForm = () => {
                                         <option value="Prog">Prog</option>
                                     </select>
                                 </label>
-                            </div>
-                            {errors.genre_1?.map((message, idx) => (
-                                <p className='text-red-500' key={idx}>{message}</p>
-                            ))}
+                            
+                                {errors.genre_1?.map((message, idx) => (
+                                    <p className='text-red-500' key={idx}>{message}</p>
+                                ))}
 
-                            {/* Genre 2 */}
-                            <div>
+                                {/* Genre 2 */}
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Genre 2:
                                     <select 
@@ -466,12 +468,14 @@ const RigCreateForm = () => {
                             ))}
 
                             {/* Submit Button */}
-                            <button 
-                                type="submit"
-                                className='text-white mt-2 sm:mt-0 bg-amber-500 px-3 py-2 font-bold hover:scale-105 hover:bg-transparent border-2 border-amber-500'
-                            >
-                                Submit
-                            </button>
+                            <div className='mt-5 flex items-center justify-end'>
+                                <button 
+                                    type="submit"
+                                    className='text-white mt-2 sm:mt-0 bg-amber-500 px-3 py-2 font-bold hover:scale-105 hover:bg-transparent border-2 border-amber-500'
+                                >
+                                    Submit
+                                </button>
+                            </div>
 
                         </form>
                     </div>
