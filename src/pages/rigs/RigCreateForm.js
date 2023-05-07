@@ -2,11 +2,9 @@ import React, { useRef, useState } from 'react'
 import Hero from '../../components/Hero'
 import Seperator from '../../components/Seperator'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import { axiosReq } from '../../api/axiosDefaults';
 
 const RigCreateForm = () => {
-    const setCurrentUser = useSetCurrentUser();
 
     const [rigData, setRigData] = useState({
         name: '',
@@ -46,9 +44,19 @@ const RigCreateForm = () => {
   
     const handleChange = (event) => {
         setRigData({
-        ...rigData,
-        [event.target.name]: event.target.value,
-      });
+            ...rigData,
+            [event.target.name]: event.target.value,
+        });
+    };
+
+    const handleChangeImage = (event, inputName) => {
+        if (event.target.files.length){
+            URL.revokeObjectURL([inputName]);
+            setRigData({
+                ...rigData,
+                [inputName]: URL.createObjectURL(event.target.files[0]),
+            });
+        };
     };
 
     const featuredImageInput = useRef(null);
@@ -61,28 +69,28 @@ const RigCreateForm = () => {
         const formData = new FormData();
 
         formData.append('name', name);
-        formData.append('budget', budget);
         formData.append('category', category);
-        formData.append('attribute_1', attribute_1);
-        formData.append('attribute_2', attribute_2);
-        formData.append('genre_1', genre_1);
-        formData.append('genre_2', genre_2);
         formData.append('description', description);
         formData.append('gear_list', gear_list);
-        formData.append('featured_image', featuredImageInput.current.files[0])
-        formData.append('image_2', imageTwoInput.current.files[0])
-        formData.append('image_3', imageThreeInput.current.files[0])
-        formData.append('image_4', imageFourInput.current.files[0])
+        formData.append('featured_image', featuredImageInput.current?.files?.[0] ?? null);
+        formData.append('image_2', imageTwoInput.current?.files?.[0] ?? null);
+        formData.append('image_3', imageThreeInput.current?.files?.[0] ?? null);
+        formData.append('image_4', imageFourInput.current?.files?.[0] ?? null);
+        formData.append('attribute_1', attribute_1);
+        formData.append('attribute_2', attribute_2);
+        formData.append('budget', budget);
+        formData.append('genre_1', genre_1);
+        formData.append('genre_2', genre_2);
 
-      try {
-        const {data} = await axiosReq.post('/rigs/', formData);
-        history.push(`/rigs/${data.id}`);
-      } catch(err) {
-        console.log(err);
-        if (err.response?.status !== 401) {
-            setErrors(err.response?.data);
+        try {
+            const {data} = await axiosReq.post('/rigs/', formData);
+            history.push(`/rigs/${data.id}`);
+        } catch(err) {
+            console.log(err);
+            if (err.response?.status !== 401) {
+                setErrors(err.response?.data);
+            }
         }
-      }
     };
 
     return (
@@ -98,7 +106,7 @@ const RigCreateForm = () => {
             <section className='px-5 py-12 lg:py-24 bg-slate-100'>
                 <div className='container mx-auto'>
                     <div className='bg-zinc-800 h-full pt-10 pb-8 px-8 md:pt-16 md:pb-14 md:px-16 lg:px-12 xl:px-16 border-2 border-amber-400 shadow-xl text-left flex flex-col justify-center gap-9'>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} enctype="multipart/form-data">
 
                             {/* Name */}
                             <div>
@@ -113,6 +121,9 @@ const RigCreateForm = () => {
                                         />
                                 </label>
                             </div>
+                            {errors.name?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Budget */}
                             <div>
@@ -134,6 +145,9 @@ const RigCreateForm = () => {
                                         </select>
                                 </label>
                             </div>
+                            {errors.budget?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Category */}
                             <div>
@@ -159,6 +173,9 @@ const RigCreateForm = () => {
                                     </select>
                                 </label>
                             </div>
+                            {errors.category?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Attribute 1 */}
                             <div>
@@ -187,6 +204,9 @@ const RigCreateForm = () => {
                                     </select>
                                 </label>
                             </div>
+                            {errors.attribute_1?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Attribute 2 */}
                             <div>
@@ -215,6 +235,9 @@ const RigCreateForm = () => {
                                     </select>
                                 </label>
                             </div>
+                            {errors.attribute_2?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Genre 1 */}
                             <div>
@@ -268,6 +291,9 @@ const RigCreateForm = () => {
                                     </select>
                                 </label>
                             </div>
+                            {errors.genre_1?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Genre 2 */}
                             <div>
@@ -321,6 +347,9 @@ const RigCreateForm = () => {
                                     </select>
                                 </label>
                             </div>
+                            {errors.genre_2?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Description */}
                             <div>
@@ -339,6 +368,9 @@ const RigCreateForm = () => {
                                     </textarea>
                                 </label>
                             </div>
+                            {errors.description?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Gear List */}
                             <div>
@@ -357,66 +389,81 @@ const RigCreateForm = () => {
                                     </textarea>
                                 </label>
                             </div>
+                            {errors.gear_list?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Featured Image */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>Featured Image
                                 <input 
                                     type="file" 
-                                    name="featured_image" 
+                                    // name="featured_image" 
                                     id="featured_image" 
-                                    value={featured_image}
+                                    // value={featured_image}
                                     ref={featuredImageInput}
-                                    onChange={handleChange}
+                                    onChange={(e) => handleChangeImage(e, 'featured_image')}
                                     accept="image/*" 
                                 />
                                 </label>
                             </div>
+                            {errors.featured_image?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Image 2 */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>Image 2
                                 <input 
                                     type="file" 
-                                    name="image_2" 
+                                    // name="image_2" 
                                     id="image_2" 
-                                    value={image_2}
+                                    // value={image_2}
                                     ref={imageTwoInput}
-                                    onChange={handleChange}
+                                    onChange={(e) => handleChangeImage(e, 'image_2')}
                                     accept="image/*" 
                                 />
                                 </label>
                             </div>
+                            {errors.image_2?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Image 3 */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>Image 3
                                 <input 
                                     type="file" 
-                                    name="image_3" 
+                                    // name="image_3" 
                                     id="image_3" 
-                                    value={image_3}
+                                    // value={image_3}
                                     ref={imageThreeInput}
-                                    onChange={handleChange}
+                                    onChange={(e) => handleChangeImage(e, 'image_3')}
                                     accept="image/*" 
                                 />
                                 </label>
                             </div>
+                            {errors.image_3?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Image 4 */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>Image 4
                                 <input 
                                     type="file" 
-                                    name="image_4" 
+                                    // name="image_4" 
                                     id="image_4" 
-                                    value={image_4}
+                                    // value={image_4}
                                     ref={imageFourInput}
-                                    onChange={handleChange}
+                                    onChange={(e) => handleChangeImage(e, 'image_4')}
                                     accept="image/*" 
                                 />
                                 </label>
                             </div>
+                            {errors.image_4?.map((message, idx) => (
+                                <p className='text-red-500' key={idx}>{message}</p>
+                            ))}
 
                             {/* Submit Button */}
                             <button 
