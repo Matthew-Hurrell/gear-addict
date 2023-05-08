@@ -3,6 +3,7 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import FsLightbox from "fslightbox-react";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Seperator from '../../components/Seperator';
+import { axiosRes } from '../../api/axiosDefaults';
 
 const Rig = (props) => {
     const {
@@ -29,11 +30,76 @@ const Rig = (props) => {
         gear_list,
         genre_1,
         genre_2,
+        setRigs,
     } = props;
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
     const [toggler, setToggler] = useState(false);
+
+    const handleLike = async () => {
+        try {
+            const {data} = await axiosRes.post('/likes/', { rig:id });
+            setRigs((prevRigs) => ({
+                ...prevRigs,
+                results: prevRigs.results.map((rig) => {
+                    return rig.id === id
+                    ? {...rig, likes_count: rig.likes_count + 1, like_id: data.id}
+                    : rig;
+                }),
+            }));
+        } catch(err) {
+            console.log(err);
+        }
+    };
+
+    const handleUnlike = async () => {
+        try {
+            await axiosRes.delete(`/likes/${like_id}/`);
+            setRigs((prevRigs) => ({
+                ...prevRigs,
+                results: prevRigs.results.map((rig) => {
+                    return rig.id === id
+                    ? {...rig, likes_count: rig.likes_count - 1, like_id: null}
+                    : rig;
+                }),
+            }));
+        } catch(err) {
+            console.log(err);
+        }
+    };
+
+    const handleStar = async () => {
+        try {
+            const {data} = await axiosRes.post('/stars/', { rig:id });
+            setRigs((prevRigs) => ({
+                ...prevRigs,
+                results: prevRigs.results.map((rig) => {
+                    return rig.id === id
+                    ? {...rig, stars_count: rig.stars_count + 1, star_id: data.id}
+                    : rig;
+                }),
+            }));
+        } catch(err) {
+            console.log(err);
+        }
+    };
+
+    const handleUnstar = async () => {
+        try {
+            await axiosRes.delete(`/stars/${star_id}/`);
+            setRigs((prevRigs) => ({
+                ...prevRigs,
+                results: prevRigs.results.map((rig) => {
+                    return rig.id === id
+                    ? {...rig, stars_count: rig.stars_count - 1, star_id: null}
+                    : rig;
+                }),
+            }));
+        } catch(err) {
+            console.log(err);
+        }
+    };
 
     return (
         <div>
@@ -89,7 +155,7 @@ const Rig = (props) => {
                         ) : like_id ? (
                             <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
                                 <button 
-                                    onClick={() => {}}
+                                    onClick={handleUnlike}
                                     className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
                                     <i className="fa-solid fa-hand-horns text-black text-xl md:text-3xl"></i>
@@ -98,7 +164,7 @@ const Rig = (props) => {
                         ) : currentUser ? (
                             <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
                                 <button 
-                                    onClick={() => {}}
+                                    onClick={handleLike}
                                     className='bg-white group hover:bg-zinc-800 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
                                     <i className="fa-light group-hover:text-white fa-hand-horns text-black text-xl md:text-3xl"></i>
@@ -116,7 +182,7 @@ const Rig = (props) => {
                         ) : star_id ? (
                             <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
                                 <button 
-                                    onClick={() => {}}
+                                    onClick={handleUnstar}
                                     className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
                                     <i className="fa-solid fa-star text-black text-xl md:text-3xl"></i>
@@ -125,7 +191,7 @@ const Rig = (props) => {
                         ) : currentUser ? (
                             <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
                                 <button 
-                                    onClick={() => {}}
+                                    onClick={handleStar}
                                     className='bg-white group hover:bg-zinc-800 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
                                     <i className="fa-light group-hover:text-white fa-star text-black text-xl md:text-3xl"></i>
