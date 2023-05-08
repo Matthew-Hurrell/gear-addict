@@ -82,18 +82,58 @@ const Rig = (props) => {
                         </div>
                         }
 
-                        {/* Like / Save */}
+                        {/* Like */}
                         {is_owner ? (
-                            <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex gap-3'>
-                                <button className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'>
-                                    <i className="fa-light fa-hand-horns text-black text-xl md:text-3xl"></i>
+                            <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
+                            </div>
+                        ) : like_id ? (
+                            <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
+                                <button 
+                                    onClick={() => {}}
+                                    className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
+                                >
+                                    <i className="fa-solid fa-hand-horns text-black text-xl md:text-3xl"></i>
                                 </button>
-                                <button className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'>
-                                    <i className="fa-light fa-star text-black text-xl md:text-3xl"></i>
+                            </div>
+                        ) : currentUser ? (
+                            <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
+                                <button 
+                                    onClick={() => {}}
+                                    className='bg-white group hover:bg-zinc-800 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
+                                >
+                                    <i className="fa-light group-hover:text-white fa-hand-horns text-black text-xl md:text-3xl"></i>
                                 </button>
                             </div>
                         ) : (
-                            <div></div>
+                            <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
+                            </div>
+                        )}
+
+                        {/* Save */}
+                        {is_owner ? (
+                            <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
+                            </div>
+                        ) : star_id ? (
+                            <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
+                                <button 
+                                    onClick={() => {}}
+                                    className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
+                                >
+                                    <i className="fa-solid fa-star text-black text-xl md:text-3xl"></i>
+                                </button>
+                            </div>
+                        ) : currentUser ? (
+                            <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
+                                <button 
+                                    onClick={() => {}}
+                                    className='bg-white group hover:bg-zinc-800 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
+                                >
+                                    <i className="fa-light group-hover:text-white fa-star text-black text-xl md:text-3xl"></i>
+                                </button>
+                            </div>
+                        ) : (
+                            <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
+                            </div>
                         )}
 
                     </div>
