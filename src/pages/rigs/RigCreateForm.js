@@ -72,10 +72,10 @@ const RigCreateForm = () => {
         formData.append('category', category);
         formData.append('description', description);
         formData.append('gear_list', gear_list);
-        formData.append('featured_image', featuredImageInput.current?.files?.[0] ?? null);
-        formData.append('image_2', imageTwoInput.current?.files?.[0] ?? null);
-        formData.append('image_3', imageThreeInput.current?.files?.[0] ?? null);
-        formData.append('image_4', imageFourInput.current?.files?.[0] ?? null);
+        formData.append('featured_image', featuredImageInput.current?.files?.[0] ?? "");
+        formData.append('image_2', imageTwoInput.current?.files?.[0] ?? "");
+        formData.append('image_3', imageThreeInput.current?.files?.[0] ?? "");
+        formData.append('image_4', imageFourInput.current?.files?.[0] ?? "");
         formData.append('attribute_1', attribute_1);
         formData.append('attribute_2', attribute_2);
         formData.append('budget', budget);
