@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import SignInForm from './pages/auth/SignInForm';
 import RigCreateForm from './pages/rigs/RigCreateForm';
 import RigPage from './pages/rigs/RigPage';
+import RigsPage from './pages/rigs/RigsPage';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       <NavBar />
       <div>
         <Switch>
-          <Route exact path="/" render={() => <h1>Home page</h1>} />
+          <Route exact path="/" render={() => <RigsPage message="No results found! Adjust your search"/>} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/rig/create" render={() => <RigCreateForm />} />
