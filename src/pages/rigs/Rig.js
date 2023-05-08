@@ -82,6 +82,20 @@ const Rig = (props) => {
                         </div>
                         }
 
+                        {/* Like / Save */}
+                        {is_owner ? (
+                            <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex gap-3'>
+                                <button className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'>
+                                    <i className="fa-light fa-hand-horns text-black text-xl md:text-3xl"></i>
+                                </button>
+                                <button className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'>
+                                    <i className="fa-light fa-star text-black text-xl md:text-3xl"></i>
+                                </button>
+                            </div>
+                        ) : (
+                            <div></div>
+                        )}
+
                     </div>
 
                     {/* Gallery Button */}
@@ -112,10 +126,14 @@ const Rig = (props) => {
                     <div className='w-full text-left md:w-5/12 xl:w-3/12'>
                         <h3 className='text-2xl lg:text-3xl mb-5'>Rig Details</h3>
                         <ul className='text-lg lg:text-xl'>
-                            <li className='mb-1.5'>Category: {category}</li>
-                            <li className='mb-1.5'>Attributes: {attribute_1}, {attribute_2}</li>
-                            <li className='mb-1.5'>Genres: {genre_1}, {genre_2}</li>
-                            <li className='mb-1.5'>Budget: {budget}</li>
+                            {category && <li className='mb-1.5'>Category: {category}</li>}
+                            {(attribute_1 || attribute_2) && (
+                                <li className='mb-1.5'>Attributes: {attribute_1 ? attribute_1 + ', ' : ''}{attribute_2 ? attribute_2 : ''}</li>
+                            )}
+                            {(genre_1 || genre_2) && (
+                                <li className='mb-1.5'>Attributes: {genre_1 ? genre_1 + ', ' : ''}{genre_2 ? genre_2 : ''}</li>
+                            )}
+                            {budget && <li className='mb-1.5'>Budget: {budget}</li>}
                             <li className='mb-1.5'>Likes: {likes_count}</li>
                             <li className='mb-1.5'>Stars: {stars_count}</li>
                             <li>Last updated: {updated_at}</li>
@@ -125,23 +143,21 @@ const Rig = (props) => {
                     {/* Gear List */}
                     <div className='w-full md:w-6/12 block xl:hidden text-left'>
                         <h3 className='text-2xl mb-5'>Gear List</h3>
-                        <p className='text-lg'>{gear_list}</p>
+                        <p className='text-lg'>{gear_list ? gear_list : 'No gear listed'}</p>
                     </div>
 
                     {/* Description */}
                     <div className='w-full xl:w-6/12 text-left'>
                         <h3 className='text-2xl lg:text-3xl mb-5'>Description</h3>
-                        <p className='text-lg lg:text-xl'>{description}</p>
+                        <p className='text-lg lg:text-xl'>{description ? description : 'No description'}</p>
                     </div>
 
                     {/* Gear List */}
                     <div className='hidden xl:block w-3/12 text-left'>
                         <h3 className='text-3xl mb-5'>Gear List</h3>
-                        <p className='text-xl'>{gear_list}</p>
+                        <p className='text-xl'>{gear_list ? gear_list : 'No gear listed'}</p>
                     </div>
-
                 </div>
-
             </section>
 
             <Seperator />
