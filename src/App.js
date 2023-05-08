@@ -6,6 +6,7 @@ import SignUpForm from './pages/auth/SignUpForm';
 import Footer from './components/Footer';
 import SignInForm from './pages/auth/SignInForm';
 import RigCreateForm from './pages/rigs/RigCreateForm';
+import RigPage from './pages/rigs/RigPage';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/rig/create" render={() => <RigCreateForm />} />
+          <Route exact path="/rigs/:id" render={() => <RigPage />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </div>
