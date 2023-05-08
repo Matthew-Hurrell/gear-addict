@@ -22,6 +22,6 @@ nav, a, h1, h2, h3, h4, h5 {
   font-family: 'Roboto', sans-serif;
 }
 
-p {
+p, ul {
   font-family: 'Cardo', serif;
 }
