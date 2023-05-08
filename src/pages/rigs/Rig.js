@@ -51,15 +51,20 @@ const Rig = (props) => {
                         {budget && <p className='bg-red-700 text-white px-2 py-1 text-lg'>{budget}</p>}
                     </div>
 
-                    {/* Image */}
                     <div className='lg:col-span-2 h-80 sm:h-96 md:h-[600px] w-full relative'>
-                        <img src={featured_image} className='h-full w-full object-center object-cover' />
+
+                        {/* Image */}
+                        <img src={featured_image} alt={name} className='h-full w-full object-center object-cover' />
+
+                        {/* Profile */}
                         <div className='absolute h-10 w-10 sm:h-14 sm:w-14 bottom-1 sm:bottom-2.5 left-12 sm:left-14'>
                             <Link className="flex items-center justify-center" to={`/profiles/${profile_id}`}>
-                                <img src={profile_image} className='h-full w-full object-center object-cover rounded-full relative z-10' />
+                                <img src={profile_image} alt={owner} className='h-full w-full object-center object-cover rounded-full relative z-10' />
                                 <p className='bg-zinc-800 text-white ml-[-10px] pl-4 py-1 pr-2 text-base sm:text-lg relative z-0'>@{owner}</p>
                             </Link>
                         </div>
+
+                        {/* Attributes */}
                         <div className='absolute top-2.5 left-3 gap-5 hidden md:flex'>
                             {attribute_1 && <p className='bg-amber-500 text-white px-2 py-1 text-xl'>{attribute_1}</p>}
                             {attribute_2 && <p className='bg-amber-500 text-white px-2 py-1 text-xl'>{attribute_2}</p>}
@@ -67,6 +72,16 @@ const Rig = (props) => {
                             {genre_2 && <p className='bg-green-700 text-white px-2 py-1 text-xl'>{genre_2}</p>}
                             {budget && <p className='bg-red-700 text-white px-2 py-1 text-xl'>{budget}</p>}
                         </div>
+
+                        {/* Edit / Delete */}
+                        {is_owner && 
+                        <div className='absolute top-2.5 right-3'>
+                            <button className='text-2xl rounded-full bg-white text-gray-600 h-10 w-10 lg:h-12 lg:w-12 flex items-center justify-center'>
+                                <i className="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                        }
+
                     </div>
 
                     {/* Gallery Button */}
