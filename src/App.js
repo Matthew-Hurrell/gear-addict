@@ -9,6 +9,7 @@ import RigCreateForm from './pages/rigs/RigCreateForm';
 import RigPage from './pages/rigs/RigPage';
 import RigsPage from './pages/rigs/RigsPage';
 import { useCurrentUser } from './contexts/CurrentUserContext';
+import HomePage from './pages/HomePage';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -23,7 +24,7 @@ function App() {
             exact 
             path="/" 
             render={() => (
-              <RigsPage message="No results found! Adjust your search"/>
+              <HomePage />
             )} 
           />
           <Route 
