@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 import RigCard from './RigCard';
 
-const RigsPage = ({ message, filter="" }) => {
+const RigsPage = ({ message, filter="", title }) => {
     const [rigs, setRigs] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
@@ -25,6 +25,9 @@ const RigsPage = ({ message, filter="" }) => {
 
     return (
         <section className='bg-slate-100 px-5 py-12 lg:py-24'>
+
+            {title && <h2 className='text-center text-4xl text-black mb-14'>{title}</h2>}
+
             <div className='container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10'>
                 {hasLoaded ? (
                     <>
