@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RigsPage from './rigs/RigsPage';
 import HomeHero from '../components/HomeHero';
 import SearchBar from '../components/SearchBar';
@@ -8,6 +8,9 @@ import Seperator from '../components/Seperator';
 import IconSeperator from '../components/IconSeperator';
 
 const HomePage = () => {
+
+  const [query, setQuery] = useState("");
+
   return (
     <div>
 
@@ -18,7 +21,7 @@ const HomePage = () => {
         <Seperator />
 
         {/* Search Bar */}
-        <SearchBar />
+        <SearchBar query={query} setQuery={setQuery} />
 
         {/* Introduction */}
         <IntroHome />
@@ -37,6 +40,7 @@ const HomePage = () => {
             message="No results found! Adjust your search"
             filter={`&ordering=likes__created_at&`}
             title="Hottest Rigs"
+            query={query}
         />
 
     </div>
