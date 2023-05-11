@@ -17,7 +17,7 @@ const Asset = ({spinner, src, message}) => {
                 aria-label="Loading Spinner"
                 data-testid="loader"
             />}
-            {src && <img src={src} alt={message} />}
+            {src && <img className="w-full h-full object-center object-cover" src={src} alt={message} />}
             {message && <p className="">{message}</p>}
         </div>
     );
