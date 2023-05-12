@@ -10,6 +10,7 @@ import RigPage from './pages/rigs/RigPage';
 import RigsPage from './pages/rigs/RigsPage';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import HomePage from './pages/HomePage';
+import LatestRigs from './pages/rigs/LatestRigs';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -46,6 +47,13 @@ function App() {
                 filter={`stars__owner__profile=${profile_id}&`}
               />
             )} 
+          />
+          <Route 
+            exact 
+            path="/latest"
+            render={() => (
+              <LatestRigs />
+            )}
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
