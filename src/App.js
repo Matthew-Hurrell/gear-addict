@@ -11,6 +11,8 @@ import RigsPage from './pages/rigs/RigsPage';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import HomePage from './pages/HomePage';
 import LatestRigs from './pages/rigs/LatestRigs';
+import FeedPage from './pages/FeedPage';
+import SavedPage from './pages/SavedPage';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -32,9 +34,8 @@ function App() {
             exact 
             path="/feed" 
             render={() => (
-              <RigsPage 
-                message="No results found! Adjust your search or become a fan of another user to see their rigs here" 
-                filter={`owner__idolguy__fan__profile=${profile_id}&`}
+              <FeedPage 
+                profile_id={profile_id}
               />
             )} 
           />
@@ -42,9 +43,8 @@ function App() {
             exact 
             path="/saved" 
             render={() => (
-              <RigsPage 
-                message="No results found! Adjust your search or save a rig to store them here" 
-                filter={`stars__owner__profile=${profile_id}&`}
+              <SavedPage 
+                profile_id={profile_id}
               />
             )} 
           />
