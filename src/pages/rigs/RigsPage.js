@@ -5,11 +5,10 @@ import RigCard from './RigCard';
 import Asset from '../../components/Asset';
 import BrokenInstruments from '../../assets/gear-addict-broken-instruments.jpeg';
 
-const RigsPage = ({ message, filter="", title, slice_num }) => {
+const RigsPage = ({ message, filter="", title, slice_num, query }) => {
     const [rigs, setRigs] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
-    const [query, setQuery] = useState("");
 
     useEffect(() => {
         const fetchRigs = async () => {
