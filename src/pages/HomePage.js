@@ -9,8 +9,6 @@ import IconSeperator from '../components/IconSeperator';
 
 const HomePage = () => {
 
-  const [query, setQuery] = useState("");
-
   return (
     <div>
 
@@ -19,9 +17,6 @@ const HomePage = () => {
 
         {/* Seperator */}
         <Seperator />
-
-        {/* Search Bar */}
-        <SearchBar query={query} setQuery={setQuery} />
 
         {/* Introduction */}
         <IntroHome />
@@ -38,9 +33,9 @@ const HomePage = () => {
         {/* Hottest Rigs */}
         <RigsPage 
             message="No results found! Adjust your search"
-            filter={`&ordering=likes__created_at&`}
+            filter={`&ordering=likes__created_at&?limit=4`}
             title="Hottest Rigs"
-            query={query}
+            slice_num={4}
         />
 
     </div>
