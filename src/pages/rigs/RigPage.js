@@ -6,6 +6,7 @@ import Seperator from '../../components/Seperator';
 import Hero from '../../components/Hero';
 import CommentCreateForm from '../comments/CommentCreateForm';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import Comment from '../comments/Comment';
 
 const RigPage = () => {
     const { id } = useParams();
@@ -18,17 +19,18 @@ const RigPage = () => {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{data: rig}] = await Promise.all([
+                const [{ data: rig }, { data: comments }] = await Promise.all([
                     axiosReq.get(`/rigs/${id}`),
+                    axiosReq.get(`/comments/?rig=${id}`),
                 ]);
                 setRig({results: [rig]});
-                console.log(rig);
                 setRigData(rig);
-                console.log(rig.name);
+                setComments(comments);
             } catch(err) {
                 console.log(err);
             }
-        }
+        };
+
         handleMount();
     }, [id]);
 
@@ -48,6 +50,15 @@ const RigPage = () => {
             ) : comments.results.length ? (
                 "Comments"
             ) : null}
+            {comments.results.length ? (
+                comments.results.map(comment => (
+                    <Comment key={comment.id} {...comment} />
+                ))
+            ) : currentUser ? (
+                <span>No comments yet, be the first to comment!</span>
+            ) : (
+                <span>No comments yet, sign in or sign up to comment</span>
+            )}
         </div>
     )
 }
