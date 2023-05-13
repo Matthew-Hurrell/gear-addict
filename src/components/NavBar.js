@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/gear-addict-test-logo.png';
+import logo from '../assets/gear-addict-logo-white.png';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import styles from '../styles/NavBar.module.css';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
