@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import FsLightbox from "fslightbox-react";
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Seperator from '../../components/Seperator';
 import { axiosRes } from '../../api/axiosDefaults';
+import DropdownMenu from '../../components/DropdownMenu';
 
 const Rig = (props) => {
     const {
@@ -36,6 +37,20 @@ const Rig = (props) => {
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
     const [toggler, setToggler] = useState(false);
+    const history = useHistory();
+
+    const handleEdit = () => {
+        history.push(`/rigs/${id}/edit`);
+    }
+
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/rigs/${id}/`);
+            history.goBack();
+        } catch(err) {
+            console.log(err);
+        }
+    }
 
     const handleLike = async () => {
         try {
@@ -140,13 +155,7 @@ const Rig = (props) => {
                         </div>
 
                         {/* Edit / Delete */}
-                        {is_owner && 
-                        <div className='absolute top-2.5 right-3'>
-                            <button className='text-2xl rounded-full bg-white text-gray-600 h-10 w-10 lg:h-12 lg:w-12 flex items-center justify-center'>
-                                <i className="fa-solid fa-ellipsis-vertical"></i>
-                            </button>
-                        </div>
-                        }
+                        {is_owner && <DropdownMenu handleEdit={handleEdit} handleDelete={handleDelete} />}
 
                         {/* Like */}
                         {is_owner ? (
