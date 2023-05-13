@@ -7,7 +7,7 @@ import BrokenInstruments from '../../assets/gear-addict-broken-instruments.jpeg'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
 
-const RigsPage = ({ message, filter="", title, slice_num, query }) => {
+const RigsList = ({ message, filter="", title, slice_num, query }) => {
     const [rigs, setRigs] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
@@ -67,7 +67,7 @@ const RigsPage = ({ message, filter="", title, slice_num, query }) => {
                             <div className='bg-zinc-800 flex justify-center items-center py-10 px-10'>
                                 <h2 className='text-white text-2xl'>{message}</h2>
                             </div>
-                            <Asset src={BrokenInstruments} alt="Illustration of broken instruments" />
+                            <Asset message={message} src={BrokenInstruments} alt="Illustration of broken instruments" />
                         </div>
                     )}
                 </>
@@ -83,4 +83,4 @@ const RigsPage = ({ message, filter="", title, slice_num, query }) => {
     )
 }
 
-export default RigsPage
+export default RigsList
