@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import RigsPage from '../pages/rigs/RigsPage';
+import RigsList from '../pages/rigs/RigsList';
 import Hero from '../components/Hero';
 import SearchBar from '../components/SearchBar';
 import Seperator from '../components/Seperator';
@@ -19,8 +19,8 @@ const SavedPage = ({profile_id}) => {
             {/* SearchBar */}
             <SearchBar query={query} setQuery={setQuery} /> 
 
-            {/* RigsPage */}
-            <RigsPage 
+            {/* RigsList */}
+            <RigsList 
                 message="No results found! Adjust your search or save a rig to store them here" 
                 filter={`stars__owner__profile=${profile_id}&`}
                 query={query}

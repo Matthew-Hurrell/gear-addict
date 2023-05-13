@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import RigsPage from './rigs/RigsPage';
+import RigsList from './rigs/RigsList';
 import HomeHero from '../components/HomeHero';
-import SearchBar from '../components/SearchBar';
 import IntroHome from '../components/IntroHome';
 import HowToUse from '../components/HowToUse';
 import Seperator from '../components/Seperator';
@@ -31,7 +30,7 @@ const HomePage = () => {
         <IconSeperator />
 
         {/* Hottest Rigs */}
-        <RigsPage 
+        <RigsList
             message="No results found! Adjust your search"
             filter={`&ordering=likes__created_at&?limit=4`}
             title="Hottest Rigs"
