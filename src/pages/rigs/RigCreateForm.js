@@ -109,7 +109,7 @@ const RigCreateForm = () => {
                         <form 
                             className='bg-zinc-800 h-full pt-10 pb-8 px-8 md:pt-16 md:pb-14 md:px-16 lg:px-12 xl:px-16 2xl:px-24 border-2 border-amber-400 shadow-xl text-left flex flex-col justify-center gap-5' 
                             onSubmit={handleSubmit} 
-                            enctype="multipart/form-data"
+                            encType="multipart/form-data"
                         >
 
                             {/* Name */}
