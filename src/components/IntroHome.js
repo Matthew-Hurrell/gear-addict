@@ -6,7 +6,7 @@ const IntroHome = () => {
         <div className='container mx-auto'>
             <h2 className='text-3xl lg:text-4xl mb-2'>Welcome to Gear Addict</h2>
             <h3 className='text-lg lg:text-xl mb-7'>Home of music gear fans and enthusiasts</h3>
-                <p class="max-w-4xl mx-auto text-base lg:text-lg">
+                <p className="max-w-4xl mx-auto text-base lg:text-lg">
                     Are you a musician who loves to collect and play with different instruments and equipment?
                     Do you find yourself constantly searching for the right gear for your performances and recordings?
                     If so, Gear Addict is the perfect platform for you. Our site allows you to create a profile,

@@ -13,7 +13,7 @@ const SearchBar = ({query, setQuery}) => {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           ></input>
-          <i class="fa-solid fa-magnifying-glass absolute right-2 z-50 top-[50%] translate-y-[-50%] text-zinc-400"></i>
+          <i className="fa-solid fa-magnifying-glass absolute right-2 z-50 top-[50%] translate-y-[-50%] text-zinc-400"></i>
         </form>
       </div>
     </div>

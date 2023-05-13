@@ -181,7 +181,7 @@ const RigCard = (props) => {
                 <p className='line-clamp-4 text-lg lg:text-xl'>{description}</p>
                 <div className='flex items-center justify-end mt-3'>
                     <Link className="group hover:scale-105" to={`/rigs/${id}`}>
-                        <span className='text-base lg:text-lg'>View rig</span> <i class="ml-2 align-top fa-solid fa-arrow-right text-white text-xl group-hover:animate-pulse"></i>
+                        <span className='text-base lg:text-lg'>View rig</span> <i className="ml-2 align-top fa-solid fa-arrow-right text-white text-xl group-hover:animate-pulse"></i>
                     </ Link>
                 </div>
 
