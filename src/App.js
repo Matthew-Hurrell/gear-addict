@@ -13,6 +13,7 @@ import LatestRigs from './pages/rigs/LatestRigs';
 import FeedPage from './pages/FeedPage';
 import SavedPage from './pages/SavedPage';
 import RigsPage from './pages/RigsPage';
+import RigEditForm from './pages/rigs/RigEditForm';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -60,6 +61,7 @@ function App() {
           <Route exact path="/rig/create" render={() => <RigCreateForm />} />
           <Route exact path="/rigs" render={() => <RigsPage filter={`owner__profile=${profile_id}&`} />} />
           <Route exact path="/rigs/:id" render={() => <RigPage />} />
+          <Route exact path="/rigs/:id/edit" render={() => <RigEditForm />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </div>
