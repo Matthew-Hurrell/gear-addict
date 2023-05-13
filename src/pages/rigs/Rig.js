@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import FsLightbox from "fslightbox-react";
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import Seperator from '../../components/Seperator';
+import IconSeperator from '../../components/IconSeperator';
 import { axiosRes } from '../../api/axiosDefaults';
 import DropdownMenu from '../../components/DropdownMenu';
 
@@ -231,7 +231,7 @@ const Rig = (props) => {
                 </div>
             </section>
 
-            <Seperator />
+            <IconSeperator />
 
             {/* Rig Details */}
             <section className='bg-white px-10 py-12 lg:py-24'>
@@ -277,7 +277,7 @@ const Rig = (props) => {
             </section>
 
             {/* Seperator */}
-            <Seperator />
+            <IconSeperator />
         </div>
     )
 }
