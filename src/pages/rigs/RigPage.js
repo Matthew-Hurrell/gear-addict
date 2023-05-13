@@ -2,14 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 import Rig from './Rig';
-import header from '../../assets/gear-addict-hero-2.jpg';
 import Seperator from '../../components/Seperator';
 import Hero from '../../components/Hero';
+import CommentCreateForm from '../comments/CommentCreateForm';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 const RigPage = () => {
     const { id } = useParams();
     const [rig, setRig] = useState({ results: [] });
     const [rigData, setRigData] = useState(null);
+    const currentUser = useCurrentUser();
+    const profile_image = currentUser?.profile_image;
+    const [comments, setComments] = useState({ results: [] });
 
     useEffect(() => {
         const handleMount = async () => {
@@ -33,6 +37,17 @@ const RigPage = () => {
             {rigData && <Hero righeader title={`${rigData.name}`} />}
             <Seperator />
             <Rig {...rig.results[0]} setRigs={setRig} />
+            {currentUser ? (
+                <CommentCreateForm
+                    profile_id={currentUser.profile_id}
+                    profileImage={profile_image}
+                    rig={id}
+                    setRig={setRig}
+                    setComments={setComments}
+                />
+            ) : comments.results.length ? (
+                "Comments"
+            ) : null}
         </div>
     )
 }
