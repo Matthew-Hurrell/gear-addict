@@ -251,6 +251,7 @@ const Rig = (props) => {
                             {budget && <li className='mb-1.5'>Budget: {budget}</li>}
                             <li className='mb-1.5'>Likes: {likes_count}</li>
                             <li className='mb-1.5'>Stars: {stars_count}</li>
+                            <li className='mb-1.5'>Comments: {comments_count}</li>
                             <li>Last updated: {updated_at}</li>
                         </ul>
                     </div>
@@ -275,15 +276,8 @@ const Rig = (props) => {
                 </div>
             </section>
 
+            {/* Seperator */}
             <Seperator />
-
-            {/* Comments */}
-            <section className='bg-slate-100 px-5 py-12 lg:py-24'>
-                <div className='container mx-auto flex flex-col lg:flex-row gap-10'>
-
-                </div>
-            </section>
-
         </div>
     )
 }
