@@ -246,7 +246,7 @@ const Rig = (props) => {
                                 <li className='mb-1.5'>Attributes: {attribute_1 ? attribute_1 + ', ' : ''}{attribute_2 ? attribute_2 : ''}</li>
                             )}
                             {(genre_1 || genre_2) && (
-                                <li className='mb-1.5'>Attributes: {genre_1 ? genre_1 + ', ' : ''}{genre_2 ? genre_2 : ''}</li>
+                                <li className='mb-1.5'>Genres: {genre_1 ? genre_1 + ', ' : ''}{genre_2 ? genre_2 : ''}</li>
                             )}
                             {budget && <li className='mb-1.5'>Budget: {budget}</li>}
                             <li className='mb-1.5'>Likes: {likes_count}</li>
