@@ -11,7 +11,7 @@ const DropdownMenu = ({handleEdit, handleDelete}) => {
             >
                 <i className="fa-solid fa-ellipsis-vertical"></i>
             </button>
-            <div className={`shadow-2xl z-50 flex absolute p-3 gap-6 bg-white left-3 top-14 ${isActive ? 'block' : 'hidden'}`}>
+            <div className={`shadow-2xl z-50 flex absolute p-3 gap-6 bg-white right-0 top-14 ${isActive ? 'block' : 'hidden'}`}>
 
                 {/* Edit */}
                 <button
