@@ -7,6 +7,7 @@ import Seperator from '../components/Seperator';
 import IconSeperator from '../components/IconSeperator';
 
 const HomePage = () => {
+  const [query, setQuery] = useState("");
 
   return (
     <div>
@@ -32,9 +33,10 @@ const HomePage = () => {
         {/* Hottest Rigs */}
         <RigsList
             message="No results found! Adjust your search"
-            filter={`&ordering=likes__created_at&?limit=4`}
+            filter='&ordering=likes__created_at&'
             title="Hottest Rigs"
             slice_num={4}
+            query={query}
         />
 
     </div>
