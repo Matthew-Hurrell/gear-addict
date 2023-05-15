@@ -42,35 +42,38 @@ const CommentCreateForm = (props) => {
     };
 
     return (
-        <section className='bg-slate-100 px-5 py-12 lg:py-24'>
-                <div className='container mx-auto'>
-                    <form 
-                        className="" 
-                        onSubmit={handleSubmit}
-                    >
-                        <div>
-                            <Link to={`/profiles/${profile_id}`}>
-                                <Avatar src={profileImage} />
-                            </Link>
-                            <textarea
-                                id="content"
-                                name="content"
-                                className=""
-                                placeholder="That's awesome!"
-                                value={content}
-                                onChange={handleChange}
-                                rows={4}
-                            />
-                        </div>
-                        <button
-                            className=""
-                            type="submit"
-                        >
-                            Post
-                        </button>
-                    </form>
+        <div>
+            <div className="flex items-center mb-5 justify-between">
+                <h3 className="text-2xl lg:text-3xl text-center lg:text-left">Post a comment</h3>
+                <Link to={`/profiles/${profile_id}`}>
+                    <Avatar src={profileImage} />
+                </Link>
+            </div>
+            <form 
+                className="" 
+                onSubmit={handleSubmit}
+            >
+                <div>
+                    <textarea
+                        id="content"
+                        name="content"
+                        className="border-zinc-400 border-2 w-full px-2 py-0.5 font-normal text-black"
+                        placeholder="That's awesome!"
+                        value={content}
+                        onChange={handleChange}
+                        rows={4}
+                    />
                 </div>
-            </section>
+                <div className="flex items-center justify-end mt-5">
+                    <button
+                        className="text-white bg-green-700 px-3 py-2 font-bold hover:text-green-700 hover:scale-105 hover:bg-transparent border-2 border-green-700"
+                        type="submit"
+                    >
+                        Post
+                    </button>
+                </div>
+            </form>
+        </div>
     );
 };
 
