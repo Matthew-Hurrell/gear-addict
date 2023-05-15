@@ -46,7 +46,12 @@ const RigPage = () => {
                         {comments.results.length ? (
                             <div className='divide-y divide-zinc-800'>
                                 {comments.results.map(comment => (
-                                    <Comment key={comment.id} {...comment} />
+                                    <Comment 
+                                        key={comment.id} 
+                                        {...comment} 
+                                        setRig={setRig}
+                                        setComments={setComments}
+                                    />
                                 ))}
                             </div>
                         ) : currentUser ? (
