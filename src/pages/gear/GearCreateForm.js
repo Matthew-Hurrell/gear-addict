@@ -84,7 +84,7 @@ const GearCreateForm = () => {
 
         try {
             const {data} = await axiosReq.post('/gear/', formData);
-            history.push(`/gear/${data.id}`);
+            history.push(`/gear`);
         } catch(err) {
             console.log(err);
             if (err.response?.status !== 401) {
