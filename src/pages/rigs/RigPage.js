@@ -7,6 +7,9 @@ import Hero from '../../components/Hero';
 import CommentCreateForm from '../comments/CommentCreateForm';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Comment from '../comments/Comment';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Asset from '../../components/Asset';
+import { fetchMoreData } from '../../utils/utils';
 
 const RigPage = () => {
     const { id } = useParams();
@@ -45,14 +48,22 @@ const RigPage = () => {
                         <h3 className="text-2xl lg:text-3xl mb-1 lg:mb-7 text-left">Comments</h3>
                         {comments.results.length ? (
                             <div className='divide-y divide-zinc-800'>
-                                {comments.results.map(comment => (
-                                    <Comment 
-                                        key={comment.id} 
-                                        {...comment} 
-                                        setRig={setRig}
-                                        setComments={setComments}
-                                    />
-                                ))}
+                                <InfiniteScroll 
+                                    children={
+                                        comments.results.map(comment => (
+                                            <Comment 
+                                                key={comment.id} 
+                                                {...comment} 
+                                                setRig={setRig}
+                                                setComments={setComments}
+                                            />
+                                        ))
+                                    }
+                                    dataLength={comments.results.length}
+                                    loader={<Asset spinner />}
+                                    hasMore={!!comments.next}
+                                    next={() => fetchMoreData(comments, setComments)}
+                                />
                             </div>
                         ) : currentUser ? (
                             <p className='text-left mt-3 lg:mt-5 text-lg'>No comments yet, be the first to comment!</p>
