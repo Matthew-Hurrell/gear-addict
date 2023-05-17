@@ -37,7 +37,7 @@ const RigsList = ({ message, filter="", title, slice_num, query }) => {
     }, [filter, pathname, query]);
 
     return (
-        <section className='bg-white px-5 py-12 lg:py-24'>
+        <section className='bg-slate-100 px-5 py-12 lg:py-24'>
 
             {title && <h2 className='text-center text-3xl lg:text-4xl text-black mb-14'>{title}</h2>}
 
