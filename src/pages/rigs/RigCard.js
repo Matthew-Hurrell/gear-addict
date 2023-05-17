@@ -100,7 +100,7 @@ const RigCard = (props) => {
     };
 
     return (
-        <article className='w-full flex flex-col'>
+        <article className='w-full flex flex-col shadow-xl border-b-2 border-amber-400'>
             <div className='w-full h-64 sm:h-80 md:h-96 lg:h-80 2xl:h-96 relative'>
                 {/* Image */}
                 <img src={featured_image} alt={name} className='h-full w-full object-center object-cover' />
@@ -117,9 +117,6 @@ const RigCard = (props) => {
                 <div className='absolute top-2 left-2 lg:top-2.5 lg:left-3 gap-3 lg:gap-5 flex'>
                     {attribute_1 && <p className='bg-amber-500 text-white px-2 py-1 text-white px-2 py-1 text-lg lg:text-xl'>{attribute_1}</p>}
                     {attribute_2 && <p className='bg-amber-500 text-white px-2 py-1 text-lg lg:text-xl'>{attribute_2}</p>}
-                    {/* {genre_1 && <p className='bg-green-700 text-white px-2 py-1 text-xl'>{genre_1}</p>}
-                    {genre_2 && <p className='bg-green-700 text-white px-2 py-1 text-xl'>{genre_2}</p>} */}
-                    {/* {budget && <p className='bg-red-700 text-white px-2 py-1 text-lg lg:text-xl'>{budget}</p>} */}
                 </div>
 
                 {/* Like */}
@@ -176,12 +173,12 @@ const RigCard = (props) => {
                     </div>
                 )}
             </div>
-            <div className="bg-zinc-800 text-white py-5 px-10 flex flex-col justify-between grow">
+            <div className="bg-white text-black py-5 px-10 flex flex-col justify-between grow">
                 <h3 className="mb-3 text-2xl lg:text-3xl">{name}</h3>
                 <p className='line-clamp-4 text-lg lg:text-xl'>{description}</p>
                 <div className='flex items-center justify-end mt-3'>
                     <Link className="group hover:scale-105" to={`/rigs/${id}`}>
-                        <span className='text-base lg:text-lg'>View rig</span> <i className="ml-2 align-top fa-solid fa-arrow-right text-white text-xl group-hover:animate-pulse"></i>
+                        <span className='text-base lg:text-lg'>View rig</span> <i className="ml-2 align-top fa-solid fa-arrow-right text-black text-xl group-hover:animate-pulse"></i>
                     </ Link>
                 </div>
 
