@@ -3,6 +3,7 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosRes } from '../../api/axiosDefaults';
 import CategoryBadge from '../../components/CategoryBadge';
+import GearStatusBadge from '../../components/GearStatusBadge';
 
 
 const GearCard = (props) => {
@@ -31,7 +32,7 @@ const GearCard = (props) => {
     const is_owner = currentUser?.username === owner;
 
     return (
-        <article className='w-full flex flex-col'>
+        <article className='w-full flex flex-col shadow-xl border-b-2 border-amber-400'>
             <div className='w-full relative h-64 sm:h-72 md:h-64 lg:h-72 xl:h-80 2xl:h-[350px]'>
                 {/* Image */}
                 <img src={image} alt={name} className='h-full w-full object-center object-cover' />
@@ -67,16 +68,37 @@ const GearCard = (props) => {
                 ) : (
                     <CategoryBadge accessories />
                 )}
+
+                <div className='absolute left-2 top-2 flex items-center gap-2'>
+                    {/* Repair */}
+                    {(repair === 1) && <GearStatusBadge repair />}
+
+                    {/* Sale */}
+                    {(sale === 1) && <GearStatusBadge sale />}
+
+                    {/* Insured */}
+                    {(insured === 1) && <GearStatusBadge insured />}
+                </div>
+
             </div>
-            <div className="bg-zinc-800 text-white py-5 px-10 flex flex-col justify-between grow">
-                <h3 className="mb-3 text-2xl lg:text-3xl">{name}</h3>
-                <p>{location}</p>
-                <p>{value}</p>
-                <p>{brand}</p>
-                <p>{model}</p>
-                <p>{year}</p>
-                <p>{serial}</p>
-                <p className='line-clamp-4 text-lg lg:text-xl'>{description}</p>
+            <div className="bg-white text-black py-5 px-10 flex flex-col grow">
+                <h3 className="mb-3 text-xl lg:text-2xl">{name}</h3>
+                <div className='grid grid-cols-1 gap-y-2'>
+                    {location && <p className='text-lg text-left'><i className="fa-solid fa-location-dot mr-2"></i>{location}</p>}
+                    {value && <p className='text-lg text-left'><i className="fa-sharp fa-solid fa-circle-sterling mr-2"></i>{value}</p>}
+                    {brand && model ? (
+                        <p className='text-lg text-left'><i className="fa-solid fa-circle-info mr-2"></i>{brand && `${brand}, `}{model}</p>
+                    ) : model ? (
+                        <p className='text-lg text-left'><i className="fa-solid fa-circle-info mr-2"></i>{model}</p>
+                    ) : brand ? (
+                        <p className='text-lg text-left'><i className="fa-solid fa-circle-info mr-2"></i>{brand}</p>
+                    ) : (
+                        null
+                    )}
+                    {serial && <p className='text-lg text-left'><i className="fa-solid fa-hashtag mr-2"></i>{serial}</p>}
+                    {year && <p className='text-lg text-left'><i class="fa-regular fa-calendar mr-2"></i>{year}</p>}
+                </div>
+                {description && <p className='line-clamp-4 text-lg text-left mt-3'>{description}</p>}
             </div>
         </article>
     )
