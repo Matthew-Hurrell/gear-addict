@@ -12,7 +12,7 @@ const GearPage = ({filter}) => {
         <div>
 
             {/* Hero */}
-            <Hero title="Gear" />
+            <Hero title="My Gear" />
 
             {/* Seperator */}
             <Seperator />
