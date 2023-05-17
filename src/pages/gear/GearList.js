@@ -54,7 +54,7 @@ const GearList = ({ message, filter="", title, query }) => {
                             loader={<Asset spinner />}
                             hasMore={!!gear.next}
                             next={() => fetchMoreData(gear, setGear)}
-                            className='container mx-auto grid grid-cols-2 lg:grid-cols-3 gap-10'
+                            className='container mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'
                         />
                     ) : (
                         <div className='container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10'>
