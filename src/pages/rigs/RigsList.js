@@ -7,10 +7,20 @@ import BrokenInstruments from '../../assets/gear-addict-broken-instruments.jpeg'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
 
-const RigsList = ({ message, filter="", title, slice_num, query }) => {
+const RigsList = ({ message, filter="", title, slice_num, query, saved }) => {
     const [rigs, setRigs] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
+
+    const fetchRigs = async () => {
+        try {
+            const {data} = await axiosReq.get(`/rigs/?${filter}search=${query}`);
+            setRigs(data);
+            setHasLoaded(true);
+        } catch(err) {
+            console.log(err);
+        }
+    }
 
     useEffect(() => {
         const fetchRigs = async () => {
@@ -18,9 +28,6 @@ const RigsList = ({ message, filter="", title, slice_num, query }) => {
                 const {data} = await axiosReq.get(`/rigs/?${filter}search=${query}`);
                 setRigs(data);
                 setHasLoaded(true);
-                // console.log(filter);
-                // console.log(`/rigs/?${filter}search=${query}`);
-                // console.log(data);
             } catch(err) {
                 console.log(err);
             }
@@ -52,7 +59,11 @@ const RigsList = ({ message, filter="", title, slice_num, query }) => {
                                     ))
                                 ) : (
                                     rigs.results.map(rig => (
-                                        <RigCard key={rig.id} {...rig} setRigs={setRigs} />
+                                        saved ? (
+                                            <RigCard key={rig.id} {...rig} setRigs={setRigs} saved fetchRigs={fetchRigs} />
+                                        ) : (
+                                            <RigCard key={rig.id} {...rig} setRigs={setRigs} />
+                                        )
                                     ))
                                 )
                             }
