@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
-import { axiosReq } from '../../api/axiosDefaults';
+import { axiosReq, axiosRes } from '../../api/axiosDefaults';
 import GearCard from './GearCard';
 import Asset from '../../components/Asset';
 import BrokenInstruments from '../../assets/gear-addict-broken-instruments.jpeg';
@@ -11,6 +11,19 @@ const GearList = ({ message, filter="", title, query }) => {
     const [gear, setGear] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
+
+    const fetchGear = async () => {
+        try {
+            const {data} = await axiosReq.get(`/gear/?${filter}search=${query}`);
+            setGear(data);
+            setHasLoaded(true);
+            // console.log(filter);
+            // console.log(`/gear/?${filter}search=${query}`);
+            // console.log(data);
+        } catch(err) {
+            console.log(err);
+        }
+    }
 
     useEffect(() => {
         const fetchGear = async () => {
@@ -47,7 +60,7 @@ const GearList = ({ message, filter="", title, query }) => {
                         <InfiniteScroll 
                             children={
                                 gear.results.map(gear => (
-                                    <GearCard key={gear.id} {...gear} setGear={setGear} />
+                                    <GearCard key={gear.id} {...gear} setGear={setGear} fetchGear={fetchGear} />
                                 ))
                             }
                             dataLength={gear.results.length}
