@@ -1,9 +1,10 @@
 import React from 'react';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosRes } from '../../api/axiosDefaults';
 import CategoryBadge from '../../components/CategoryBadge';
 import GearStatusBadge from '../../components/GearStatusBadge';
+import DropdownMenu from '../../components/DropdownMenu';
 
 
 const GearCard = (props) => {
@@ -26,10 +27,25 @@ const GearCard = (props) => {
         sale,
         insured,
         setGear,
+        fetchGear,
     } = props;
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+    const history = useHistory();
+
+    const handleEdit = () => {
+        history.push(`/gear/${id}/edit`);
+    }
+
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/gear/${id}/`);
+            fetchGear();
+        } catch(err) {
+            console.log(err);
+        }
+    }
 
     return (
         <article className='w-full flex flex-col shadow-xl border-b-2 border-amber-400'>
@@ -79,6 +95,9 @@ const GearCard = (props) => {
                     {/* Insured */}
                     {(insured === 1) && <GearStatusBadge insured />}
                 </div>
+
+                {/* Edit / Delete */}
+                {is_owner && <DropdownMenu handleEdit={handleEdit} handleDelete={handleDelete} />}
 
             </div>
             <div className="bg-white text-black py-5 px-10 flex flex-col grow">
