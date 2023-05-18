@@ -16,6 +16,7 @@ import RigsPage from './pages/RigsPage';
 import RigEditForm from './pages/rigs/RigEditForm';
 import GearCreateForm from './pages/gear/GearCreateForm';
 import GearPage from './pages/gear/GearPage';
+import GearEditForm from './pages/gear/GearEditForm';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -66,6 +67,7 @@ function App() {
           <Route exact path="/rigs/:id/edit" render={() => <RigEditForm />} />
           <Route exact path="/gear/create" render={() => <GearCreateForm />} />
           <Route exact path="/gear" render={() => <GearPage filter={`owner__profile=${profile_id}&`} />} />
+          <Route exact path="/gear/:id/edit" render={() => <GearEditForm />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </div>
