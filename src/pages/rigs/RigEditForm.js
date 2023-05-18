@@ -62,8 +62,6 @@ const RigEditForm = () => {
                     image_4,
                     is_owner
                 } = data;
-                console.log(featured_image);
-                console.log(image_2);
                 is_owner ? setRigData({
                     name, 
                     budget, 
@@ -518,7 +516,7 @@ const RigEditForm = () => {
                                 <p className='text-red-500' key={idx}>{message}</p>
                             ))}
 
-                            {/* Submit / Cancel Buttons */}
+                            {/* Save / Cancel Buttons */}
                             <div className='mt-5 lg:mt-7 flex items-center justify-center gap-10'>
 
                                 {/* Cancel */}
