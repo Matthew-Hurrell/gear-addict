@@ -24,6 +24,7 @@ const SavedPage = ({profile_id}) => {
                 message="No results found! Adjust your search or save a rig to store them here" 
                 filter={`stars__owner__profile=${profile_id}&`}
                 query={query}
+                saved
             />
         </div>
     )
