@@ -30,6 +30,8 @@ const RigCard = (props) => {
         genre_1,
         genre_2,
         setRigs,
+        saved,
+        fetchRigs,
     } = props;
 
     const currentUser = useCurrentUser();
@@ -94,6 +96,7 @@ const RigCard = (props) => {
                     : rig;
                 }),
             }));
+            {saved && fetchRigs()}
         } catch(err) {
             console.log(err);
         }
