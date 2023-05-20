@@ -10,26 +10,28 @@ const Profile = ({profile}) => {
     const is_owner = currentUser?.username === owner;
 
     return (
-        <div>
-            <Link className='flex flex-col lg:flex-row' to={`/profiles/${id}`}>
+        <div className='flex items-center justify-between'>
+            <Link className='flex flex-col lg:flex-row items-center gap-1.5' to={`/profiles/${id}`}>
                 <Avatar src={image} />
                 <p>{owner}</p>
-                {currentUser && !is_owner && (
-                    fan_id ? (
-                        <button
-                            onClick={() => {}}
-                        >
-                            Unfan
-                        </button>
-                    ) : (
-                        <button
-                            onClick={() => {}}
-                        >
-                            Fan
-                        </button>
-                    )
-                )}
             </Link>
+            {currentUser && !is_owner && (
+                fan_id ? (
+                    <button
+                        onClick={() => {}}
+                        className='text-zinc-800'
+                    >
+                        <i className="fa-solid fa-hand-horns text-2xl"></i>
+                    </button>
+                ) : (
+                    <button
+                        onClick={() => {}}
+                        className='shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
+                    >
+                        <i className="fa-light fa-hand-horns text-2xl"></i>
+                    </button>
+                )
+            )}
         </div>
     )
 }
