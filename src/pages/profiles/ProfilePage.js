@@ -8,6 +8,8 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { useProfileData, useSetProfileData } from '../../contexts/ProfileDataContext';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import Seperator from '../../components/Seperator';
+import SearchBar from '../../components/SearchBar';
+import RigsList from '../rigs/RigsList';
 
 const ProfilePage = () => {
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -16,6 +18,8 @@ const ProfilePage = () => {
     const setProfileData = useSetProfileData();
     const { pageProfile } = useProfileData();
     const [profile] = pageProfile.results;
+    const [query, setQuery] = useState("");
+    const is_owner = currentUser?.username === profile?.owner;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,6 +42,7 @@ const ProfilePage = () => {
 
     const mainProfileHeader = (
         <>
+            {/* Header Image */}
             <section className='relative h-56 sm:h-60 md:h-64 lg:h-72 xl:h-80 2xl:h-96 flex items-end px-5'>
                 <div className='z-0 absolute h-full w-full top-0 left-0'>
                     <img src={profile?.header_image} className='object-center object-cover w-full h-full grayscale brightness-50' alt={`${profile?.owner} profile header`} />
@@ -48,15 +53,53 @@ const ProfilePage = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Seperator */}
             <Seperator />
-            <section className='bg-slate-100 px-5 py-12 lg:py-24 relative'>
-                <div className='text-left py-3 px-5 container mx-auto'>
-                    <h1 className='text-5xl mb-5'>{profile?.owner}</h1>
+
+            {/* Profile Details */}
+            <section className='bg-white px-5 py-12 lg:py-24 relative'>
+                <div className='text-left py-3 lg:px-5 container mx-auto'>
+                    <div className='flex flex-col lg:flex-row max-w-4xl mb-3 lg:mb-0 justify-between gap-3 md:gap-5 items-center'>
+                        <h1 className='text-4xl lg:text-5xl lg:mb-5'>{profile?.owner}</h1>
+                        <div className='flex gap-5 mb-5'>
+                            <div className='flex flex-col justify-center items-center gap-1'>
+                                <p className='text-xl'>Fans:</p>
+                                <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
+                                    <p className='text-black text-lg'>{profile?.fans_count}</p>
+                                </div>
+                            </div>
+                            <div className='flex flex-col justify-center items-center gap-1'>
+                                <p className='text-xl'>Idols:</p>
+                                <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
+                                    <p className='text-black text-lg'>{profile?.idols_count}</p>
+                                </div>
+                            </div>
+                            <div className='flex flex-col justify-center items-center gap-1'>
+                                <p className='text-xl'>Rigs:</p>
+                                <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
+                                    <p className='text-black text-lg'>{profile?.rigs_count}</p>
+                                </div>
+                            </div>
+                            <div className='flex flex-col justify-center items-center gap-1'>
+                                <p className='text-xl'>Gear:</p>
+                                <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
+                                    <p className='text-black text-lg'>{profile?.gear_count}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div className='max-w-4xl'>
-                        <p className='text-xl mb-5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                        <div className='grid grid-cols-2 text-xl'>
-                            {profile?.location && <p><i className="fa-sharp fa-solid fa-location-dot text-2xl"></i>{profile?.location}</p>}
-                            {/* {profile?.} */}
+                        <p className='text-lg lg:text-xl mb-5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 text-lg lg:text-xl'>
+                            {profile?.location && <p className='mb-1.5'><i className="fa-sharp fa-solid fa-location-dot text-2xl text-black mr-1"></i>{profile?.location}</p>}
+                            {(profile?.instrument_1 || profile?.instrument_2 || profile?.instrument_3) && (
+                                <p className='mb-1.5'><i className="fa-solid fa-saxophone-fire text-2xl text-black mr-1"></i>{profile?.instrument_1 ? profile?.instrument_1 + ', ' : ''}{profile?.instrument_2 ? profile?.instrument_2 + ', ' : ''}{profile?.instrument_3 ? profile?.instrument_3 : ''}</p>
+                            )}
+                            {(profile?.genre_1 || profile?.genre_2 || profile?.genre_3) && (
+                                <p className='mb-1.5'><i className="fa-solid fa-music text-2xl text-black mr-1"></i>{profile?.genre_1 ? profile?.genre_1 + ', ' : ''}{profile?.genre_2 ? profile?.genre_2 + ', ' : ''}{profile?.genre_3 ? profile?.genre_3 : ''}</p>
+                            )}
+                            {profile?.expertise && <p className='mb-1.5'><i className="fa-solid fa-briefcase text-2xl text-black mr-1"></i>{profile?.expertise}</p>}
                         </div>
                     </div>
                 </div>
@@ -66,11 +109,18 @@ const ProfilePage = () => {
     );
 
     const mainProfileRigs = (
-        <section>
-            <div>
-                RIGS
-            </div>
-        </section>
+        <>
+            <SearchBar 
+                query={query} 
+                setQuery={setQuery} 
+            />
+            <RigsList 
+                message="No results found! Adjust your search or this profile has no rigs"
+                query={query}
+                filter={`owner__profile=${id}&`}
+                title={is_owner ? ('Rigs') : `${profile?.owner}'s Rigs`}
+            />
+        </>
     );
 
     return (
@@ -82,7 +132,9 @@ const ProfilePage = () => {
                     {mainProfileRigs}
                 </>
             ) : (
-                <Asset spinner />
+                <section className='container mx-auto flex items-center justify-center px-5 py-12 lg:py-24'>
+                    <Asset spinner />
+                </section>
             )}
         </div>
     )
