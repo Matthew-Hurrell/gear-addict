@@ -59,48 +59,53 @@ const ProfilePage = () => {
 
             {/* Profile Details */}
             <section className='bg-white px-5 py-12 lg:py-24 relative'>
-                <div className='text-left py-3 lg:px-5 container mx-auto'>
-                    <div className='flex flex-col lg:flex-row max-w-4xl mb-3 lg:mb-0 justify-between gap-3 md:gap-5 items-center'>
-                        <h1 className='text-4xl lg:text-5xl lg:mb-5'>{profile?.owner}</h1>
-                        <div className='flex gap-5 mb-5'>
-                            <div className='flex flex-col justify-center items-center gap-1'>
-                                <p className='text-xl'>Fans:</p>
-                                <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
-                                    <p className='text-black text-lg'>{profile?.fans_count}</p>
+                <div className='text-left py-3 lg:px-5 container mx-auto flex flex-col lg:flex-row gap-12 xl:gap-28'>
+                    <div className='w-full lg:w-9/12'>
+                        <div className='flex flex-col lg:flex-row mb-3 lg:mb-0 justify-between gap-3 md:gap-5 items-center'>
+                            <h1 className='text-4xl lg:text-5xl lg:mb-5'>{profile?.owner}</h1>
+                            <div className='flex gap-5 mb-5'>
+                                <div className='flex flex-col justify-center items-center gap-1'>
+                                    <p className='text-xl'>Fans:</p>
+                                    <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
+                                        <p className='text-black text-lg'>{profile?.fans_count}</p>
+                                    </div>
+                                </div>
+                                <div className='flex flex-col justify-center items-center gap-1'>
+                                    <p className='text-xl'>Idols:</p>
+                                    <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
+                                        <p className='text-black text-lg'>{profile?.idols_count}</p>
+                                    </div>
+                                </div>
+                                <div className='flex flex-col justify-center items-center gap-1'>
+                                    <p className='text-xl'>Rigs:</p>
+                                    <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
+                                        <p className='text-black text-lg'>{profile?.rigs_count}</p>
+                                    </div>
+                                </div>
+                                <div className='flex flex-col justify-center items-center gap-1'>
+                                    <p className='text-xl'>Gear:</p>
+                                    <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
+                                        <p className='text-black text-lg'>{profile?.gear_count}</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div className='flex flex-col justify-center items-center gap-1'>
-                                <p className='text-xl'>Idols:</p>
-                                <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
-                                    <p className='text-black text-lg'>{profile?.idols_count}</p>
-                                </div>
-                            </div>
-                            <div className='flex flex-col justify-center items-center gap-1'>
-                                <p className='text-xl'>Rigs:</p>
-                                <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
-                                    <p className='text-black text-lg'>{profile?.rigs_count}</p>
-                                </div>
-                            </div>
-                            <div className='flex flex-col justify-center items-center gap-1'>
-                                <p className='text-xl'>Gear:</p>
-                                <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
-                                    <p className='text-black text-lg'>{profile?.gear_count}</p>
-                                </div>
+                        </div>
+                        <div>
+                            <p className='text-lg lg:text-xl mb-5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            <div className='grid grid-cols-1 lg:grid-cols-2 text-lg lg:text-xl'>
+                                {profile?.location && <p className='mb-1.5'><i className="fa-sharp fa-solid fa-location-dot text-2xl text-black mr-1"></i>{profile?.location}</p>}
+                                {(profile?.instrument_1 || profile?.instrument_2 || profile?.instrument_3) && (
+                                    <p className='mb-1.5'><i className="fa-solid fa-saxophone-fire text-2xl text-black mr-1"></i>{profile?.instrument_1 ? profile?.instrument_1 + ', ' : ''}{profile?.instrument_2 ? profile?.instrument_2 + ', ' : ''}{profile?.instrument_3 ? profile?.instrument_3 : ''}</p>
+                                )}
+                                {(profile?.genre_1 || profile?.genre_2 || profile?.genre_3) && (
+                                    <p className='mb-1.5'><i className="fa-solid fa-music text-2xl text-black mr-1"></i>{profile?.genre_1 ? profile?.genre_1 + ', ' : ''}{profile?.genre_2 ? profile?.genre_2 + ', ' : ''}{profile?.genre_3 ? profile?.genre_3 : ''}</p>
+                                )}
+                                {profile?.expertise && <p className='mb-1.5'><i className="fa-solid fa-briefcase text-2xl text-black mr-1"></i>{profile?.expertise}</p>}
                             </div>
                         </div>
                     </div>
-                    <div className='max-w-4xl'>
-                        <p className='text-lg lg:text-xl mb-5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                        <div className='grid grid-cols-1 lg:grid-cols-2 text-lg lg:text-xl'>
-                            {profile?.location && <p className='mb-1.5'><i className="fa-sharp fa-solid fa-location-dot text-2xl text-black mr-1"></i>{profile?.location}</p>}
-                            {(profile?.instrument_1 || profile?.instrument_2 || profile?.instrument_3) && (
-                                <p className='mb-1.5'><i className="fa-solid fa-saxophone-fire text-2xl text-black mr-1"></i>{profile?.instrument_1 ? profile?.instrument_1 + ', ' : ''}{profile?.instrument_2 ? profile?.instrument_2 + ', ' : ''}{profile?.instrument_3 ? profile?.instrument_3 : ''}</p>
-                            )}
-                            {(profile?.genre_1 || profile?.genre_2 || profile?.genre_3) && (
-                                <p className='mb-1.5'><i className="fa-solid fa-music text-2xl text-black mr-1"></i>{profile?.genre_1 ? profile?.genre_1 + ', ' : ''}{profile?.genre_2 ? profile?.genre_2 + ', ' : ''}{profile?.genre_3 ? profile?.genre_3 : ''}</p>
-                            )}
-                            {profile?.expertise && <p className='mb-1.5'><i className="fa-solid fa-briefcase text-2xl text-black mr-1"></i>{profile?.expertise}</p>}
-                        </div>
+                    <div className='w-3/12 hidden lg:block'>
+                        <PopularProfiles />
                     </div>
                 </div>
 
@@ -125,7 +130,6 @@ const ProfilePage = () => {
 
     return (
         <div>
-            {/* <PopularProfiles /> */}
             {hasLoaded ? (
                 <>
                     {mainProfileHeader}
