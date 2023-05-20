@@ -15,7 +15,7 @@ const Profile = ({profile}) => {
                 <Avatar src={image} />
                 <p>{owner}</p>
                 {currentUser && !is_owner && (
-                    following_id ? (
+                    fan_id ? (
                         <button
                             onClick={() => {}}
                         >
