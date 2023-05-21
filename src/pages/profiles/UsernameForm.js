@@ -78,7 +78,7 @@ const UsernameForm = () => {
                             <p className='text-red-500' key={idx}>{message}</p>
                             ))}
 
-                            <div className='flex flex-col sm:flex-row items-center justify-between text-white mt-2'>
+                            <div className='flex flex-col sm:flex-row items-center justify-center gap-10 text-white mt-2'>
 
                                 {/* Cancel */}
                                 <button
