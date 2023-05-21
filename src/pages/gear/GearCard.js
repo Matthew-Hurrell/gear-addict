@@ -115,7 +115,7 @@ const GearCard = (props) => {
                         null
                     )}
                     {serial && <p className='text-lg text-left'><i className="fa-solid fa-hashtag mr-2"></i>{serial}</p>}
-                    {year && <p className='text-lg text-left'><i class="fa-regular fa-calendar mr-2"></i>{year}</p>}
+                    {year && <p className='text-lg text-left'><i className="fa-regular fa-calendar mr-2"></i>{year}</p>}
                 </div>
                 {description && <p className='line-clamp-4 text-lg text-left mt-3'>{description}</p>}
             </div>
