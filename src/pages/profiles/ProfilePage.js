@@ -33,7 +33,6 @@ const ProfilePage = () => {
                     pageProfile: { results: [pageProfile] },
                 }));
                 setHasLoaded(true);
-                console.log(pageProfile);
             } catch (err) {
                 console.log(err);
             }
