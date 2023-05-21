@@ -2,12 +2,15 @@ import React from 'react';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Avatar from '../../components/Avatar';
+import { useSetProfileData } from '../../contexts/ProfileDataContext';
 
 const Profile = ({profile}) => {
     const {id, fan_id, image, owner} = profile;
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+
+    const {handleFollow} = useSetProfileData();
 
     return (
         <div className='flex items-center justify-between'>
@@ -25,7 +28,7 @@ const Profile = ({profile}) => {
                     </button>
                 ) : (
                     <button
-                        onClick={() => {}}
+                        onClick={() => handleFollow(profile)}
                         className='hover:scale-105 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
                     >
                         <i className="fa-light fa-hand-horns text-2xl"></i>
