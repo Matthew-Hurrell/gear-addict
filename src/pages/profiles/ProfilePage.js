@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import Seperator from '../../components/Seperator';
 import SearchBar from '../../components/SearchBar';
 import RigsList from '../rigs/RigsList';
+import { ProfileEditDropdown } from '../../components/DropdownMenu';
 
 const ProfilePage = () => {
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -59,6 +60,11 @@ const ProfilePage = () => {
 
             {/* Profile Details */}
             <section className='bg-white px-5 py-12 lg:py-24 relative'>
+
+                {/* Profile Edit Menu */}
+                {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
+                
+                {/* Profile Details Content */}
                 <div className='text-left py-3 lg:px-5 container mx-auto flex flex-col lg:flex-row gap-12 xl:gap-28'>
                     <div className='w-full lg:w-9/12'>
                         <div className='flex flex-col lg:flex-row mb-3 lg:mb-0 justify-between gap-3 md:gap-5 items-center'>
