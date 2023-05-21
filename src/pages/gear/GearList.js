@@ -6,11 +6,13 @@ import Asset from '../../components/Asset';
 import BrokenInstruments from '../../assets/gear-addict-broken-instruments.jpeg';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 const GearList = ({ message, filter="", title, query }) => {
     const [gear, setGear] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
+    const currentUser = useCurrentUser();
 
     const fetchGear = async () => {
         try {
@@ -47,7 +49,7 @@ const GearList = ({ message, filter="", title, query }) => {
             clearTimeout(timer);
         };
 
-    }, [filter, pathname, query]);
+    }, [filter, pathname, query, currentUser]);
 
     return (
         <section className='bg-slate-100 px-5 py-12 lg:py-24'>
