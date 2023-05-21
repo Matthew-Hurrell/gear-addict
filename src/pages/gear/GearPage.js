@@ -3,8 +3,10 @@ import Hero from '../../components/Hero';
 import SearchBar from '../../components/SearchBar';
 import Seperator from '../../components/Seperator';
 import GearList from './GearList';
+import { useRedirect } from '../../hooks/useRedirect';
 
 const GearPage = ({filter}) => {
+    useRedirect('loggedOut');
 
     const [query, setQuery] = useState("");
 
@@ -17,11 +19,11 @@ const GearPage = ({filter}) => {
             {/* Seperator */}
             <Seperator />
 
-            {/* SearchBar */}
+            {/* Search Bar */}
             <SearchBar query={query} setQuery={setQuery} gear />
 
-            {/* GearList */}
-            <GearList  query={query} filter={filter} message="No results. Adjust search or add a rig to view it here" />
+            {/* Gear List */}
+            <GearList  query={query} filter={filter} message="No results. Adjust search or add gear to view it here" />
             
         </div>
     )
