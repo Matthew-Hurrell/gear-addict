@@ -5,8 +5,11 @@ import { axiosRes } from '../../api/axiosDefaults';
 import Hero from '../../components/Hero';
 import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import Seperator from '../../components/Seperator';
+import { useRedirect } from '../../hooks/useRedirect';
 
 const UsernameForm = () => {
+    useRedirect('loggedOut');
+    
     const [username, setUsername] = useState("");
     const [errors, setErrors] = useState({});
   
