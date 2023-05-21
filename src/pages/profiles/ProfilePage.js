@@ -15,7 +15,7 @@ const ProfilePage = () => {
     const [hasLoaded, setHasLoaded] = useState(false);
     const currentUser = useCurrentUser();
     const { id } = useParams();
-    const setProfileData = useSetProfileData();
+    const {setProfileData, handleFollow} = useSetProfileData();
     const { pageProfile } = useProfileData();
     const [profile] = pageProfile.results;
     const [query, setQuery] = useState("");
@@ -75,7 +75,7 @@ const ProfilePage = () => {
                                     ) : (
                                         <button
                                             className='hover:scale-105 mb-5 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
-                                            onClick={() => {}}
+                                            onClick={() => handleFollow(profile)}
                                         >
                                             <i className="fa-light fa-hand-horns text-2xl"></i>
                                         </button>
