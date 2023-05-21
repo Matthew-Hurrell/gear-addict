@@ -5,8 +5,11 @@ import { axiosRes } from '../../api/axiosDefaults';
 import Hero from '../../components/Hero';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Seperator from '../../components/Seperator';
+import { useRedirect } from '../../hooks/useRedirect';
 
 const UserPasswordForm = () => {
+    useRedirect('loggedOut');
+    
     const [userData, setUserData] = useState({
         new_password1: "",
         new_password2: "",
