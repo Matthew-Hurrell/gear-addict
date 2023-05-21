@@ -62,7 +62,26 @@ const ProfilePage = () => {
                 <div className='text-left py-3 lg:px-5 container mx-auto flex flex-col lg:flex-row gap-12 xl:gap-28'>
                     <div className='w-full lg:w-9/12'>
                         <div className='flex flex-col lg:flex-row mb-3 lg:mb-0 justify-between gap-3 md:gap-5 items-center'>
-                            <h1 className='text-4xl lg:text-5xl lg:mb-5'>{profile?.owner}</h1>
+                            <div className='flex items-center gap-7'>
+                                <h1 className='text-4xl lg:text-5xl lg:mb-5'>{profile?.owner}</h1>
+                                {currentUser && !is_owner && (
+                                    profile?.fan_id ? (
+                                        <button 
+                                            className='hover:scale-105 mb-5 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
+                                            onClick={() => {}}
+                                        >
+                                            <i className="fa-solid fa-hand-horns text-2xl"></i>
+                                        </button>
+                                    ) : (
+                                        <button
+                                            className='hover:scale-105 mb-5 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
+                                            onClick={() => {}}
+                                        >
+                                            <i className="fa-light fa-hand-horns text-2xl"></i>
+                                        </button>
+                                    )
+                                )}
+                            </div>
                             <div className='flex gap-5 mb-5'>
                                 <div className='flex flex-col justify-center items-center gap-1'>
                                     <p className='text-xl'>Fans:</p>
