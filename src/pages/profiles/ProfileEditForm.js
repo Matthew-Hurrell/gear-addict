@@ -159,10 +159,10 @@ const ProfileEditForm = () => {
                             encType="multipart/form-data"
                         >
 
-                            {/* Name */}
+                            {/* Alternative Name */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Name:
+                                    Alternative Name:
                                         <input 
                                             className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                             type="text"
