@@ -10,7 +10,7 @@ const Profile = ({profile}) => {
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
 
-    const {handleFollow} = useSetProfileData();
+    const {handleFan, handleUnfan} = useSetProfileData();
 
     return (
         <div className='flex items-center justify-between'>
@@ -21,14 +21,14 @@ const Profile = ({profile}) => {
             {currentUser && !is_owner && (
                 fan_id ? (
                     <button
-                        onClick={() => {}}
+                        onClick={() => handleUnfan(profile)}
                         className='hover:scale-105 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
                     >
                         <i className="fa-solid fa-hand-horns text-2xl"></i>
                     </button>
                 ) : (
                     <button
-                        onClick={() => handleFollow(profile)}
+                        onClick={() => handleFan(profile)}
                         className='hover:scale-105 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
                     >
                         <i className="fa-light fa-hand-horns text-2xl"></i>
