@@ -3,8 +3,11 @@ import RigsList from '../pages/rigs/RigsList';
 import Hero from '../components/Hero';
 import SearchBar from '../components/SearchBar';
 import Seperator from '../components/Seperator';
+import { useRedirect } from '../hooks/useRedirect';
 
 const SavedPage = ({profile_id}) => {
+    useRedirect('loggedOut');
+    
     const [query, setQuery] = useState("");
 
     return (
