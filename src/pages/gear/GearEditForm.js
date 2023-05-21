@@ -87,7 +87,7 @@ const GearEditForm = () => {
                     insured,
                 }) : history.push('/');
             } catch(err) {
-                console.log(err);
+                // console.log(err);
             }
         };
 
@@ -138,7 +138,7 @@ const GearEditForm = () => {
             await axiosReq.put(`/gear/${id}/`, formData);
             history.push(`/gear`);
         } catch(err) {
-            console.log(err);
+            // console.log(err);
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }

@@ -80,7 +80,7 @@ const RigEditForm = () => {
                     image_4,
                 }) : history.push('/');
             } catch(err) {
-                console.log(err);
+                // console.log(err);
             }
         };
 
@@ -139,7 +139,7 @@ const RigEditForm = () => {
             await axiosReq.put(`/rigs/${id}/`, formData);
             history.push(`/rigs/${id}`);
         } catch(err) {
-            console.log(err);
+            // console.log(err);
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }

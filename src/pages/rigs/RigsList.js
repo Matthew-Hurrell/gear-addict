@@ -18,7 +18,7 @@ const RigsList = ({ message, filter="", title, slice_num, query, saved }) => {
             setRigs(data);
             setHasLoaded(true);
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     }
 
@@ -29,7 +29,7 @@ const RigsList = ({ message, filter="", title, slice_num, query, saved }) => {
                 setRigs(data);
                 setHasLoaded(true);
             } catch(err) {
-                console.log(err);
+                // console.log(err);
             }
         }
 

@@ -43,7 +43,7 @@ const GearCard = (props) => {
             await axiosRes.delete(`/gear/${id}/`);
             fetchGear();
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     }
 

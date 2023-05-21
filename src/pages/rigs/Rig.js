@@ -48,7 +48,7 @@ const Rig = (props) => {
             await axiosRes.delete(`/rigs/${id}/`);
             history.goBack();
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     }
 
@@ -64,7 +64,7 @@ const Rig = (props) => {
                 }),
             }));
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     };
 
@@ -80,7 +80,7 @@ const Rig = (props) => {
                 }),
             }));
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     };
 
@@ -96,7 +96,7 @@ const Rig = (props) => {
                 }),
             }));
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     };
 
@@ -112,7 +112,7 @@ const Rig = (props) => {
                 }),
             }));
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     };
 

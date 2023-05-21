@@ -21,7 +21,7 @@ const GearList = ({ message, filter="", title, query }) => {
             // console.log(`/gear/?${filter}search=${query}`);
             // console.log(data);
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     }
 
@@ -35,7 +35,7 @@ const GearList = ({ message, filter="", title, query }) => {
                 // console.log(`/gear/?${filter}search=${query}`);
                 // console.log(data);
             } catch(err) {
-                console.log(err);
+                // console.log(err);
             }
         }
 

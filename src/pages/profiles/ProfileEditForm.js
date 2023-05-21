@@ -84,7 +84,7 @@ const ProfileEditForm = () => {
                         expertise,  
                     });
                 } catch (err) {
-                    console.log(err);
+                    // console.log(err);
                     history.push("/");
                 }
             } else {
@@ -136,7 +136,7 @@ const ProfileEditForm = () => {
             await axiosReq.put(`/profiles/${id}/`, formData);
             history.push(`/profiles/${id}`);
         } catch(err) {
-            console.log(err);
+            // console.log(err);
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }

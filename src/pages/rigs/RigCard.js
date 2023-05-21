@@ -49,7 +49,7 @@ const RigCard = (props) => {
                 }),
             }));
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     };
 
@@ -65,7 +65,7 @@ const RigCard = (props) => {
                 }),
             }));
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     };
 
@@ -81,7 +81,7 @@ const RigCard = (props) => {
                 }),
             }));
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     };
 
@@ -98,7 +98,7 @@ const RigCard = (props) => {
             }));
             {saved && fetchRigs()}
         } catch(err) {
-            console.log(err);
+            // console.log(err);
         }
     };
 
