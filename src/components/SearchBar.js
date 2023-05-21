@@ -3,7 +3,7 @@ import React from 'react';
 const SearchBar = ({query, setQuery, gear}) => {
 
   return (
-    <div className='bg-zinc-600 py-2 px-5'>
+    <div className='bg-zinc-800 py-2 px-5'>
       <div className='container mx-auto flex items-center justify-end'>
         <form className='relative inline-block w-full md:w-80 lg:w-96' onSubmit={(event) => event.preventDefault()}>
           <input 
