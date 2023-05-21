@@ -8,7 +8,6 @@ const Asset = ({spinner, src, message}) => {
 
   return (
         <div className="sweet-loading">
-            {/* <button onClick={() => setLoading(!loading)}>Toggle Loader</button> */}
 
             {spinner && <FadeLoader
                 color={color}
@@ -18,7 +17,6 @@ const Asset = ({spinner, src, message}) => {
                 data-testid="loader"
             />}
             {src && <img className="w-full h-full object-center object-cover" src={src} alt={message} />}
-            {message && <p className="">{message}</p>}
         </div>
     );
 };
