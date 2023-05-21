@@ -119,7 +119,7 @@ const ProfileEditForm = () => {
             formData.append('image', imageInput.current?.files?.[0] ?? "");
         }
         if (headerImageInput?.current?.files?.[0]) {
-            formData.append('image', headerImageInput.current?.files?.[0] ?? "");
+            formData.append('header_image', headerImageInput.current?.files?.[0] ?? "");
         }
         formData.append('location', location);
         formData.append('instrument_1', instrument_1);
@@ -180,13 +180,15 @@ const ProfileEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Bio:
-                                        <input 
+                                        <textarea 
+                                            rows="4" 
+                                            cols="50"
                                             className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
-                                            type="text"
                                             name="bio"
                                             value={bio}
                                             onChange={handleChange}
-                                        />
+                                        >
+                                        </textarea>
                                 </label>
                             </div>
                             {errors.bio?.map((message, idx) => (
