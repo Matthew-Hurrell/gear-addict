@@ -19,6 +19,7 @@ import GearPage from './pages/gear/GearPage';
 import GearEditForm from './pages/gear/GearEditForm';
 import ProfilePage from './pages/profiles/ProfilePage';
 import UsernameForm from './pages/profiles/UsernameForm';
+import UserPasswordForm from './pages/profiles/UserPasswordForm';
 
 function App() {
   const currentUser = useCurrentUser();
@@ -72,6 +73,7 @@ function App() {
           <Route exact path="/gear/:id/edit" render={() => <GearEditForm />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
+          <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </div>
