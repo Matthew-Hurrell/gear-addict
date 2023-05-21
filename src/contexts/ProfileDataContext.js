@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useCurrentUser } from "./CurrentUserContext";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
-import { followHelper } from "../utils/utils";
+import { fanHelper, unfanHelper } from "../utils/utils";
 
 export const ProfileDataContext = createContext();
 export const SetProfileDataContext = createContext();
@@ -18,7 +18,7 @@ export const ProfileDataProvider = ({children}) => {
 
     const currentUser = useCurrentUser();
 
-    const handleFollow = async (clickedProfile) => {
+    const handleFan = async (clickedProfile) => {
         try {
             const {data} = await axiosRes.post('/fans/', {
                 idol: clickedProfile.id
@@ -28,13 +28,13 @@ export const ProfileDataProvider = ({children}) => {
                 ...prevState,
                 pageProfile: {
                     results: prevState.pageProfile.results.map((profile) => 
-                        followHelper(profile, clickedProfile, data.id)
+                        fanHelper(profile, clickedProfile, data.id)
                     ),
                 },
                 popularProfiles: {
                     ...prevState.popularProfiles,
                     results: prevState.popularProfiles.results.map((profile) => 
-                        followHelper(profile, clickedProfile, data.id)
+                        fanHelper(profile, clickedProfile, data.id)
                     ),
                 },
             }));
@@ -42,6 +42,29 @@ export const ProfileDataProvider = ({children}) => {
             console.log(err);
         }
     };
+
+    const handleUnfan = async (clickedProfile) => {
+        try {
+            const {data} = await axiosRes.delete(`/fans/${clickedProfile.fan_id}`);
+
+            setProfileData(prevState => ({
+                ...prevState,
+                pageProfile: {
+                    results: prevState.pageProfile.results.map((profile) => 
+                        unfanHelper(profile, clickedProfile)
+                    ),
+                },
+                popularProfiles: {
+                    ...prevState.popularProfiles,
+                    results: prevState.popularProfiles.results.map((profile) => 
+                        unfanHelper(profile, clickedProfile)
+                    ),
+                },
+            }));
+        } catch(err) {
+
+        }
+    }
 
     useEffect(() => {
         const handleMount = async () => {
@@ -63,7 +86,7 @@ export const ProfileDataProvider = ({children}) => {
 
     return (
         <ProfileDataContext.Provider value={profileData} >
-            <SetProfileDataContext.Provider value={{setProfileData, handleFollow}} >
+            <SetProfileDataContext.Provider value={{setProfileData, handleFan, handleUnfan}} >
                 {children}
             </SetProfileDataContext.Provider>
         </ProfileDataContext.Provider>
