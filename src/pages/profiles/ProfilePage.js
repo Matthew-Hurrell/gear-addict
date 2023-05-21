@@ -120,10 +120,10 @@ const ProfilePage = () => {
                             <div className='grid grid-cols-1 lg:grid-cols-2 text-lg lg:text-xl'>
                                 {profile?.location && <p className='mb-1.5'><i className="fa-sharp fa-solid fa-location-dot text-2xl text-black mr-1"></i>{profile?.location}</p>}
                                 {(profile?.instrument_1 || profile?.instrument_2 || profile?.instrument_3) && (
-                                    <p className='mb-1.5'><i className="fa-solid fa-saxophone-fire text-2xl text-black mr-1"></i>{profile?.instrument_1 ? profile?.instrument_1 + ', ' : ''}{profile?.instrument_2 ? profile?.instrument_2 + ', ' : ''}{profile?.instrument_3 ? profile?.instrument_3 : ''}</p>
+                                    <p className='mb-1.5'><i className="fa-solid fa-saxophone-fire text-2xl text-black mr-1"></i>{profile?.instrument_1 ? profile?.instrument_1 : ''}{profile?.instrument_2 ? ', ' + profile?.instrument_2 : ''}{profile?.instrument_3 ? ', ' + profile?.instrument_3 : ''}</p>
                                 )}
                                 {(profile?.genre_1 || profile?.genre_2 || profile?.genre_3) && (
-                                    <p className='mb-1.5'><i className="fa-solid fa-music text-2xl text-black mr-1"></i>{profile?.genre_1 ? profile?.genre_1 + ', ' : ''}{profile?.genre_2 ? profile?.genre_2 + ', ' : ''}{profile?.genre_3 ? profile?.genre_3 : ''}</p>
+                                    <p className='mb-1.5'><i className="fa-solid fa-music text-2xl text-black mr-1"></i>{profile?.genre_1 ? profile?.genre_1 : ''}{profile?.genre_2 ? ', ' + profile?.genre_2 : ''}{profile?.genre_3 ? ', ' + profile?.genre_3 : ''}</p>
                                 )}
                                 {profile?.expertise && <p className='mb-1.5'><i className="fa-solid fa-briefcase text-2xl text-black mr-1"></i>{profile?.expertise}</p>}
                             </div>
