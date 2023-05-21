@@ -4,8 +4,11 @@ import Seperator from '../../components/Seperator'
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
+import { useRedirect } from '../../hooks/useRedirect';
 
 const ProfileEditForm = () => {
+    useRedirect('loggedOut');
+    
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
     const history = useHistory();
