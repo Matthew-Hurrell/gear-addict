@@ -69,7 +69,10 @@ const ProfilePage = () => {
                     <div className='w-full lg:w-9/12'>
                         <div className='flex flex-col lg:flex-row mb-3 lg:mb-0 justify-between gap-3 md:gap-5 items-center'>
                             <div className='flex items-center gap-7'>
-                                <h1 className='text-4xl lg:text-5xl lg:mb-5'>{profile?.owner}</h1>
+                                <div className='flex items-end gap-5'>
+                                    <h1 className='text-4xl lg:text-5xl lg:mb-5'>{profile?.owner}</h1>
+                                    {profile?.name && <p className='mb-[3px] lg:mb-6 text-lg'>{`(${profile?.name})`}</p>}
+                                </div>
                                 {currentUser && !is_owner && (
                                     profile?.fan_id ? (
                                         <button 
@@ -117,15 +120,15 @@ const ProfilePage = () => {
                         </div>
                         <div>
                             <p className='text-lg lg:text-xl mb-5'>{profile?.bio}</p>
-                            <div className='grid grid-cols-1 lg:grid-cols-2 text-lg lg:text-xl'>
-                                {profile?.location && <p className='mb-1.5'><i className="fa-sharp fa-solid fa-location-dot text-2xl text-black mr-1"></i>{profile?.location}</p>}
+                            <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-2 text-lg lg:text-xl'>
+                                {profile?.location && <p className='mb-1.5'><i className="fa-sharp fa-solid fa-location-dot text-2xl text-zinc-800 mr-5"></i>{profile?.location}</p>}
                                 {(profile?.instrument_1 || profile?.instrument_2 || profile?.instrument_3) && (
-                                    <p className='mb-1.5'><i className="fa-solid fa-saxophone-fire text-2xl text-black mr-1"></i>{profile?.instrument_1 ? profile?.instrument_1 : ''}{profile?.instrument_2 ? ', ' + profile?.instrument_2 : ''}{profile?.instrument_3 ? ', ' + profile?.instrument_3 : ''}</p>
+                                    <p className='mb-1.5'><i className="fa-solid fa-saxophone-fire text-2xl text-zinc-800 mr-2"></i>{profile?.instrument_1 ? profile?.instrument_1 : ''}{profile?.instrument_2 ? ', ' + profile?.instrument_2 : ''}{profile?.instrument_3 ? ', ' + profile?.instrument_3 : ''}</p>
                                 )}
                                 {(profile?.genre_1 || profile?.genre_2 || profile?.genre_3) && (
-                                    <p className='mb-1.5'><i className="fa-solid fa-music text-2xl text-black mr-1"></i>{profile?.genre_1 ? profile?.genre_1 : ''}{profile?.genre_2 ? ', ' + profile?.genre_2 : ''}{profile?.genre_3 ? ', ' + profile?.genre_3 : ''}</p>
+                                    <p className='mb-1.5'><i className="fa-solid fa-music text-2xl text-zinc-800 mr-[17px]"></i>{profile?.genre_1 ? profile?.genre_1 : ''}{profile?.genre_2 ? ', ' + profile?.genre_2 : ''}{profile?.genre_3 ? ', ' + profile?.genre_3 : ''}</p>
                                 )}
-                                {profile?.expertise && <p className='mb-1.5'><i className="fa-solid fa-briefcase text-2xl text-black mr-1"></i>{profile?.expertise}</p>}
+                                {profile?.expertise && <p className='mb-1.5'><i className="fa-solid fa-briefcase text-2xl text-zinc-800 mr-[18px]"></i>{profile?.expertise}</p>}
                             </div>
                         </div>
                     </div>
