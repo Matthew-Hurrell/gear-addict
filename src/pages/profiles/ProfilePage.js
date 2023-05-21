@@ -71,7 +71,7 @@ const ProfilePage = () => {
                             <div className='flex items-center gap-7'>
                                 <div className='flex items-end gap-5'>
                                     <h1 className='text-4xl lg:text-5xl lg:mb-5'>{profile?.owner}</h1>
-                                    {profile?.name && <p className='mb-[3px] lg:mb-6 text-lg'>{`(${profile?.name})`}</p>}
+                                    {profile?.name && <p className='mb-[3px] lg:mb-6 text-lg text-gray-700'>{`(${profile?.name})`}</p>}
                                 </div>
                                 {currentUser && !is_owner && (
                                     profile?.fan_id ? (
