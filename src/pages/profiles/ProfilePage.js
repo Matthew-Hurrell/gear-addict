@@ -91,7 +91,7 @@ const ProfilePage = () => {
                             </div>
                         </div>
                         <div>
-                            <p className='text-lg lg:text-xl mb-5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            <p className='text-lg lg:text-xl mb-5'>{profile?.bio}</p>
                             <div className='grid grid-cols-1 lg:grid-cols-2 text-lg lg:text-xl'>
                                 {profile?.location && <p className='mb-1.5'><i className="fa-sharp fa-solid fa-location-dot text-2xl text-black mr-1"></i>{profile?.location}</p>}
                                 {(profile?.instrument_1 || profile?.instrument_2 || profile?.instrument_3) && (
