@@ -70,7 +70,7 @@ export function ProfileEditDropdown({ id }) {
                     onClick={() => history.push(`/profiles/${id}/edit/username`)}
                     aria-label="edit-username"
                 >
-                    <i class="fa-solid fa-user-pen hover:scale-105 text-2xl text-zinc-800"></i>
+                    <i className="fa-solid fa-user-pen hover:scale-105 text-2xl text-zinc-800"></i>
                 </button>
 
                 {/* Edit Password */}
@@ -78,7 +78,7 @@ export function ProfileEditDropdown({ id }) {
                     onClick={() => history.push(`/profiles/${id}/edit/password`)}
                     aria-label="edit-password"
                 >
-                    <i class="fa-solid fa-lock-keyhole hover:scale-105 text-2xl text-zinc-800"></i>
+                    <i className="fa-solid fa-lock-keyhole hover:scale-105 text-2xl text-zinc-800"></i>
                 </button>
             </div>
         </div>
