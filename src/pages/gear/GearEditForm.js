@@ -3,8 +3,10 @@ import Hero from '../../components/Hero'
 import Seperator from '../../components/Seperator'
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
+import { useRedirect } from '../../hooks/useRedirect';
 
 const GearEditForm = () => {
+    useRedirect('loggedOut');
 
     const [gearData, setGearData] = useState({
         name: '',
