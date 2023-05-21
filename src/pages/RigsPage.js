@@ -3,8 +3,10 @@ import Hero from '../components/Hero';
 import Seperator from '../components/Seperator';
 import SearchBar from '../components/SearchBar';
 import RigsList from './rigs/RigsList';
+import { useRedirect } from '../hooks/useRedirect';
 
 const RigsPage = ({filter}) => {
+    useRedirect('loggedOut');
 
     const [query, setQuery] = useState("");
 
