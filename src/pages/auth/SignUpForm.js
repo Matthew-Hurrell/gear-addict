@@ -3,8 +3,11 @@ import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import image from '../../assets/gear-addict-band-jump.jpg';
 import axios from 'axios';
 import Hero from '../../components/Hero';
+import { useRedirect } from '../../hooks/useRedirect';
 
 const SignUpForm = () => {
+  useRedirect('loggedIn');
+  
   const [signUpData, setSignUpData] = useState({
     username: '',
     password1: '',
