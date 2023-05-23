@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
 import Asset from "../../components/Asset";
-
 import PopularProfiles from "./PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosReq } from '../../api/axiosDefaults';
@@ -16,7 +14,7 @@ const ProfilePage = () => {
     const [hasLoaded, setHasLoaded] = useState(false);
     const currentUser = useCurrentUser();
     const { id } = useParams();
-    const {setProfileData, handleFan, handleUnfan} = useSetProfileData();
+    const { setProfileData, handleFan, handleUnfan } = useSetProfileData();
     const { pageProfile } = useProfileData();
     const [profile] = pageProfile.results;
     const [query, setQuery] = useState("");
@@ -62,25 +60,33 @@ const ProfilePage = () => {
 
                 {/* Profile Edit Menu */}
                 {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
-                
+
                 {/* Profile Details Content */}
                 <div className='text-left py-3 lg:px-5 container mx-auto flex flex-col lg:flex-row gap-12 xl:gap-28'>
                     <div className='w-full lg:w-9/12'>
                         <div className='flex flex-col lg:flex-row mb-3 lg:mb-0 justify-between gap-3 md:gap-5 items-center'>
                             <div className='flex items-center gap-7'>
                                 <div className='flex items-end gap-5'>
+
+                                    {/* Owner */}
                                     <h1 className='text-4xl lg:text-5xl lg:mb-5'>{profile?.owner}</h1>
+
+                                    {/* Alternative Name */}
                                     {profile?.name && <p className='mb-[3px] lg:mb-6 text-lg text-gray-700'>{`(${profile?.name})`}</p>}
                                 </div>
                                 {currentUser && !is_owner && (
                                     profile?.fan_id ? (
-                                        <button 
+
+                                        // Unfan Button
+                                        <button
                                             className='hover:scale-105 mb-5 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
                                             onClick={() => handleUnfan(profile)}
                                         >
                                             <i className="fa-solid fa-hand-horns text-2xl"></i>
                                         </button>
                                     ) : (
+
+                                        // Fan Button
                                         <button
                                             className='hover:scale-105 mb-5 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
                                             onClick={() => handleFan(profile)}
@@ -91,24 +97,32 @@ const ProfilePage = () => {
                                 )}
                             </div>
                             <div className='flex gap-5 mb-5'>
+
+                                {/* Fans Count */}
                                 <div className='flex flex-col justify-center items-center gap-1'>
                                     <p className='text-xl'>Fans:</p>
                                     <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
                                         <p className='text-black text-lg'>{profile?.fans_count}</p>
                                     </div>
                                 </div>
+
+                                {/* Idols Count */}
                                 <div className='flex flex-col justify-center items-center gap-1'>
                                     <p className='text-xl'>Idols:</p>
                                     <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
                                         <p className='text-black text-lg'>{profile?.idols_count}</p>
                                     </div>
                                 </div>
+
+                                {/* Rigs Count */}
                                 <div className='flex flex-col justify-center items-center gap-1'>
                                     <p className='text-xl'>Rigs:</p>
                                     <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
                                         <p className='text-black text-lg'>{profile?.rigs_count}</p>
                                     </div>
                                 </div>
+
+                                {/* Gear Count */}
                                 <div className='flex flex-col justify-center items-center gap-1'>
                                     <p className='text-xl'>Gear:</p>
                                     <div className='flex items-center justify-center rounded-full bg-amber-300 h-10 w-10'>
@@ -118,35 +132,51 @@ const ProfilePage = () => {
                             </div>
                         </div>
                         <div>
+
+                            {/* Bio */}
                             <p className='text-lg lg:text-xl mb-5'>{profile?.bio}</p>
                             <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-2 text-lg lg:text-xl'>
+
+                                {/* Location */}
                                 {profile?.location && <p className='mb-1.5'><i className="fa-sharp fa-solid fa-location-dot text-2xl text-zinc-800 mr-5"></i>{profile?.location}</p>}
+                                
+                                {/* Instruments */}
                                 {(profile?.instrument_1 || profile?.instrument_2 || profile?.instrument_3) && (
                                     <p className='mb-1.5'><i className="fa-solid fa-saxophone-fire text-2xl text-zinc-800 mr-2"></i>{profile?.instrument_1 ? profile?.instrument_1 : ''}{profile?.instrument_2 ? ', ' + profile?.instrument_2 : ''}{profile?.instrument_3 ? ', ' + profile?.instrument_3 : ''}</p>
                                 )}
+
+                                {/* Genres */}
                                 {(profile?.genre_1 || profile?.genre_2 || profile?.genre_3) && (
                                     <p className='mb-1.5'><i className="fa-solid fa-music text-2xl text-zinc-800 mr-[17px]"></i>{profile?.genre_1 ? profile?.genre_1 : ''}{profile?.genre_2 ? ', ' + profile?.genre_2 : ''}{profile?.genre_3 ? ', ' + profile?.genre_3 : ''}</p>
                                 )}
+
+                                {/* Expertise */}
                                 {profile?.expertise && <p className='mb-1.5'><i className="fa-solid fa-briefcase text-2xl text-zinc-800 mr-[18px]"></i>{profile?.expertise}</p>}
                             </div>
                         </div>
                     </div>
+
+                    {/* Popular Profiles */}
                     <div className='w-3/12 hidden lg:block'>
                         <PopularProfiles />
                     </div>
                 </div>
-
             </section>
         </>
     );
 
+    // Main Profile Rigs
     const mainProfileRigs = (
         <>
-            <SearchBar 
-                query={query} 
-                setQuery={setQuery} 
+
+            {/* Search Bar */}
+            <SearchBar
+                query={query}
+                setQuery={setQuery}
             />
-            <RigsList 
+
+            {/* RigsList */}
+            <RigsList
                 message="No results found! Adjust your search or this profile has no rigs"
                 query={query}
                 filter={`owner__profile=${id}&`}

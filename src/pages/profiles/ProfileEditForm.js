@@ -1,22 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react'
-import Hero from '../../components/Hero'
-import Seperator from '../../components/Seperator'
+import React, { useEffect, useRef, useState } from 'react';
+import Hero from '../../components/Hero';
+import Seperator from '../../components/Seperator';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
-import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/useRedirect';
 
 const ProfileEditForm = () => {
     useRedirect('loggedOut');
-    
+
     const currentUser = useCurrentUser();
-    const setCurrentUser = useSetCurrentUser();
     const history = useHistory();
     const { id } = useParams();
-
     const imageInput = useRef(null);
     const headerImageInput = useRef(null);
-
 
     const [profileData, setProfileData] = useState({
         name: '',
@@ -33,19 +30,19 @@ const ProfileEditForm = () => {
         expertise: '',
     });
 
-    const { 
-        name, 
-        bio, 
-        image, 
-        header_image, 
-        location, 
-        instrument_1, 
-        instrument_2, 
-        instrument_3, 
-        genre_1, 
-        genre_2, 
-        genre_3, 
-        expertise, 
+    const {
+        name,
+        bio,
+        image,
+        header_image,
+        location,
+        instrument_1,
+        instrument_2,
+        instrument_3,
+        genre_1,
+        genre_2,
+        genre_3,
+        expertise,
     } = profileData;
 
     const [errors, setErrors] = useState({});
@@ -55,33 +52,33 @@ const ProfileEditForm = () => {
             if (currentUser?.profile_id?.toString() === id) {
                 try {
                     const { data } = await axiosReq.get(`/profiles/${id}/`);
-                    const { 
+                    const {
                         name,
                         bio,
-                        image, 
-                        header_image, 
-                        location, 
-                        instrument_1, 
-                        instrument_2, 
-                        instrument_3, 
-                        genre_1, 
-                        genre_2, 
-                        genre_3, 
-                        expertise,  
+                        image,
+                        header_image,
+                        location,
+                        instrument_1,
+                        instrument_2,
+                        instrument_3,
+                        genre_1,
+                        genre_2,
+                        genre_3,
+                        expertise,
                     } = data;
-                    setProfileData({ 
+                    setProfileData({
                         name,
                         bio,
-                        image, 
-                        header_image, 
-                        location, 
-                        instrument_1, 
-                        instrument_2, 
-                        instrument_3, 
-                        genre_1, 
-                        genre_2, 
-                        genre_3, 
-                        expertise,  
+                        image,
+                        header_image,
+                        location,
+                        instrument_1,
+                        instrument_2,
+                        instrument_3,
+                        genre_1,
+                        genre_2,
+                        genre_3,
+                        expertise,
                     });
                 } catch (err) {
                     // console.log(err);
@@ -91,10 +88,10 @@ const ProfileEditForm = () => {
                 history.push("/");
             }
         };
-    
+
         handleMount();
-      }, [currentUser, history, id]);
-  
+    }, [currentUser, history, id]);
+
     const handleChange = (event) => {
         setProfileData({
             ...profileData,
@@ -103,7 +100,7 @@ const ProfileEditForm = () => {
     };
 
     const handleChangeImage = (event, inputName) => {
-        if (event.target.files.length){
+        if (event.target.files.length) {
             URL.revokeObjectURL([inputName]);
             setProfileData({
                 ...profileData,
@@ -111,7 +108,7 @@ const ProfileEditForm = () => {
             });
         };
     };
-  
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData();
@@ -135,7 +132,7 @@ const ProfileEditForm = () => {
         try {
             await axiosReq.put(`/profiles/${id}/`, formData);
             history.push(`/profiles/${id}`);
-        } catch(err) {
+        } catch (err) {
             // console.log(err);
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
@@ -147,7 +144,7 @@ const ProfileEditForm = () => {
         <div>
 
             {/* Hero */}
-            <Hero title='Edit profile'/>
+            <Hero title='Edit profile' />
 
             {/* Seperator */}
             <Seperator />
@@ -156,9 +153,9 @@ const ProfileEditForm = () => {
             <section className='px-5 py-12 lg:py-24 bg-slate-100'>
                 <div className='container mx-auto'>
                     <div className='w-full lg:w-8/12 xl:w-7/12 mx-auto'>
-                        <form 
-                            className='bg-zinc-800 h-full pt-10 pb-8 px-8 md:pt-16 md:pb-14 md:px-16 lg:px-12 xl:px-16 2xl:px-24 border-2 border-amber-400 shadow-xl text-left flex flex-col justify-center gap-5' 
-                            onSubmit={handleSubmit} 
+                        <form
+                            className='bg-zinc-800 h-full pt-10 pb-8 px-8 md:pt-16 md:pb-14 md:px-16 lg:px-12 xl:px-16 2xl:px-24 border-2 border-amber-400 shadow-xl text-left flex flex-col justify-center gap-5'
+                            onSubmit={handleSubmit}
                             encType="multipart/form-data"
                         >
 
@@ -166,13 +163,13 @@ const ProfileEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Alternative Name:
-                                        <input 
-                                            className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
-                                            type="text"
-                                            name="name"
-                                            value={name}
-                                            onChange={handleChange}
-                                        />
+                                    <input
+                                        className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
+                                        type="text"
+                                        name="name"
+                                        value={name}
+                                        onChange={handleChange}
+                                    />
                                 </label>
                             </div>
                             {errors.name?.map((message, idx) => (
@@ -183,15 +180,15 @@ const ProfileEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Bio:
-                                        <textarea 
-                                            rows="4" 
-                                            cols="50"
-                                            className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
-                                            name="bio"
-                                            value={bio}
-                                            onChange={handleChange}
-                                        >
-                                        </textarea>
+                                    <textarea
+                                        rows="4"
+                                        cols="50"
+                                        className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
+                                        name="bio"
+                                        value={bio}
+                                        onChange={handleChange}
+                                    >
+                                    </textarea>
                                 </label>
                             </div>
                             {errors.bio?.map((message, idx) => (
@@ -202,13 +199,13 @@ const ProfileEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Location:
-                                        <input 
-                                            className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
-                                            type="text"
-                                            name="location"
-                                            value={location}
-                                            onChange={handleChange}
-                                        />
+                                    <input
+                                        className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
+                                        type="text"
+                                        name="location"
+                                        value={location}
+                                        onChange={handleChange}
+                                    />
                                 </label>
                             </div>
                             {errors.location?.map((message, idx) => (
@@ -219,7 +216,7 @@ const ProfileEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Instrument 1:
-                                    <select 
+                                    <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="instrument_1"
                                         id="instrument_1"
@@ -270,7 +267,7 @@ const ProfileEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Instrument 2:
-                                    <select 
+                                    <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="instrument_2"
                                         id="instrument_2"
@@ -321,7 +318,7 @@ const ProfileEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Instrument 3:
-                                    <select 
+                                    <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="instrument_3"
                                         id="instrument_3"
@@ -372,7 +369,7 @@ const ProfileEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Genre 1:
-                                    <select 
+                                    <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="genre_1"
                                         id="genre_1"
@@ -428,7 +425,7 @@ const ProfileEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Genre 2:
-                                    <select 
+                                    <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="genre_2"
                                         id="genre_2"
@@ -484,7 +481,7 @@ const ProfileEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Genre 3:
-                                    <select 
+                                    <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="genre_3"
                                         id="genre_3"
@@ -540,7 +537,7 @@ const ProfileEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Expertise:
-                                    <select 
+                                    <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="expertise"
                                         id="expertise"
@@ -563,14 +560,14 @@ const ProfileEditForm = () => {
                             {/* Image */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>Image:
-                                <input 
-                                    className='mx-auto sm:mx-0 sm:w-7/12'
-                                    type="file" 
-                                    id="image" 
-                                    ref={imageInput}
-                                    onChange={(e) => handleChangeImage(e, 'image')}
-                                    accept="image/*" 
-                                />
+                                    <input
+                                        className='mx-auto sm:mx-0 sm:w-7/12'
+                                        type="file"
+                                        id="image"
+                                        ref={imageInput}
+                                        onChange={(e) => handleChangeImage(e, 'image')}
+                                        accept="image/*"
+                                    />
                                 </label>
                             </div>
                             {errors.image?.map((message, idx) => (
@@ -580,14 +577,14 @@ const ProfileEditForm = () => {
                             {/* Header Image */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>Header Image:
-                                <input 
-                                    className='mx-auto sm:mx-0 sm:w-7/12'
-                                    type="file" 
-                                    id="header_image" 
-                                    ref={headerImageInput}
-                                    onChange={(e) => handleChangeImage(e, 'header_image')}
-                                    accept="image/*" 
-                                />
+                                    <input
+                                        className='mx-auto sm:mx-0 sm:w-7/12'
+                                        type="file"
+                                        id="header_image"
+                                        ref={headerImageInput}
+                                        onChange={(e) => handleChangeImage(e, 'header_image')}
+                                        accept="image/*"
+                                    />
                                 </label>
                             </div>
                             {errors.header_image?.map((message, idx) => (
@@ -606,14 +603,13 @@ const ProfileEditForm = () => {
                                 </button>
 
                                 {/* Save */}
-                                <button 
+                                <button
                                     type="submit"
                                     className='text-white mt-2 sm:mt-0 bg-green-700 px-3 py-2 font-bold hover:scale-105 hover:bg-transparent border-2 border-green-700'
                                 >
                                     Save
                                 </button>
                             </div>
-
                         </form>
                     </div>
                 </div>

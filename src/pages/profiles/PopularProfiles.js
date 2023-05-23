@@ -9,14 +9,17 @@ const PopularProfiles = () => {
     return (
         <div>
             {popularProfiles.results.length ? (
-              <>
-                <h3 className='text-2xl mb-5'>Most popular profiles</h3>
-                <div className='flex flex-col gap-3'>
-                    {popularProfiles.results.slice(0, 4).map((profile) => (
-                        <Profile key={profile.id} profile={profile} />
-                    ))}
-                </div>
-              </>  
+                <>
+                    {/* Heading */}
+                    <h3 className='text-2xl mb-5'>Most popular profiles</h3>
+
+                    {/* Popular Profiles */}
+                    <div className='flex flex-col gap-3'>
+                        {popularProfiles.results.slice(0, 4).map((profile) => (
+                            <Profile key={profile.id} profile={profile} />
+                        ))}
+                    </div>
+                </>
             ) : (
                 <Asset spinner />
             )}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import image from '../../assets/gear-addict-sign-in-page.jpg';
 import { axiosRes } from '../../api/axiosDefaults';
@@ -9,15 +9,14 @@ import { useRedirect } from '../../hooks/useRedirect';
 
 const UserPasswordForm = () => {
     useRedirect('loggedOut');
-    
+
     const [userData, setUserData] = useState({
         new_password1: "",
         new_password2: "",
     });
-    const { new_password1, new_password2 } = userData;
 
+    const { new_password1, new_password2 } = userData;
     const [errors, setErrors] = useState({});
-  
     const history = useHistory();
     const { id } = useParams();
     const currentUser = useCurrentUser();
@@ -28,13 +27,13 @@ const UserPasswordForm = () => {
             [event.target.name]: event.target.value,
         });
     };
-  
+
     useEffect(() => {
         if (currentUser?.profile_id?.toString() !== id) {
             history.push("/");
         }
     }, [currentUser, history, id]);
-  
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -50,7 +49,7 @@ const UserPasswordForm = () => {
         <div>
 
             {/* Hero */}
-            <Hero title='Edit Password'/>
+            <Hero title='Edit Password' />
 
             {/* Seperator */}
             <Seperator />
@@ -61,7 +60,7 @@ const UserPasswordForm = () => {
 
                     {/* Edit Password Form */}
                     <div className="2xl:w-10/12 2xl:ml-auto">
-                        <form 
+                        <form
                             className='bg-zinc-800 h-full pt-10 pb-8 px-8 md:pt-16 md:pb-14 md:px-16 lg:px-12 xl:px-16 border-2 border-amber-400 shadow-xl text-left flex flex-col justify-center gap-9'
                             onSubmit={handleSubmit}
                         >
@@ -70,7 +69,7 @@ const UserPasswordForm = () => {
                                 {/* New Password 1 */}
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     New Password:
-                                    <input 
+                                    <input
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         placeholder="new password"
                                         type="password"
@@ -81,15 +80,15 @@ const UserPasswordForm = () => {
                                 </label>
                             </div>
                             {errors.new_password1?.map((message, idx) => (
-                            <p className='text-red-500' key={idx}>{message}</p>
+                                <p className='text-red-500' key={idx}>{message}</p>
                             ))}
 
                             <div>
 
-                                {/* Password 2 */}
+                                {/* New Password 2 */}
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Confirm New Password:
-                                    <input 
+                                    <input
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         placeholder="Confirm new password"
                                         type="password"
@@ -100,7 +99,7 @@ const UserPasswordForm = () => {
                                 </label>
                             </div>
                             {errors.new_password2?.map((message, idx) => (
-                            <p className='text-red-500' key={idx}>{message}</p>
+                                <p className='text-red-500' key={idx}>{message}</p>
                             ))}
 
                             <div className='flex flex-col sm:flex-row items-center justify-center gap-10 text-white mt-2'>
@@ -123,16 +122,16 @@ const UserPasswordForm = () => {
 
                             </div>
                             {errors.non_field_errors?.map((message, idx) => (
-                            <p className='text-red-500' key={idx}>{message}</p>
+                                <p className='text-red-500' key={idx}>{message}</p>
                             ))}
                         </form>
                     </div>
 
                     {/* Image */}
                     <div className="2xl:w-10/12">
-                        <img 
-                            className='object-center object-cover w-full h-full' 
-                            src={image} 
+                        <img
+                            className='object-center object-cover w-full h-full'
+                            src={image}
                             alt="Live band performing in rehearsal room and jumping in the air"
                         />
                     </div>
