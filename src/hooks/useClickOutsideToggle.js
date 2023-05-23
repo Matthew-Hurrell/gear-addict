@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react';
 
 const useClickOutsideToggle = () => {
 
@@ -7,7 +7,7 @@ const useClickOutsideToggle = () => {
     const ref = useRef(null);
 
     const handleClick = (event) => {
-      setIsActive(current => !current);
+        setIsActive(current => !current);
     };
 
     useEffect(() => {
