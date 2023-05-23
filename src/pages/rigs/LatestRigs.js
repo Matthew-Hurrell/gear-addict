@@ -20,7 +20,7 @@ const LatestRigs = () => {
             <SearchBar query={query} setQuery={setQuery} />
 
             {/* RigsList */}
-            <RigsList 
+            <RigsList
                 message="No results found! Adjust your search"
                 query={query}
             />

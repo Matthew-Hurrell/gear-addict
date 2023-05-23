@@ -3,32 +3,19 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosRes } from '../../api/axiosDefaults';
 
-
 const RigCard = (props) => {
     const {
         id,
         owner,
         profile_id,
         profile_image,
-        likes_count,
         like_id,
-        stars_count,
         star_id,
         name,
-        updated_at,
         attribute_1,
         attribute_2,
-        budget,
-        category, 
-        comments_count,
         description,
         featured_image,
-        image_2,
-        image_3,
-        image_4,
-        gear_list,
-        genre_1,
-        genre_2,
         setRigs,
         saved,
         fetchRigs,
@@ -39,16 +26,16 @@ const RigCard = (props) => {
 
     const handleLike = async () => {
         try {
-            const {data} = await axiosRes.post('/likes/', { rig:id });
+            const { data } = await axiosRes.post('/likes/', { rig: id });
             setRigs((prevRigs) => ({
                 ...prevRigs,
                 results: prevRigs.results.map((rig) => {
                     return rig.id === id
-                    ? {...rig, likes_count: rig.likes_count + 1, like_id: data.id}
-                    : rig;
+                        ? { ...rig, likes_count: rig.likes_count + 1, like_id: data.id }
+                        : rig;
                 }),
             }));
-        } catch(err) {
+        } catch (err) {
             // console.log(err);
         }
     };
@@ -60,27 +47,27 @@ const RigCard = (props) => {
                 ...prevRigs,
                 results: prevRigs.results.map((rig) => {
                     return rig.id === id
-                    ? {...rig, likes_count: rig.likes_count - 1, like_id: null}
-                    : rig;
+                        ? { ...rig, likes_count: rig.likes_count - 1, like_id: null }
+                        : rig;
                 }),
             }));
-        } catch(err) {
+        } catch (err) {
             // console.log(err);
         }
     };
 
     const handleStar = async () => {
         try {
-            const {data} = await axiosRes.post('/stars/', { rig:id });
+            const { data } = await axiosRes.post('/stars/', { rig: id });
             setRigs((prevRigs) => ({
                 ...prevRigs,
                 results: prevRigs.results.map((rig) => {
                     return rig.id === id
-                    ? {...rig, stars_count: rig.stars_count + 1, star_id: data.id}
-                    : rig;
+                        ? { ...rig, stars_count: rig.stars_count + 1, star_id: data.id }
+                        : rig;
                 }),
             }));
-        } catch(err) {
+        } catch (err) {
             // console.log(err);
         }
     };
@@ -92,12 +79,12 @@ const RigCard = (props) => {
                 ...prevRigs,
                 results: prevRigs.results.map((rig) => {
                     return rig.id === id
-                    ? {...rig, stars_count: rig.stars_count - 1, star_id: null}
-                    : rig;
+                        ? { ...rig, stars_count: rig.stars_count - 1, star_id: null }
+                        : rig;
                 }),
             }));
-            {saved && fetchRigs()}
-        } catch(err) {
+            { saved && fetchRigs() }
+        } catch (err) {
             // console.log(err);
         }
     };
@@ -130,7 +117,7 @@ const RigCard = (props) => {
                     </div>
                 ) : like_id ? (
                     <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
-                        <button 
+                        <button
                             onClick={handleUnlike}
                             className='shadow-xl bg-white rounded-full hover:scale-105 border-zinc-800 border h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                         >
@@ -139,7 +126,7 @@ const RigCard = (props) => {
                     </div>
                 ) : currentUser ? (
                     <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
-                        <button 
+                        <button
                             onClick={handleLike}
                             className='shadow-xl bg-white border-zinc-800 hover:scale-105 border group hover:scale-105 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                         >
@@ -157,7 +144,7 @@ const RigCard = (props) => {
                     </div>
                 ) : star_id ? (
                     <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
-                        <button 
+                        <button
                             onClick={handleUnstar}
                             className='shadow-xl bg-white rounded-full hover:scale-105 border-zinc-800 border h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                         >
@@ -166,7 +153,7 @@ const RigCard = (props) => {
                     </div>
                 ) : currentUser ? (
                     <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
-                        <button 
+                        <button
                             onClick={handleStar}
                             className='shadow-xl bg-white group hover:scale-105 border-zinc-800 border rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                         >
@@ -179,8 +166,14 @@ const RigCard = (props) => {
                 )}
             </div>
             <div className="bg-white text-black py-5 px-10 flex flex-col justify-between grow">
+
+                {/* Name */}
                 <h3 className="mb-3 text-2xl lg:text-3xl">{name}</h3>
+
+                {/* Description */}
                 <p className='line-clamp-4 text-lg lg:text-xl'>{description}</p>
+
+                {/* Link */}
                 <div className='flex items-center justify-end mt-3'>
                     <Link className="group hover:scale-105" to={`/rigs/${id}`}>
                         <span className='text-base lg:text-lg'>View rig</span> <i className="ml-2 align-top fa-solid fa-arrow-right text-black text-xl group-hover:animate-pulse"></i>

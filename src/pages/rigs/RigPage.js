@@ -26,10 +26,10 @@ const RigPage = () => {
                     axiosReq.get(`/rigs/${id}`),
                     axiosReq.get(`/comments/?rig=${id}`),
                 ]);
-                setRig({results: [rig]});
+                setRig({ results: [rig] });
                 setRigData(rig);
                 setComments(comments);
-            } catch(err) {
+            } catch (err) {
                 // console.log(err);
             }
         };
@@ -39,21 +39,33 @@ const RigPage = () => {
 
     return (
         <div>
+
+            {/* Rig Name */}
             {rigData && <Hero righeader title={`${rigData.name}`} />}
+
+            {/* Seperator */}
             <Seperator />
+
+            {/* Rig */}
             <Rig {...rig.results[0]} setRigs={setRig} />
+
+            {/* Comments */}
             <section className='bg-slate-100 px-5 py-12 lg:py-24'>
                 <div className='container mx-auto flex flex-col-reverse lg:flex-row justify-between'>
                     <div className='w-full lg:w-8/12'>
+
+                        {/* Heading */}
                         <h3 className="text-2xl lg:text-3xl mb-1 lg:mb-7 text-left">Comments</h3>
+
+                        {/* Comments Loop */}
                         {comments.results.length ? (
                             <div className='divide-y divide-zinc-800'>
-                                <InfiniteScroll 
+                                <InfiniteScroll
                                     children={
                                         comments.results.map(comment => (
-                                            <Comment 
-                                                key={comment.id} 
-                                                {...comment} 
+                                            <Comment
+                                                key={comment.id}
+                                                {...comment}
                                                 setRig={setRig}
                                                 setComments={setComments}
                                             />
@@ -72,6 +84,8 @@ const RigPage = () => {
                         )}
                     </div>
                     {currentUser ? (
+
+                        // Comment Create Form
                         <div className='w-full lg:w-3/12 mb-10 lg:mb-0'>
                             <CommentCreateForm
                                 profile_id={currentUser.profile_id}
@@ -86,14 +100,18 @@ const RigPage = () => {
                             <h3 className="text-2xl lg:text-3xl mb-5 text-left">Post a comment</h3>
                             <h3 className="text-base lg:text-xl mb-5 text-left">You need to be logged in to post comments!</h3>
                             <div className='flex items-center gap-5'>
-                                <Link 
-                                    className="text-white bg-green-700 px-3 py-2 font-bold hover:text-green-700 hover:scale-105 hover:bg-transparent border-2 border-green-700" 
+
+                                {/* Log In Link */}
+                                <Link
+                                    className="text-white bg-green-700 px-3 py-2 font-bold hover:text-green-700 hover:scale-105 hover:bg-transparent border-2 border-green-700"
                                     to="/signin"
                                 >
                                     Log In
                                 </Link>
-                                <Link 
-                                    className="text-white bg-amber-500 px-3 py-2 font-bold hover:text-amber-500 hover:scale-105 hover:bg-transparent border-2 border-amber-500" 
+
+                                {/* Sign Up Link */}
+                                <Link
+                                    className="text-white bg-amber-500 px-3 py-2 font-bold hover:text-amber-500 hover:scale-105 hover:bg-transparent border-2 border-amber-500"
                                     to="/signup"
                                 >
                                     Sign Up

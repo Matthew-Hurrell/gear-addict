@@ -8,7 +8,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
-const RigsList = ({ message, filter="", title, slice_num, query, saved }) => {
+const RigsList = ({ message, filter = "", title, slice_num, query, saved }) => {
     const [rigs, setRigs] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
@@ -16,21 +16,21 @@ const RigsList = ({ message, filter="", title, slice_num, query, saved }) => {
 
     const fetchRigs = async () => {
         try {
-            const {data} = await axiosReq.get(`/rigs/?${filter}search=${query}`);
+            const { data } = await axiosReq.get(`/rigs/?${filter}search=${query}`);
             setRigs(data);
             setHasLoaded(true);
-        } catch(err) {
+        } catch (err) {
             // console.log(err);
         }
-    }
+    };
 
     useEffect(() => {
         const fetchRigs = async () => {
             try {
-                const {data} = await axiosReq.get(`/rigs/?${filter}search=${query}`);
+                const { data } = await axiosReq.get(`/rigs/?${filter}search=${query}`);
                 setRigs(data);
                 setHasLoaded(true);
-            } catch(err) {
+            } catch (err) {
                 // console.log(err);
             }
         }
@@ -48,12 +48,14 @@ const RigsList = ({ message, filter="", title, slice_num, query, saved }) => {
     return (
         <section className='bg-slate-100 px-5 py-12 lg:py-24'>
 
+            {/* Title */}
             {title && <h2 className='text-center text-3xl lg:text-4xl text-black mb-14'>{title}</h2>}
 
-            {hasLoaded ? (  
+            {/* Rigs Loop */}
+            {hasLoaded ? (
                 <>
                     {rigs.results.length ? (
-                        <InfiniteScroll 
+                        <InfiniteScroll
                             children={
                                 slice_num ? (
                                     rigs.results.slice(0, slice_num).map(rig => (
@@ -76,6 +78,8 @@ const RigsList = ({ message, filter="", title, slice_num, query, saved }) => {
                             className='container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10'
                         />
                     ) : (
+
+                        // No Rigs Display
                         <div className='container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10'>
                             <div className='bg-zinc-800 flex justify-center items-center py-10 px-10'>
                                 <h2 className='text-white text-2xl'>{message}</h2>
@@ -85,13 +89,14 @@ const RigsList = ({ message, filter="", title, slice_num, query, saved }) => {
                     )}
                 </>
             ) : (
+
+                // Loading Spinner
                 <div className='container mx-auto'>
                     <div className='flex items-center justify-center'>
                         <Asset spinner />
                     </div>
                 </div>
             )}
-
         </section>
     )
 }

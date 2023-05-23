@@ -21,7 +21,7 @@ const Rig = (props) => {
         attribute_1,
         attribute_2,
         budget,
-        category, 
+        category,
         comments_count,
         description,
         featured_image,
@@ -47,23 +47,23 @@ const Rig = (props) => {
         try {
             await axiosRes.delete(`/rigs/${id}/`);
             history.goBack();
-        } catch(err) {
+        } catch (err) {
             // console.log(err);
         }
     }
 
     const handleLike = async () => {
         try {
-            const {data} = await axiosRes.post('/likes/', { rig:id });
+            const { data } = await axiosRes.post('/likes/', { rig: id });
             setRigs((prevRigs) => ({
                 ...prevRigs,
                 results: prevRigs.results.map((rig) => {
                     return rig.id === id
-                    ? {...rig, likes_count: rig.likes_count + 1, like_id: data.id}
-                    : rig;
+                        ? { ...rig, likes_count: rig.likes_count + 1, like_id: data.id }
+                        : rig;
                 }),
             }));
-        } catch(err) {
+        } catch (err) {
             // console.log(err);
         }
     };
@@ -75,27 +75,27 @@ const Rig = (props) => {
                 ...prevRigs,
                 results: prevRigs.results.map((rig) => {
                     return rig.id === id
-                    ? {...rig, likes_count: rig.likes_count - 1, like_id: null}
-                    : rig;
+                        ? { ...rig, likes_count: rig.likes_count - 1, like_id: null }
+                        : rig;
                 }),
             }));
-        } catch(err) {
+        } catch (err) {
             // console.log(err);
         }
     };
 
     const handleStar = async () => {
         try {
-            const {data} = await axiosRes.post('/stars/', { rig:id });
+            const { data } = await axiosRes.post('/stars/', { rig: id });
             setRigs((prevRigs) => ({
                 ...prevRigs,
                 results: prevRigs.results.map((rig) => {
                     return rig.id === id
-                    ? {...rig, stars_count: rig.stars_count + 1, star_id: data.id}
-                    : rig;
+                        ? { ...rig, stars_count: rig.stars_count + 1, star_id: data.id }
+                        : rig;
                 }),
             }));
-        } catch(err) {
+        } catch (err) {
             // console.log(err);
         }
     };
@@ -107,11 +107,11 @@ const Rig = (props) => {
                 ...prevRigs,
                 results: prevRigs.results.map((rig) => {
                     return rig.id === id
-                    ? {...rig, stars_count: rig.stars_count - 1, star_id: null}
-                    : rig;
+                        ? { ...rig, stars_count: rig.stars_count - 1, star_id: null }
+                        : rig;
                 }),
             }));
-        } catch(err) {
+        } catch (err) {
             // console.log(err);
         }
     };
@@ -165,7 +165,7 @@ const Rig = (props) => {
                             </div>
                         ) : like_id ? (
                             <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
-                                <button 
+                                <button
                                     onClick={handleUnlike}
                                     className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
@@ -174,7 +174,7 @@ const Rig = (props) => {
                             </div>
                         ) : currentUser ? (
                             <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
-                                <button 
+                                <button
                                     onClick={handleLike}
                                     className='bg-white group hover:bg-zinc-800 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
@@ -192,7 +192,7 @@ const Rig = (props) => {
                             </div>
                         ) : star_id ? (
                             <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
-                                <button 
+                                <button
                                     onClick={handleUnstar}
                                     className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
@@ -201,7 +201,7 @@ const Rig = (props) => {
                             </div>
                         ) : currentUser ? (
                             <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
-                                <button 
+                                <button
                                     onClick={handleStar}
                                     className='bg-white group hover:bg-zinc-800 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
@@ -220,19 +220,22 @@ const Rig = (props) => {
                         <button className='text-lg sm:text-xl text-center text-white h-full w-full py-3 lg:py-0' onClick={() => setToggler(!toggler)}>
                             View image gallery <i className="fa-solid fa-magnifying-glass ml-1"></i>
                         </button>
+
+                        {/* FS Lightbox */}
                         <FsLightbox
                             toggler={toggler}
                             sources={[
-                              featured_image && `${featured_image}`,
-                              image_2 && `${image_2}`,
-                              image_3 && `${image_3}`,
-                              image_4 && `${image_4}`,
+                                featured_image && `${featured_image}`,
+                                image_2 && `${image_2}`,
+                                image_3 && `${image_3}`,
+                                image_4 && `${image_4}`,
                             ].filter(Boolean)}
                         />
                     </div>
                 </div>
             </section>
 
+            {/* Icon Seperator */}
             <IconSeperator />
 
             {/* Rig Details */}
@@ -243,17 +246,33 @@ const Rig = (props) => {
                     <div className='w-full text-left md:w-5/12 xl:w-3/12'>
                         <h3 className='text-2xl lg:text-3xl mb-5'>Rig Details</h3>
                         <ul className='text-lg lg:text-xl'>
+
+                            {/* Category */}
                             {category && <li className='mb-1.5'>Category: {category}</li>}
+
+                            {/* Attributes */}
                             {(attribute_1 || attribute_2) && (
                                 <li className='mb-1.5'>Attributes: {attribute_1 ? attribute_1 : ''}{attribute_2 ? ', ' + attribute_2 : ''}</li>
                             )}
+                            
+                            {/* Genres */}
                             {(genre_1 || genre_2) && (
                                 <li className='mb-1.5'>Genres: {genre_1 ? genre_1 : ''}{genre_2 ? ', ' + genre_2 : ''}</li>
                             )}
+
+                            {/* Budget */}
                             {budget && <li className='mb-1.5'>Budget: {budget}</li>}
+
+                            {/* Likes Count */}
                             <li className='mb-1.5'>Likes: {likes_count}</li>
+
+                            {/* Stars Count */}
                             <li className='mb-1.5'>Stars: {stars_count}</li>
+
+                            {/* Comments Count */}
                             <li className='mb-1.5'>Comments: {comments_count}</li>
+
+                            {/* Last Updated */}
                             <li>Last updated: {updated_at}</li>
                         </ul>
                     </div>
@@ -278,7 +297,7 @@ const Rig = (props) => {
                 </div>
             </section>
 
-            {/* Seperator */}
+            {/* Icon Seperator */}
             <IconSeperator />
         </div>
     )
