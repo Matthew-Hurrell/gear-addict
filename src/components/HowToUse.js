@@ -1,5 +1,7 @@
 import React from 'react';
 import image_1 from '../assets/gear-addict-how-to-use-1.png';
+import image_2 from '../assets/gear-addict-how-to-use-2.png';
+import image_3 from '../assets/gear-addict-how-to-use-3.png';
 
 const HowToUse = () => {
   return (
@@ -23,7 +25,7 @@ const HowToUse = () => {
           <div className='relative'>
             <h4 className='w-full text-lg lg:text-xl bg-zinc-800 text-white text-right py-3 px-3'>Add and catalogue your gear</h4>
             <div className='w-full h-64 sm:h-96 h-96 md:h-[500px] lg:h-80 xl:h-96 2xl:h-[450px]'>
-              <img className='w-full h-full object-center object-cover' src={image_1} alt="Gear Addict sign up page" />
+              <img className='w-full h-full object-center object-cover' src={image_2} alt="Gear Addict sign up page" />
             </div>
             <div className='h-12 w-12 rounded-full absolute top-[-10px] md:top-[-23px] left-[-10px] md:left-[-23px] flex items-center justify-center text-2xl bg-amber-400'>
               2
@@ -34,7 +36,7 @@ const HowToUse = () => {
           <div className='relative'>
             <h4 className='w-full text-lg lg:text-xl bg-zinc-800 text-white text-right py-3 px-3'>Add and share your live rig</h4>
             <div className='w-full h-64 sm:h-96 h-96 md:h-[500px] lg:h-80 xl:h-96 2xl:h-[450px]'>
-              <img className='w-full h-full object-center object-cover' src={image_1} alt="Gear Addict sign up page" />
+              <img className='w-full h-full object-center object-cover' src={image_3} alt="Gear Addict sign up page" />
             </div>
             <div className='h-12 w-12 rounded-full absolute top-[-10px] md:top-[-23px] left-[-10px] md:left-[-23px] flex items-center justify-center text-2xl bg-amber-400'>
               3
