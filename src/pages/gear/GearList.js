@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
+import { axiosReq } from '../../api/axiosDefaults';
 import GearCard from './GearCard';
 import Asset from '../../components/Asset';
 import BrokenInstruments from '../../assets/gear-addict-broken-instruments.jpeg';
@@ -8,7 +8,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
-const GearList = ({ message, filter="", title, query }) => {
+const GearList = ({ message, filter = "", title, query }) => {
     const [gear, setGear] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
@@ -16,13 +16,10 @@ const GearList = ({ message, filter="", title, query }) => {
 
     const fetchGear = async () => {
         try {
-            const {data} = await axiosReq.get(`/gear/?${filter}search=${query}`);
+            const { data } = await axiosReq.get(`/gear/?${filter}search=${query}`);
             setGear(data);
             setHasLoaded(true);
-            // console.log(filter);
-            // console.log(`/gear/?${filter}search=${query}`);
-            // console.log(data);
-        } catch(err) {
+        } catch (err) {
             // console.log(err);
         }
     }
@@ -30,13 +27,10 @@ const GearList = ({ message, filter="", title, query }) => {
     useEffect(() => {
         const fetchGear = async () => {
             try {
-                const {data} = await axiosReq.get(`/gear/?${filter}search=${query}`);
+                const { data } = await axiosReq.get(`/gear/?${filter}search=${query}`);
                 setGear(data);
                 setHasLoaded(true);
-                // console.log(filter);
-                // console.log(`/gear/?${filter}search=${query}`);
-                // console.log(data);
-            } catch(err) {
+            } catch (err) {
                 // console.log(err);
             }
         }
@@ -54,12 +48,14 @@ const GearList = ({ message, filter="", title, query }) => {
     return (
         <section className='bg-slate-100 px-5 py-12 lg:py-24'>
 
+            {/* Title */}
             {title && <h2 className='text-center text-3xl lg:text-4xl text-black mb-14'>{title}</h2>}
 
-            {hasLoaded ? (  
+            {/* Gear Cards */}
+            {hasLoaded ? (
                 <>
                     {gear.results.length ? (
-                        <InfiniteScroll 
+                        <InfiniteScroll
                             children={
                                 gear.results.map(gear => (
                                     <GearCard key={gear.id} {...gear} setGear={setGear} fetchGear={fetchGear} />
@@ -87,7 +83,6 @@ const GearList = ({ message, filter="", title, query }) => {
                     </div>
                 </div>
             )}
-
         </section>
     )
 }
