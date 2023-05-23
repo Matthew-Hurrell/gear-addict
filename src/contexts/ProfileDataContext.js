@@ -44,7 +44,7 @@ export const ProfileDataProvider = ({ children }) => {
 
     const handleUnfan = async (clickedProfile) => {
         try {
-            const { data } = await axiosRes.delete(`/fans/${clickedProfile.fan_id}`);
+            await axiosRes.delete(`/fans/${clickedProfile.fan_id}`);
 
             setProfileData(prevState => ({
                 ...prevState,
