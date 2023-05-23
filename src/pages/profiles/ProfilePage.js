@@ -47,7 +47,7 @@ const ProfilePage = () => {
                 </div>
                 <div className='container mx-auto relative z-10'>
                     <div className='absolute bottom-[-48px] md:bottom-[-64px] lg:bottom-[-80px] xl:bottom-[-96px] w-24 md:w-32 lg:w-40 h-24 md:h-32 lg:h-40 xl:w-48 xl:h-48 p-1 rounded-full bg-amber-400'>
-                        <img src={profile?.image} className='h-full w-full object-center object-cover rounded-full' alt={`${profile?.owner} profile image`} />
+                        <img src={profile?.image} className='h-full w-full object-center object-cover rounded-full' alt={`${profile?.owner} profile`} />
                     </div>
                 </div>
             </section>
