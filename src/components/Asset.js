@@ -1,17 +1,13 @@
-import { useState } from "react";
 import FadeLoader from "react-spinners/FadeLoader";
 
+const Asset = ({ spinner, src, message }) => {
 
-const Asset = ({spinner, src, message}) => {
-  const [loading, setLoading] = useState(true);
-  const [color, setColor] = useState("#fbbf24");
-
-  return (
+    return (
         <div className="sweet-loading">
 
             {spinner && <FadeLoader
-                color={color}
-                loading={loading}
+                color={"#fbbf24"}
+                loading={true}
                 size={50}
                 aria-label="Loading Spinner"
                 data-testid="loader"
