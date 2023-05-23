@@ -2,7 +2,7 @@ import React from 'react'
 
 const IntroHome = () => {
   return (
-    <section className='bg-white px-5 py-12 lg:py-24'>
+    <section className='bg-slate-50 px-5 py-12 lg:py-24'>
         <div className='container mx-auto'>
             <h2 className='text-3xl lg:text-4xl mb-2'>Welcome to Gear Addict</h2>
             <h3 className='text-lg lg:text-xl mb-7'>Home of music gear fans and enthusiasts</h3>
