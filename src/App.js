@@ -32,33 +32,33 @@ function App() {
       <NavBar />
       <div>
         <Switch>
-          <Route 
-            exact 
-            path="/" 
+          <Route
+            exact
+            path="/"
             render={() => (
               <HomePage />
-            )} 
+            )}
           />
-          <Route 
-            exact 
-            path="/feed" 
+          <Route
+            exact
+            path="/feed"
             render={() => (
-              <FeedPage 
+              <FeedPage
                 profile_id={profile_id}
               />
-            )} 
+            )}
           />
-          <Route 
-            exact 
-            path="/saved" 
+          <Route
+            exact
+            path="/saved"
             render={() => (
-              <SavedPage 
+              <SavedPage
                 profile_id={profile_id}
               />
-            )} 
+            )}
           />
-          <Route 
-            exact 
+          <Route
+            exact
             path="/latest"
             render={() => (
               <LatestRigs />
