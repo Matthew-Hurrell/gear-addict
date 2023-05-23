@@ -33,7 +33,7 @@ const HomePage = () => {
         {/* Hottest Rigs */}
         <RigsList
             message="No results found! Adjust your search"
-            filter='&ordering=likes__created_at&'
+            filter='&ordering=-likes_count&'
             title="Hottest Rigs"
             slice_num={4}
             query={query}
