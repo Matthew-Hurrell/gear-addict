@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styles from '../styles/NavBar.module.css';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';

@@ -1,26 +1,25 @@
-import React from 'react'
+import React from 'react';
 import header from '../assets/gear-addict-page-header.jpg';
 import Righeader from '../assets/gear-addict-hero-2.jpg';
 
 const Hero = (props) => {
-
-    const {title, righeader} = props;
+    const { title, righeader } = props;
 
     return (
         <section className='h-52 md:h-72 lg:h-[400px] relative items-center'>
             {righeader ? (
-                    <img 
-                        src={Righeader}
-                        className='z-0 absolute top-0 object-center object-cover w-full h-full grayscale'
-                        alt="Black and white fender amplifier" 
+                <img
+                    src={Righeader}
+                    className='z-0 absolute top-0 object-center object-cover w-full h-full grayscale'
+                    alt="Black and white fender amplifier"
                 />
-                ) : (
-                    <img
-                        src={header}
-                        className='z-0 absolute top-0 object-top object-cover w-full h-full grayscale brightness-200'
-                        alt="Black and white fender amplifier with drumkit in the background" 
-                    />
-                )
+            ) : (
+                <img
+                    src={header}
+                    className='z-0 absolute top-0 object-top object-cover w-full h-full grayscale brightness-200'
+                    alt="Black and white fender amplifier with drumkit in the background"
+                />
+            )
             }
             <div className='h-full sm:px-5'>
                 <div className='sm:container mx-auto flex justify-center sm:justify-start h-full'>

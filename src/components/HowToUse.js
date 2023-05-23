@@ -4,6 +4,7 @@ import image_2 from '../assets/gear-addict-how-to-use-2.png';
 import image_3 from '../assets/gear-addict-how-to-use-3.png';
 
 const HowToUse = () => {
+  
   return (
     <section className='bg-white px-5 py-12 lg:py-24'>
       <div className='container mx-auto'>

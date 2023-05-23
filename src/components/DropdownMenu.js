@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import header from '../assets/gear-addict-home-hero.jpeg';
 
 const HomeHero = () => {
@@ -8,7 +8,7 @@ const HomeHero = () => {
             <img
                 src={header}
                 className='z-0 absolute top-0 object-right lg:object-center object-cover w-full h-full'
-                alt="Black and white fender amplifier with drumkit in the background" 
+                alt="Black and white fender amplifier with drumkit in the background"
             />
 
             <div className='flex z-10 bg-amber-500/[.9] relative inline-block px-5 md:px-10 py-5 w-full md:w-auto md:h-full flex-col justify-center items-start md:ml-10 lg:ml-36'>

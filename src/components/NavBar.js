@@ -12,7 +12,7 @@ const NavBar = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
 
-    const {isActive, setIsActive, ref, handleClick} = useClickOutsideToggle();
+    const { isActive, setIsActive, ref, handleClick } = useClickOutsideToggle();
 
     const handleSignOut = async () => {
         try {
@@ -20,11 +20,12 @@ const NavBar = () => {
             setCurrentUser(null);
             setIsActive(false);
             removeTokenTimestamp();
-        } catch(err){
+        } catch (err) {
             // console.log(err);
         }
     };
 
+    // Profile Icon
     const profileIcon = (
         <NavLink
             onClick={handleClick}
@@ -34,6 +35,7 @@ const NavBar = () => {
         </NavLink>
     );
 
+    // Add Gear Icon
     const addGearIcon = (
         <NavLink
             onClick={handleClick}
@@ -46,6 +48,7 @@ const NavBar = () => {
         </NavLink>
     );
 
+    // Add Rig Icon
     const addRigIcon = (
         <NavLink
             onClick={handleClick}
@@ -58,10 +61,13 @@ const NavBar = () => {
         </NavLink>
     );
 
+    // Logged Out Icons
     const loggedOutIcons = (
         <>
+
+            {/* Sign In */}
             <li>
-                <NavLink 
+                <NavLink
                     onClick={handleClick}
                     to="/signin"
                     exact
@@ -72,8 +78,10 @@ const NavBar = () => {
                     <span className='group-hover:underline underline-offset-8 decoration-2'>Sign In</span>
                 </NavLink>
             </li>
+
+            {/* Sign Up */}
             <li>
-                <NavLink 
+                <NavLink
                     onClick={handleClick}
                     to="/signup"
                     exact
@@ -86,9 +94,13 @@ const NavBar = () => {
             </li>
         </>
     );
+
+    // Logged In Icons
     const loggedInIcons = (
         <>
-             <li>
+
+            {/* Feed */}
+            <li>
                 <NavLink
                     onClick={handleClick}
                     to="/feed"
@@ -100,6 +112,8 @@ const NavBar = () => {
                     <span className='group-hover:underline underline-offset-8 decoration-2'>Feed</span>
                 </NavLink>
             </li>
+
+            {/* Gear */}
             <li>
                 <NavLink
                     onClick={handleClick}
@@ -112,6 +126,8 @@ const NavBar = () => {
                     <span className='group-hover:underline underline-offset-8 decoration-2'>Gear</span>
                 </NavLink>
             </li>
+
+            {/* Rigs */}
             <li>
                 <NavLink
                     onClick={handleClick}
@@ -119,11 +135,13 @@ const NavBar = () => {
                     exact
                     className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
                     activeClassName={styles.Active}
-                > 
+                >
                     <i className="fa-solid fa-amp-guitar text-xl mr-2 lg:mr-0"></i>
                     <span className='group-hover:underline underline-offset-8 decoration-2'>Rigs</span>
                 </NavLink>
             </li>
+
+            {/* Saved */}
             <li>
                 <NavLink
                     onClick={handleClick}
@@ -136,6 +154,8 @@ const NavBar = () => {
                     <span className='group-hover:underline underline-offset-8 decoration-2'>Saved</span>
                 </NavLink>
             </li>
+
+            {/* Sign Out */}
             <li>
                 <NavLink
                     to="/"
@@ -147,9 +167,13 @@ const NavBar = () => {
                     <span className='group-hover:underline underline-offset-8 decoration-2'>Sign out</span>
                 </NavLink>
             </li>
+
+            {/* Add Gear Icon */}
             <li className='lg:hidden'>
                 {currentUser && addGearIcon}
             </li>
+
+            {/* Add Rig Icon */}
             <li className='lg:hidden'>
                 {currentUser && addRigIcon}
             </li>
@@ -160,7 +184,9 @@ const NavBar = () => {
         <div ref={ref}>
             <div className='bg-zinc-800 flex items-center justify-between px-5 py-2.5 relative'>
                 <div className='flex items-center gap-8'>
-                    <NavLink 
+
+                    {/* Gear Addict Logo */}
+                    <NavLink
                         onClick={handleClick}
                         to="/"
                     >
@@ -168,6 +194,8 @@ const NavBar = () => {
                             <img src={logo} alt="Gear Addict Logo" className='object-center object-contain h-full w-full' />
                         </div>
                     </NavLink>
+
+                    {/* Add Gear & Rig Icons */}
                     <div className='lg:flex items-center gap-8 tracking-wide text-white hidden'>
                         {currentUser && addGearIcon}
                         {currentUser && addRigIcon}
@@ -176,8 +204,10 @@ const NavBar = () => {
                 <div className={`transition-all z-50 duration-500 overflow-hidden border-amber-400 lg:border-0 flex lg:p-0 absolute bg-zinc-800 top-[88px] right-0 left-0 flex-col lg:static lg:flex-row items-center lg:max-h-none ${isActive ? 'max-h-[999px] border-b-4' : 'max-h-0 border-0'}`}>
                     <nav className='text-white lg:mr-8 p-5'>
                         <ul className='flex flex-col lg:flex-row items-center gap-5 tracking-wide'>
+
+                            {/* Home */}
                             <li>
-                                <NavLink 
+                                <NavLink
                                     to="/"
                                     exact
                                     className='flex flex-row lg:flex-col items-center hover:text-amber-400 hover:scale-105 group'
@@ -188,6 +218,8 @@ const NavBar = () => {
                                     <span className='group-hover:underline underline-offset-8 decoration-2'>Home</span>
                                 </NavLink>
                             </li>
+
+                            {/* Latest */}
                             <li>
                                 <NavLink
                                     to="/latest"
@@ -203,15 +235,22 @@ const NavBar = () => {
                             {currentUser ? loggedInIcons : loggedOutIcons}
                         </ul>
                     </nav>
+
+                    {/* Profile */}
                     <div className='text-white hidden lg:block'>
                         {currentUser && profileIcon}
                     </div>
                 </div>
+
                 <div className='flex lg:hidden items-center'>
+
+                    {/* Profile on small screens */}
                     <div className='text-white mr-5 md:mr-8'>
                         {currentUser && profileIcon}
                     </div>
-                    <button 
+
+                    {/* Mobile Menu Button */}
+                    <button
                         onClick={handleClick}
                         className='nav-toggle'
                     >
