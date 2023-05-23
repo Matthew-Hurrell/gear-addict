@@ -2,14 +2,15 @@ import React from 'react'
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
-const DropdownMenu = ({handleEdit, handleDelete}) => {
-    const {isActive, setIsActive, ref, handleClick} = useClickOutsideToggle();
+const DropdownMenu = ({ handleEdit, handleDelete }) => {
+    const { isActive, ref, handleClick } = useClickOutsideToggle();
+    
     return (
         <div ref={ref} className='absolute top-2.5 right-3'>
 
             {/* Dropdown Toggle */}
-            <button 
-                onClick={handleClick} 
+            <button
+                onClick={handleClick}
                 className='text-2xl rounded-full bg-white text-gray-600 h-10 w-10 lg:h-12 lg:w-12 flex items-center justify-center'
             >
                 <i className="fa-solid fa-ellipsis-vertical"></i>
@@ -40,15 +41,15 @@ const DropdownMenu = ({handleEdit, handleDelete}) => {
 };
 
 export function ProfileEditDropdown({ id }) {
-    const {isActive, setIsActive, ref, handleClick} = useClickOutsideToggle();
+    const { isActive, ref, handleClick } = useClickOutsideToggle();
     const history = useHistory();
 
     return (
         <div ref={ref} className='absolute top-2.5 right-3'>
 
             {/* Dropdown Toggle */}
-            <button 
-                onClick={handleClick} 
+            <button
+                onClick={handleClick}
                 className='text-2xl rounded-full bg-white text-gray-600 h-10 w-10 lg:h-12 lg:w-12 flex items-center justify-center'
             >
                 <i className="fa-solid fa-ellipsis-vertical"></i>
