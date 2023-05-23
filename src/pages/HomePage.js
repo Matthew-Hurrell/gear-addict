@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import RigsList from './rigs/RigsList';
 import HomeHero from '../components/HomeHero';
 import IntroHome from '../components/IntroHome';
@@ -7,37 +7,36 @@ import Seperator from '../components/Seperator';
 import IconSeperator from '../components/IconSeperator';
 
 const HomePage = () => {
-  const [query, setQuery] = useState("");
 
   return (
     <div>
 
-        {/* Hero */}
-        <HomeHero />
+      {/* Hero */}
+      <HomeHero />
 
-        {/* Seperator */}
-        <Seperator />
+      {/* Seperator */}
+      <Seperator />
 
-        {/* Introduction */}
-        <IntroHome />
+      {/* Introduction */}
+      <IntroHome />
 
-        {/* Icon Seperator */}
-        <IconSeperator />
+      {/* Icon Seperator */}
+      <IconSeperator />
 
-        {/* How To Use Section */}
-        <HowToUse />
+      {/* How To Use Section */}
+      <HowToUse />
 
-        {/* Icon Seperator */}
-        <IconSeperator />
+      {/* Icon Seperator */}
+      <IconSeperator />
 
-        {/* Hottest Rigs */}
-        <RigsList
-            message="No results found! Adjust your search"
-            filter='&ordering=-likes_count&'
-            title="Hottest Rigs"
-            slice_num={4}
-            query={query}
-        />
+      {/* Hottest Rigs */}
+      <RigsList
+        message="No results found! Adjust your search"
+        filter='&ordering=-likes_count&'
+        title="Hottest Rigs"
+        slice_num={4}
+        query=""
+      />
 
     </div>
   )
