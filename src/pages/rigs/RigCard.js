@@ -83,7 +83,7 @@ const RigCard = (props) => {
                         : rig;
                 }),
             }));
-            { saved && fetchRigs() }
+            saved && fetchRigs();
         } catch (err) {
             // console.log(err);
         }
