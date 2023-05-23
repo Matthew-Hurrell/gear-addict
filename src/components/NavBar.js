@@ -158,7 +158,7 @@ const NavBar = () => {
                         onClick={handleClick}
                         to="/"
                     >
-                        <div className='h-16'>
+                        <div className='h-16 w-36'>
                             <img src={logo} alt="Gear Addict Logo" className='object-center object-contain h-full w-full' />
                         </div>
                     </NavLink>
