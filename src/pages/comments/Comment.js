@@ -37,19 +37,23 @@ const Comment = (props) => {
                 ...prevComments,
                 results: prevComments.results.filter((comment) => comment.id !== id),
             }));
-        } catch(err) {
-
+        } catch (err) {
+            // console.log(err);
         }
     };
 
     return (
         <div className='py-5'>
             <article className='flex gap-10 items-center'>
+
+                {/* Avatar */}
                 <Link to={`/profiles/${profile_id}`}>
                     <Avatar src={profile_image} />
                 </Link>
+
+                {/* Comment Edit Form */}
                 {showEditForm ? (
-                    <CommentEditForm 
+                    <CommentEditForm
                         id={id}
                         profile_id={profile_id}
                         content={content}
@@ -60,18 +64,25 @@ const Comment = (props) => {
                 ) : (
                     <div className='w-full relative'>
                         <div className='flex flex-col lg:flex-row items-start lg:gap-5 lg:items-center justify-center lg:justify-start w-full mb-2'>
+
+                            {/* Owner */}
                             <h4 className='text-lg lg:text-xl'>{owner}</h4>
+
+                            {/* Updated At */}
                             <p className='text-sm lg:text-base text-gray-600'>{updated_at}</p>
+
+                            {/* Dropdown Menu */}
                             {is_owner && !showEditForm && (
                                 <DropdownMenu handleEdit={() => setShowEditForm(true)} handleDelete={handleDelete} />
                             )}
                         </div>
+
+                        {/* Content */}
                         <p className='text-left text-base lg:text-lg'>
                             {content}
                         </p>
                     </div>
                 )}
-
             </article>
         </div>
     )
