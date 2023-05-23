@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentEditForm(props) {
@@ -20,13 +19,13 @@ function CommentEditForm(props) {
             setComments((prevComments) => ({
                 ...prevComments,
                 results: prevComments.results.map((comment) => {
-                return comment.id === id
-                    ? {
-                        ...comment,
-                        content: formContent.trim(),
-                        updated_at: "now",
-                    }
-                    : comment;
+                    return comment.id === id
+                        ? {
+                            ...comment,
+                            content: formContent.trim(),
+                            updated_at: "now",
+                        }
+                        : comment;
                 }),
             }));
             setShowEditForm(false);
@@ -37,6 +36,8 @@ function CommentEditForm(props) {
 
     return (
         <form onSubmit={handleSubmit} className="w-full">
+
+            {/* Content */}
             <div className="">
                 <textarea
                     className="border-zinc-400 border-2 w-full px-2 py-0.5 font-normal text-black"
@@ -46,6 +47,8 @@ function CommentEditForm(props) {
                 />
             </div>
             <div className="text-right">
+
+                {/* Cancel Button */}
                 <button
                     className="mr-5 text-white bg-red-700 px-3 py-2 font-bold hover:text-red-700 hover:scale-105 hover:bg-transparent border-2 border-red-700"
                     onClick={() => setShowEditForm(false)}
@@ -53,6 +56,8 @@ function CommentEditForm(props) {
                 >
                     Cancel
                 </button>
+
+                {/* Submit Button */}
                 <button
                     className="text-white bg-green-700 px-3 py-2 font-bold hover:text-green-700 hover:scale-105 hover:bg-transparent border-2 border-green-700"
                     type="submit"
