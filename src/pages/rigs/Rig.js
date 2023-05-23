@@ -138,9 +138,11 @@ const Rig = (props) => {
                         <img src={featured_image} alt={name} className='h-full w-full object-center object-cover' />
 
                         {/* Profile */}
-                        <div className='absolute h-10 w-10 sm:h-14 sm:w-14 bottom-1 sm:bottom-2.5 left-12 sm:left-14'>
+                        <div className='absolute bottom-1 sm:bottom-2.5 left-1 sm:left-2.5 lg:left-4 xl:left-5'>
                             <Link className="flex items-center justify-center" to={`/profiles/${profile_id}`}>
-                                <img src={profile_image} alt={owner} className='h-full w-full object-center object-cover rounded-full relative z-10' />
+                                <div className='h-14 w-14'>
+                                    <img src={profile_image} alt={owner} className='h-full w-full object-center object-cover rounded-full relative z-10' />
+                                </div>
                                 <p className='bg-zinc-800 text-white ml-[-10px] pl-4 py-1 pr-2 text-base sm:text-lg relative z-0'>@{owner}</p>
                             </Link>
                         </div>
