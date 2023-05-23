@@ -147,6 +147,12 @@ const NavBar = () => {
                     <span className='group-hover:underline underline-offset-8 decoration-2'>Sign out</span>
                 </NavLink>
             </li>
+            <li className='lg:hidden'>
+                {currentUser && addGearIcon}
+            </li>
+            <li className='lg:hidden'>
+                {currentUser && addRigIcon}
+            </li>
         </>
     );
 
@@ -195,12 +201,6 @@ const NavBar = () => {
                                 </NavLink>
                             </li>
                             {currentUser ? loggedInIcons : loggedOutIcons}
-                            <li className='lg:hidden'>
-                                {currentUser && addGearIcon}
-                            </li>
-                            <li className='lg:hidden'>
-                                {currentUser && addRigIcon}
-                            </li>
                         </ul>
                     </nav>
                     <div className='text-white hidden lg:block'>
