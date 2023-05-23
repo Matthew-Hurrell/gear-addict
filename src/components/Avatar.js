@@ -11,7 +11,7 @@ const Avatar = ({src, text}) => {
                     alt='Profile avatar'
                 />
             </div>
-            <div className='tracking-wide mt-1'>
+            <div className='tracking-wide mt-1 hidden lg:block'>
                 {text}
             </div>
         </>
