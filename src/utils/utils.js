@@ -30,7 +30,7 @@ export const fanHelper = (profile, clickedProfile, fan_id) => {
     ?
         {
             ...profile,
-            fans_count: profile.fans_count + 1,
+            idols_count: profile.idols_count + 1,
         }
     :
         profile;
@@ -39,14 +39,14 @@ export const fanHelper = (profile, clickedProfile, fan_id) => {
 export const unfanHelper = (profile, clickedProfile) => {
     return profile.id === clickedProfile.id
     ?
-    {
-        ...profile,
-        fans_count: profile.fans_count - 1,
-        fan_id: null,
-    }
+        {
+            ...profile,
+            fans_count: profile.fans_count - 1,
+            fan_id: null,
+        }
     : profile.is_owner
     ?
-    { ...profile, fans_count: profile.fans_count - 1 }
+        { ...profile, idols_count: profile.idols_count - 1 }
     :
     profile;
 }
