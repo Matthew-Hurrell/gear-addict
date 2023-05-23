@@ -5,7 +5,7 @@ import image_3 from '../assets/gear-addict-how-to-use-3.png';
 
 const HowToUse = () => {
   return (
-    <section className='bg-slate-100 px-5 py-12 lg:py-24'>
+    <section className='bg-white px-5 py-12 lg:py-24'>
       <div className='container mx-auto'>
         <h2 className='text-3xl lg:text-4xl mb-16'>How to use Gear Addict</h2>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-16'>
