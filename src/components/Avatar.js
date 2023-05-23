@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Avatar = ({src, text}) => {
+const Avatar = ({ src, text }) => {
 
     return (
         <>
             <div className='h-14 w-14'>
-                <img 
-                    className='object-center object-cover h-full w-full rounded-full' 
+                <img
+                    className='object-center object-cover h-full w-full rounded-full'
                     src={src}
                     alt='Profile avatar'
                 />
