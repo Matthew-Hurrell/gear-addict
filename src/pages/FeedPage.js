@@ -5,7 +5,7 @@ import SearchBar from '../components/SearchBar';
 import Seperator from '../components/Seperator';
 import { useRedirect } from '../hooks/useRedirect';
 
-const FeedPage = ({profile_id}) => {
+const FeedPage = ({ profile_id }) => {
     useRedirect('loggedOut');
 
     const [query, setQuery] = useState("");
@@ -24,7 +24,7 @@ const FeedPage = ({profile_id}) => {
 
             {/* RigsList */}
             <RigsList
-                message="No results found! Adjust your search or become a fan of another user to see their rigs here" 
+                message="No results found! Adjust your search or become a fan of another user to see their rigs here"
                 filter={`owner__idolguy__fan__profile=${profile_id}&`}
                 query={query}
             />

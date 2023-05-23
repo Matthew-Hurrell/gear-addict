@@ -5,9 +5,9 @@ import SearchBar from '../components/SearchBar';
 import Seperator from '../components/Seperator';
 import { useRedirect } from '../hooks/useRedirect';
 
-const SavedPage = ({profile_id}) => {
+const SavedPage = ({ profile_id }) => {
     useRedirect('loggedOut');
-    
+
     const [query, setQuery] = useState("");
 
     return (
@@ -20,11 +20,11 @@ const SavedPage = ({profile_id}) => {
             <Seperator />
 
             {/* SearchBar */}
-            <SearchBar query={query} setQuery={setQuery} /> 
+            <SearchBar query={query} setQuery={setQuery} />
 
             {/* RigsList */}
-            <RigsList 
-                message="No results found! Adjust your search or save a rig to store them here" 
+            <RigsList
+                message="No results found! Adjust your search or save a rig to store them here"
                 filter={`stars__owner__profile=${profile_id}&`}
                 query={query}
                 saved

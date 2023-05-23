@@ -5,7 +5,7 @@ import SearchBar from '../components/SearchBar';
 import RigsList from './rigs/RigsList';
 import { useRedirect } from '../hooks/useRedirect';
 
-const RigsPage = ({filter}) => {
+const RigsPage = ({ filter }) => {
     useRedirect('loggedOut');
 
     const [query, setQuery] = useState("");
@@ -14,7 +14,7 @@ const RigsPage = ({filter}) => {
         <div>
 
             {/* Hero */}
-            <Hero title="My Rigs"/>
+            <Hero title="My Rigs" />
 
             {/* Seperator */}
             <Seperator />

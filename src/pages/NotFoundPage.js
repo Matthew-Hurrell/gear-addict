@@ -2,7 +2,7 @@ import React from 'react';
 import BrokenGuitars from '../assets/gear-addict-broken-instruments.jpeg';
 
 const NotFoundPage = () => {
-  
+
   return (
     <section className='bg-white px-5 py-12 lg:py-24'>
       <div className='container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10'>
