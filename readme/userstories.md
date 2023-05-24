@@ -7,9 +7,9 @@ These are the user stories for the Gear Addict project.
 * [**Epic 1 - User Authentication**](<#epic-1---user-authentication>)
 * [**Epic 2 - Navigation**](<#epic-2---navigation>)
 * [**Epic 3 - Rigs**](<#epic-3---rigs>)
-* [**Epic 4 - ear**](<#epic-4---gear>)
+* [**Epic 4 - Gear**](<#epic-4---gear>)
 * [**Epic 5 - Comments**](<#epic-5---comments>)
-* [**Epic 6 - Profiles**](<#epic-6---profile>)
+* [**Epic 6 - Profiles**](<#epic-6---profiles>)
 * [**Epic 7 - Like**](<#epic-7---like>)
 * [**Epic 8 - Save**](<#epic-8---save>)
 
