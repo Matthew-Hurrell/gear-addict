@@ -1,100 +1,260 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Gear Addict**
 
-Welcome,
+Gear Addict is an online application that allows users to add and categorise their music gear, and also share details about their live rigs with the community. Users can interact with other users by becoming a fan, as well as liking, commenting and saving rigs.
 
-This is the Code Institute student template for React apps on the Codeanywhere IDE. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+This project was built as the final portfolio submission for the [Code Institute](https://codeinstitute.net/) Higher National Diploma in Full Stack Software Development. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **19th April, 2023**
+The project has been split into two parts - the front-end built with [React](https://react.dev/), and the back-end powered by the [Django REST Framework](https://www.django-rest-framework.org/). 
 
-## Codeanywhere Reminders
+More information on the back-end of the site can be found in the back-end [README](https://github.com/Matthew-Hurrell/gear-addict-api/blob/main/README.md).
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Link to the live site - [Gear Addict Live Site](https://gear-addict-react.herokuapp.com/)
 
-To log into the Heroku toolbelt CLI:
+Link to the live API - [Gear Addict Live API](https://gear-addict.herokuapp.com/)
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com/Matthew-Hurrell/gear-addict-api)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Gear Addict Responsive](readme/images/gear-addict-responsive.png)
 
----
+# Contents
 
-Happy coding!
+* [**Project**](<#project>)
+    * [Objective](<#objective>)
+    * [Site User Goal](<#site-user-goal>)
+    * [Site Owner Goal](<#site-owner-goal>)
+    * [Target Audience](<#target-audience>)
+    * [**Project Management**](<#project-management>)
+        * [GitHub Project Board](<#github-project-board>)
+        * [Database Schema](<#database-schema>)
+* [**User Experience UX**](<#user-experience-ux>)
+    * [Wireframes](<#wireframes>)
+    * [User Stories](<#user-stories>)
+    * [Site Structure](<#site-structure>)
+    * [Colour Scheme](<#colour-scheme>)
+    * [Typography](<#typography>)
+* [**Features**](<#features>)
+    * [**Existing Features**](<#existing-features>)
+        * [**Homepage**](<#homepage>)
+        * [**Authorisation**](<#authorisation>)
+            * [Sign Up](<#sign-up>)
+            * [Log In](<#log-in>)
+            * [Log Out](<#log-out>)
+        * [**404 Page**](<#404-page>)
+    * [**Future Features**](<#future-features>)
+* [**Components**](<#components>)
+* [**Technologies Used**](<#technologies-used>)
+    * [Languages](<#languages>)
+    * [Frameworks](<#frameworks>)
+    * [Software](<#software>)
+    * [Libraries](<#libraries>)
+* [**Testing**](<#testing>)
+    * [**Validator Tests**](<#validator-tests>)
+        * [W3C (HTML)](<#w3c-html>)
+        * [W3C (CSS)](<#w3c-css>)
+        * [JSHint (JavaScript)](<#jshint-javascript>)
+    * [**Input Validation Tests**](<#input-validation-tests>)
+    * [**Additional Tests**](<#additional-tests>)
+        * [Manual Tests](<#manual-tests>)
+        * [Automated Tests](<#automated-tests>)
+        * [Responsive Tests](<#responsive-tests>)
+        * [Browser Tests](<#browser-tests>)
+        * [Lighthouse Tests](<#lighthouse-tests>)
+        * [Wave Accessibility Tests](<#wave-accessibility-tests>)
+    * [**Bugs**](<#bugs>)
+        * [Resolved](<#resolved>)
+        * [Unresolved](<#unresolved>)
+* [**Deployment**](<#deployment>)
+    * [**Project Deployment Via Heroku**](<#project-deployment-via-heroku>)
+* [**Credits**](<#credits>)
+    * [**Content**](<#content>)
+    * [**Media**](<#media>)
+    * [**Code**](<#code>)
+*  [**Acknowledgements**](<#acknowledgements>)
 
-# Getting Started with Create React App
+# Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Back to top](<#contents>)
 
-## Available Scripts
+## Objective
 
-In the project directory, you can run:
+[Back to top](<#contents>)
 
-### `npm install`
+## Site User Goal
 
-Installs the required npm packages.
+[Back to top](<#contents>)
 
-### `npm start`
+## Site Owner Goal
 
-Runs the app in the development mode.\
-Open port 3000 to view it in the browser.
+[Back to top](<#contents>)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Target Audience
 
-### `npm test`
+[Back to top](<#contents>)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Management
 
-### `npm run build`
+[Back to top](<#contents>)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### GitHub Project Board
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[Back to top](<#contents>)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Database Schema
 
-### `npm run eject`
+[Back to top](<#contents>)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# User Experience UX
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Back to top](<#contents>)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Wireframes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[Back to top](<#contents>)
 
-## Learn More
+## User Stories
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Back to top](<#contents>)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Site Structure
 
-### Code Splitting
+[Back to top](<#contents>)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Colour Scheme
 
-### Analyzing the Bundle Size
+[Back to top](<#contents>)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Typography
 
-### Making a Progressive Web App
+[Back to top](<#contents>)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Features
 
-### Advanced Configuration
+[Back to top](<#contents>)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Existing Features
 
-### Deployment
+[Back to top](<#contents>)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Future Features
 
-### `npm run build` fails to minify
+[Back to top](<#contents>)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Components
+
+[Back to top](<#contents>)
+
+# Technologies Used
+
+[Back to top](<#contents>)
+
+## Languages
+
+[Back to top](<#contents>)
+
+## Frameworks
+
+[Back to top](<#contents>)
+
+## Software
+
+[Back to top](<#contents>)
+
+## Libraries
+
+[Back to top](<#contents>)
+
+# Testing
+
+[Back to top](<#contents>)
+
+## Validator Tests
+
+[Back to top](<#contents>)
+
+### W3C HTML
+
+[Back to top](<#contents>)
+
+### W3C CSS
+
+[Back to top](<#contents>)
+
+### JShint Javascript
+
+[Back to top](<#contents>)
+
+## Input Validation Tests
+
+[Back to top](<#contents>)
+
+## Additional Tests
+
+[Back to top](<#contents>)
+
+### Manual Tests
+
+[Back to top](<#contents>)
+
+### Automated Tests
+
+[Back to top](<#contents>)
+
+### Responsive Tests
+
+[Back to top](<#contents>)
+
+### Browser Tests
+
+[Back to top](<#contents>)
+
+### Lighthouse Tests
+
+[Back to top](<#contents>)
+
+### Wave Accessibility Tests
+
+[Back to top](<#contents>)
+
+## Bugs
+
+[Back to top](<#contents>)
+
+### Resolved
+
+[Back to top](<#contents>)
+
+### Unresolved
+
+[Back to top](<#contents>)
+
+# Deployment
+
+[Back to top](<#contents>)
+
+## Project Deployment Via Heroku
+
+[Back to top](<#contents>)
+
+# Credits
+
+[Back to top](<#contents>)
+
+## Content
+
+[Back to top](<#contents>)
+
+## Media
+
+[Back to top](<#contents>)
+
+## Code
+
+[Back to top](<#contents>)
+
+# Acknowledgements
+
+[Back to top](<#contents>)
+
+
+DOCUMENT HOW COMPONENTS AND PAGES RELATE TO USER STORIES
+DOCUMENT HOW FEATURES AND LIBRARIES HAVE IMPROVED USER EXPERIENCE
