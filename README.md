@@ -261,7 +261,7 @@ The sign-up page was created to allow users to register their details and sign-u
 
 ![Gear Addict Sign In Page](readme/images/gear-addict-sign-in-page.png)
 
-The sign-in page was created to allow users to sign into their account to access all of the Gear Addict features. On successful form submission the user is redirected to the home page.
+The sign-in page was created to allow users to sign into their account to access all of the Gear Addict features. On successful form submission, the user is redirected back to the last page they were on.
 
 [Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/2)
 
@@ -325,67 +325,161 @@ The gear page is another page only available to authenticated users. This is the
 
 ### Rigs Page
 
+![Gear Addict Rigs Page](readme/images/gear-addict-rigs-page.png)
 
+The rigs page is another page only available to authenticated users. This is the page used to display all the user's rigs that they own. The page features a list of rig cards which use the React infinite scroll component to allow for the continued loading of cards without page pagination. This page also features a search bar to allow users to search for certain rigs. If non-authenticated users try to access this page they are redirected to the home page.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/41)
 
 [Back to top](<#contents>)
 
 ### Saved Page
 
+![Gear Addict Saved Page](readme/images/gear-addict-saved-page.png)
+
+The saved page is another page only available to authenticated users. This page displays all the rigs that the user has saved by clicking the star/save button on the rig. This allows users to create a list of rigs that they want to store on their account to view later. This page also features React infinite scroll and search functionality. If non-authenticated users try to access this page they are redirected to the home page.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/15)
+
 [Back to top](<#contents>)
 
 ### Add Rig Form
+
+![Gear Addict Add Rig Form](readme/images/gear-addict-add-rig-form.png)
+
+The add rig form is only available to authenticated users. It can be accessed via the site navigation menus. If non-authenticated users try to access this page they are redirected to the home page. The page features the rig form. On successful submission, the user is redirected to the newly created rig details page. If the user clicks the cancel button they are returned to the previous page they were on. 
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/34)
 
 [Back to top](<#contents>)
 
 ### Add Gear Form
 
+![Gear Addict Add Gear Form](readme/images/gear-addict-add-gear-form.png)
+
+The add gear form is only available to authenticated users. It can be accessed via the site navigation menus. If non-authenticated users try to access this page they are redirected to the home page. The page features the gear form. On successful submission, the user is redirected to the gear page with the new gear instance visible as a card. If the user clicks the cancel button they are returned to the previous page they were on. 
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/17)
+
 [Back to top](<#contents>)
 
 ### Profile Page
+
+![Gear Addict Profile Page](readme/images/gear-addict-profile-page.png)
+
+All users who sign up have a profile automatically created. The user profile page is only visible to authenticated users, but users who aren't authenticated can still view other user profiles. The profile page displays a header image which can be customised, a profile image which can also be customised, as well as profile details and information as well as basic stats on fans, rigs, gear and idols. The popular profiles component is also displayed here. All of a user's rigs are displayed on their profile page. There is also a search bar component to search and filter the rigs. 
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/49)
 
 [Back to top](<#contents>)
 
 ### Rig Detail Page
 
+![Gear Addict Rig Detail 1](readme/images/gear-addict-rig-detail-1.png)
+
+![Gear Addict Rig Detail 2](readme/images/gear-addict-rig-detail-2.png)
+
+The rig detail page is visible to both authenticated and non-authenticated users. The page features a hero section with the rig name, an image gallery section which displays the rig attributes, a section which displays the rig details and a comments section where users can view or add comments if they are authenticated. Users can also view full-quality rig images by clicking the view image gallery button. Every rig has a rig details page which can be navigated to by clicking the view rig link on the related rig card.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/63)
+
 [Back to top](<#contents>)
 
 ### Edit Profile Details Form
+
+![Gear Addict Edit Profile Details Form](readme/images/gear-addict-edit-profile-form.png)
+
+The edit profile details form is only accessible via the profile page menu to users who are authenticated and own the profile. Clicking the edit icon directs the user to the edit profile details page. The form fields are pre-populated with the user's profile details. Changing the fields and submitting the form directs the user back to their profile with the details changed. Clicking the cancel button returns the user to their profile page with no changes made. Users can also change their profile and header images using this form. 
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/43)
+
+[Click here to view the change profile header image user story](https://github.com/Matthew-Hurrell/gear-addict/issues/59)
+
+[Click here to view the change profile image user story](https://github.com/Matthew-Hurrell/gear-addict/issues/45)
 
 [Back to top](<#contents>)
 
 ### Edit Username Form
 
+![Gear Addict Edit Username Form](readme/images/gear-addict-edit-username-form.png)
+
+The edit username form is only accessible via the profile page menu to users who are authenticated and own the profile. Clicking the edit username icon directs the user to the edit username page. The form field is pre-populated with the user's current username. Changing the field and submitting the form directs the user back to their profile with the username changed. Clicking the cancel button returns the user to their profile page with no changes made.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/5)
+
 [Back to top](<#contents>)
 
 ### Edit Password Form
 
-[Back to top](<#contents>)
+![Gear Addict Edit Password Form](readme/images/gear-addict-edit-password-form.png)
 
-### Searchbar
+The edit password form is only accessible via the profile page menu to users who are authenticated and own the profile. Clicking the edit password icon directs the user to the edit password page. The form contains two fields for password entry confirmation - ensuring a user doesn't accidentally spell the password wrong or add an extra character by mistake. Changing the fields and submitting the form directs the user back to their profile with the account password changed. Clicking the cancel button returns the user to their profile page with no changes made.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/4)
 
 [Back to top](<#contents>)
 
 ### Edit Gear Form
 
+![Gear Addict Edit Gear Form](readme/images/gear-addict-edit-gear-form.png)
+
+The edit gear form is only accessible via the gear card dropdown menu to users who are authenticated and own the gear. Clicking the edit icon directs the user to the edit gear form page. The form fields are pre-populated with the gear details. Changing the fields and submitting the form directs the user back to their gear page with the gear details changed. Clicking the cancel button returns the user to their gear page with no changes made.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/18)
+
 [Back to top](<#contents>)
 
 ### Edit Rig Form
+
+![Gear Addict Edit Rig Form](readme/images/gear-addict-edit-rig-form.png)
+
+The edit rig form is only accessible via the rig details dropdown menu to users who are authenticated and own the rig. Clicking the edit icon directs the user to the edit rig form page. The form fields are pre-populated with the rig details. Changing the fields and submitting the form directs the user back to the rig details page with the rig details changed. Clicking the cancel button returns the user to the rig details page with no changes made.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/36)
 
 [Back to top](<#contents>)
 
 ### Delete Gear
 
+![Gear Addict Delete Gear](readme/images/gear-addict-delete-gear.png)
+
+The delete gear icon is available via the gear dropdown menu to authenticated users who own the gear. There is no page for gear deletion. The user simply clicks the delete icon and the gear list is re-rendered with the gear instance deleted and removed. 
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/19)
+
 [Back to top](<#contents>)
 
 ### Delete Rig
+
+![Gear Addict Delete Rig](readme/images/gear-addict-delete-rig.png)
+
+The delete rig icon is available via the rig details dropdown menu to authenticated users who own the rig. There is no page for rig deletion. The user simply clicks the delete icon, the rig is deleted and the user is redirected back to the last page they visited. 
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/37)
 
 [Back to top](<#contents>)
 
 ### 404 Page
 
+![Gear Addict 404 Page](readme/images/gear-addict-404-page.png)
+
+The Gear Addict 404 page is triggered when a user navigates to a site URL which doesn't exist. This could be because of a number of reasons, including a faulty link or an expired URL. Most users will not see this page, but it is there as a backup for users who encounter these rare errors. The purpose of the 404 page is to notify the user that there has been an error, and the page that they have tried to access cannot be found.
+
 [Back to top](<#contents>)
 
 ## Future Features
+
+In this section, I will provide a list of potential features that could be implemented in the future.
+
+1. Further profile statistics could be added to the profile pages. This section would only be visible to profile owners on their own profiles. The stats could include a profile view count, total value of gear, and most liked rig along with further rig/gear statistics.
+2. A user could have the functionality to completely delete their account along with any related content. 
+3. Adding profile contact details could be an option for users who wish to add their contact details to their profiles for networking purposes.
+4. Adding profile social media links could also be an optional choice for users.
+5. Sound/video fields could be added to rigs to allow users to attach recordings of what the rigs sound like live.
+6. An events section could be added so users can post gig details and share them with other users.
+7. Rig reviews could be added so users can rate and post rig reviews.
+8. The ability for a user to draft a rig could be added so a user could save but not publish a rig.
+9. A for-sale section could be added so that when users mark gear for sale, it's automatically added to the sale list for other users to view.
 
 [Back to top](<#contents>)
 
@@ -424,6 +518,8 @@ The gear page is another page only available to authenticated users. This is the
 ### Add Comment Form
 
 ### Edit Comment Form
+
+### Delete Comment
 
 ### Comment
 
