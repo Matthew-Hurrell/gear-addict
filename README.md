@@ -485,7 +485,11 @@ In this section, I will provide a list of potential features that could be imple
 
 ## Components
 
+React components are independent and reusable blocks of code. There are two types of React components - class based and functional. Gear Addict makes use of functional components to avoid repetition. Here you will find a list of custom React components used in the Gear Addict application.
+
 ### Footer
+
+
 
 ### Homepage Hero
 
