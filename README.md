@@ -238,9 +238,150 @@ Gear Addict uses [Google Fonts](https://fonts.google.com/) for its typography. [
 
 # Features
 
+This section will detail the features and components present in the Gear Addict application, as well as possible future features.
+
 [Back to top](<#contents>)
 
 ## Existing Features
+
+DOCUMENT HOW COMPONENTS AND PAGES RELATE TO USER STORIES
+DOCUMENT HOW FEATURES AND LIBRARIES HAVE IMPROVED USER EXPERIENCE
+
+### Sign-Up Page
+
+![Gear Addict Sign Up Page](readme/images/gear-addit-sign-up-page.png)
+
+The sign-up page was created to allow users to register their details and sign-up for an account. On successful form submission the user is redirected to the sign in page to sign into their new account.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/1)
+
+[Back to top](<#contents>)
+
+### Sign-In Page
+
+![Gear Addict Sign In Page](readme/images/gear-addict-sign-in-page.png)
+
+The sign-in page was created to allow users to sign into their account to access all of the Gear Addict features. On successful form submission the user is redirected to the home page.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/2)
+
+[Back to top](<#contents>)
+
+### Sign Out
+
+![Gear Addict Sign Out](readme/images/gear-addict-sign-out.png)
+
+The Gear Addict sign-out functionality doesn't have its own page. The user simply clicks the sign out button in one of the nav menus and they are signed out of their account and redirected back to the home page.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/3)
+
+[Back to top](<#contents>)
+
+### Home Page
+
+![Gear Addict Home Page 1](readme/images/gear-addict-homepage-1.png)
+
+![Gear Addict Home Page 2](readme/images//gear-addict-homepage-2.png)
+
+The Gear Addict homepage features the homepage hero component as well as the intro component, how-to component and the hottest rigs list. This is the central area for the Gear Addict application.
+
+[Click here to view the how to use section user story](https://github.com/Matthew-Hurrell/gear-addict/issues/61)
+
+[Click here to view the view list of hottest rigs user story](https://github.com/Matthew-Hurrell/gear-addict/issues/58)
+
+[Back to top](<#contents>)
+
+### Latest Rigs Page
+
+![Gear Addict Latest Rigs Page](readme/images/gear-addict-latest-rigs-page.png)
+
+The latest rigs page is available to view for both authenticated and non-authenticated users. The page features a list of all the rigs currently on the site. The list uses the React infinite scroll component to continually load more rigs if the user scrolls to the end of the list. Rigs are loaded in groups of ten to reduce loading times. This helps to improve user experience as the user doesn't need to click to view the next page of paginated results, and can instead continue to scroll the same page. The list is ordered from newest to oldest. The page also features the search bar component so users can search for particular rigs or attributes if they want to filter out results. 
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/42)
+
+[Click here to view the infinite scroll user story](https://github.com/Matthew-Hurrell/gear-addict/issues/51)
+
+[Back to top](<#contents>)
+
+### Feed Page
+
+![Gear Addict Feed Page](readme/images/gear-addict-feed-page.png)
+
+The feed page is a page where users can view all of the rigs posted by other users they are a fan of. If a user becomes a fan of another user, all of their rigs will appear in this page. This is a good way for users to keep up to date with what other users are posting in one central location. This page features infinite scroll and a search bar which users can use to search for a rig or a particular user. This page is only available to authenticated users. If non-authenticated users try to access this page they are redirected to the home page.
+
+[Click here to view the search rigs user story](https://github.com/Matthew-Hurrell/gear-addict/issues/54)
+
+[Back to top](<#contents>)
+
+### Gear Page
+
+![Gear Addict Gear Page](readme/images/gear-addict-gear-page.png)
+
+The gear page is another page only available to authenticated users. This is the page used to display all the user's gear items. The page features a list of gear cards which use the React infinite scroll component to allow for the continued loading of cards without page pagination. This page also features a search bar to allow users to search for certain gear items. Users can only see their own gear items. If non-authenticated users try to access this page they are redirected to the home page.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/32)
+
+[Back to top](<#contents>)
+
+### Rigs Page
+
+
+
+[Back to top](<#contents>)
+
+### Saved Page
+
+[Back to top](<#contents>)
+
+### Add Rig Form
+
+[Back to top](<#contents>)
+
+### Add Gear Form
+
+[Back to top](<#contents>)
+
+### Profile Page
+
+[Back to top](<#contents>)
+
+### Rig Detail Page
+
+[Back to top](<#contents>)
+
+### Edit Profile Details Form
+
+[Back to top](<#contents>)
+
+### Edit Username Form
+
+[Back to top](<#contents>)
+
+### Edit Password Form
+
+[Back to top](<#contents>)
+
+### Searchbar
+
+[Back to top](<#contents>)
+
+### Edit Gear Form
+
+[Back to top](<#contents>)
+
+### Edit Rig Form
+
+[Back to top](<#contents>)
+
+### Delete Gear
+
+[Back to top](<#contents>)
+
+### Delete Rig
+
+[Back to top](<#contents>)
+
+### 404 Page
 
 [Back to top](<#contents>)
 
@@ -248,7 +389,51 @@ Gear Addict uses [Google Fonts](https://fonts.google.com/) for its typography. [
 
 [Back to top](<#contents>)
 
-# Components
+## Components
+
+### Footer
+
+### Homepage Hero
+
+### Hero 
+
+### Searchbar
+
+### No Results
+
+### Seperator
+
+### Icon Seperator
+
+### Asset
+
+### Avatar
+
+### Category Badge
+
+### Dropdown Menu
+
+### Gear Status Badge
+
+### How To Use
+
+### Homepage Intro
+
+### Nav Bar
+
+### Add Comment Form
+
+### Edit Comment Form
+
+### Comment
+
+### Gear Card
+
+### Gear List
+
+### Rig Card
+
+### Rigs List
 
 [Back to top](<#contents>)
 
@@ -363,7 +548,3 @@ Gear Addict uses [Google Fonts](https://fonts.google.com/) for its typography. [
 # Acknowledgements
 
 [Back to top](<#contents>)
-
-
-DOCUMENT HOW COMPONENTS AND PAGES RELATE TO USER STORIES
-DOCUMENT HOW FEATURES AND LIBRARIES HAVE IMPROVED USER EXPERIENCE
