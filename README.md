@@ -487,53 +487,149 @@ In this section, I will provide a list of potential features that could be imple
 
 React components are independent and reusable blocks of code. There are two types of React components - class based and functional. Gear Addict makes use of functional components to avoid repetition. Here you will find a list of custom React components used in the Gear Addict application.
 
+[Back to top](<#contents>)
+
 ### Footer
 
+![Gear Addict Footer](readme/images/gear-addict-footer.png)
 
+[Back to top](<#contents>)
 
 ### Homepage Hero
 
+![Gear Addict Homepage Hero](readme/images/hear-addict-homepage-hero.png)
+
+[Back to top](<#contents>)
+
 ### Hero 
+
+![Gear Addict Hero 1](readme/images/gear-addict-hero-1.png)
+
+![Gear Addict Hero 2](readme/images/gear-addict-hero-2.png)
+
+[Back to top](<#contents>)
 
 ### Searchbar
 
+![Gear Addict Searchbar](readme/images/gear-addict-searchbar.png)
+
+[Back to top](<#contents>)
+
 ### No Results
+
+![Gear Addict No Results](readme/images/gear-addict-no-results.png)
+
+[Back to top](<#contents>)
 
 ### Seperator
 
+![Gear Addict Seperator](readme/images/gear-addict-seperator.png)
+
+[Back to top](<#contents>)
+
 ### Icon Seperator
+
+![Gear Addict Icon Seperator](readme/images/gear-addict-icon-seperator.png)
+
+[Back to top](<#contents>)
 
 ### Asset
 
+![Gear Addict Asset](readme/images/gear-addict-asset.png)
+
+[Back to top](<#contents>)
+
 ### Avatar
+
+![Gear Addict Avatar](readme/images/gear-addict-avatar.png)
+
+[Back to top](<#contents>)
 
 ### Category Badge
 
+![Gear Addict Category Badge](readme/images/gear-addict-category-badge.png)
+
+[Back to top](<#contents>)
+
 ### Dropdown Menu
+
+![Gear Addict Dropdown Menu 1](readme/images/gear-addict-dropdown-menu-1.png)
+
+![Gear Addict Dropdown Menu 2](readme/images/gear-addict-dropdown-menu-2.png)
+
+[Back to top](<#contents>)
 
 ### Gear Status Badge
 
+![Gear Addict Gear Status Badge](readme/images/gear-addict-status-badge.png)
+
+[Back to top](<#contents>)
+
 ### How To Use
+
+![Gear Addict How To Use](readme/images/gear-addict-how-to-use.png)
+
+[Back to top](<#contents>)
 
 ### Homepage Intro
 
+![Gear Addict Homepage Intro](readme/images/gear-addict-homepage-intro.png)
+
+[Back to top](<#contents>)
+
 ### Nav Bar
+
+![Gear Addict Nav Bar 1](readme/images/gear-addict-navbar-1.png)
+
+![Gear Addict Nav Bar 2](readme/images/gear-addict-navbar-2.png)
+
+[Back to top](<#contents>)
 
 ### Add Comment Form
 
+![Gear Addict Add Comment Form](readme/images/gear-addict-add-comment-form.png)
+
+[Back to top](<#contents>)
+
 ### Edit Comment Form
+
+![Gear Addict Edit Comment Form](readme/images/gear-addict-edit-comment-form.png)
+
+[Back to top](<#contents>)
 
 ### Delete Comment
 
+![Gear Addict Delete Comment](readme/images/gear-addict-delete-comment.png)
+
+[Back to top](<#contents>)
+
 ### Comment
+
+![Gear Addict Comment](readme/images/gear-addict-comment.png)
+
+[Back to top](<#contents>)
 
 ### Gear Card
 
+![Gear Addict Gear Card](readme/images/gear-addict-gear-card.png)
+
+[Back to top](<#contents>)
+
 ### Gear List
+
+![Gear Addict Gear List](readme/images/gear-addict-gear-list.png)
+
+[Back to top](<#contents>)
 
 ### Rig Card
 
+![Gear Addict Rig Card](readme/images/gear-addict-rig-card.png)
+
+[Back to top](<#contents>)
+
 ### Rigs List
+
+![Gear Addict Rigs List](readme/images/gear-addict-rigs-list.png)
 
 [Back to top](<#contents>)
 
