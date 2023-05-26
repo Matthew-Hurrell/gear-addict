@@ -42,11 +42,6 @@ Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com
         * [**404 Page**](<#404-page>)
     * [**Future Features**](<#future-features>)
 * [**Components**](<#components>)
-* [**Technologies Used**](<#technologies-used>)
-    * [Languages](<#languages>)
-    * [Frameworks](<#frameworks>)
-    * [Software](<#software>)
-    * [Libraries](<#libraries>)
 * [**Testing**](<#testing>)
     * [**Validator Tests**](<#validator-tests>)
         * [W3C (HTML)](<#w3c-html>)
@@ -63,6 +58,11 @@ Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com
     * [**Bugs**](<#bugs>)
         * [Resolved](<#resolved>)
         * [Unresolved](<#unresolved>)
+* [**Technologies Used**](<#technologies-used>)
+    * [Languages](<#languages>)
+    * [Frameworks](<#frameworks>)
+    * [Software](<#software>)
+    * [Libraries](<#libraries>)
 * [**Deployment**](<#deployment>)
     * [**Project Deployment Via Heroku**](<#project-deployment-via-heroku>)
 * [**Credits**](<#credits>)
@@ -718,27 +718,9 @@ The rigs list component is the loop used to render multiple instances of the rig
 
 [Back to top](<#contents>)
 
-# Technologies Used
-
-[Back to top](<#contents>)
-
-## Languages
-
-[Back to top](<#contents>)
-
-## Frameworks
-
-[Back to top](<#contents>)
-
-## Software
-
-[Back to top](<#contents>)
-
-## Libraries
-
-[Back to top](<#contents>)
-
 # Testing
+
+The Gear Addict application has been tested rigorously throughout the development process. This section will provide details on the tests carried out on the front-end of the application. Back-end test documentation can be found on the [Gear Addict API README](https://github.com/Matthew-Hurrell/gear-addict-api/blob/main/README.md).
 
 [Back to top](<#contents>)
 
@@ -747,6 +729,8 @@ The rigs list component is the loop used to render multiple instances of the rig
 [Back to top](<#contents>)
 
 ### W3C HTML
+
+
 
 [Back to top](<#contents>)
 
@@ -799,6 +783,30 @@ The rigs list component is the loop used to render multiple instances of the rig
 [Back to top](<#contents>)
 
 ### Unresolved
+
+[Back to top](<#contents>)
+
+# Technologies Used
+
+Here you will find a complete list of all the technologies used to help create and develop the Gear Addict application.
+
+[Back to top](<#contents>)
+
+## Languages
+
+
+
+[Back to top](<#contents>)
+
+## Frameworks
+
+[Back to top](<#contents>)
+
+## Software
+
+[Back to top](<#contents>)
+
+## Libraries
 
 [Back to top](<#contents>)
 
