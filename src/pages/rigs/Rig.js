@@ -166,6 +166,7 @@ const Rig = (props) => {
                         ) : like_id ? (
                             <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
                                 <button
+                                    aria-label="Unlike"
                                     onClick={handleUnlike}
                                     className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
@@ -175,6 +176,7 @@ const Rig = (props) => {
                         ) : currentUser ? (
                             <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
                                 <button
+                                    aria-label="Like"
                                     onClick={handleLike}
                                     className='bg-white group hover:bg-zinc-800 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
@@ -193,6 +195,7 @@ const Rig = (props) => {
                         ) : star_id ? (
                             <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
                                 <button
+                                    aria-label="Unsave"
                                     onClick={handleUnstar}
                                     className='bg-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
@@ -202,6 +205,7 @@ const Rig = (props) => {
                         ) : currentUser ? (
                             <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
                                 <button
+                                    aria-label="Save"
                                     onClick={handleStar}
                                     className='bg-white group hover:bg-zinc-800 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                                 >
