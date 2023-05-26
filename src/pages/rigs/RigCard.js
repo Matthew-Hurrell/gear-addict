@@ -107,8 +107,8 @@ const RigCard = (props) => {
 
                 {/* Attributes */}
                 <div className='absolute top-2 left-2 lg:top-2.5 lg:left-3 gap-3 lg:gap-5 flex'>
-                    {attribute_1 && <p className='bg-amber-500 text-white px-2 py-1 text-white px-2 py-1 text-lg lg:text-xl'>{attribute_1}</p>}
-                    {attribute_2 && <p className='bg-amber-500 text-white px-2 py-1 text-lg lg:text-xl'>{attribute_2}</p>}
+                    {attribute_1 && <p className='bg-amber-400 text-black px-2 py-1 text-lg lg:text-xl'>{attribute_1}</p>}
+                    {attribute_2 && <p className='bg-amber-400 text-black px-2 py-1 text-lg lg:text-xl'>{attribute_2}</p>}
                 </div>
 
                 {/* Like */}
