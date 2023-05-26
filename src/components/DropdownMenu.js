@@ -10,6 +10,7 @@ const DropdownMenu = ({ handleEdit, handleDelete }) => {
 
             {/* Dropdown Toggle */}
             <button
+                aria-label="Dropdown Menu"
                 onClick={handleClick}
                 className='text-2xl rounded-full bg-white text-gray-600 h-10 w-10 lg:h-12 lg:w-12 flex items-center justify-center'
             >
