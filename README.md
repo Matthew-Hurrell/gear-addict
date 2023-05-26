@@ -786,7 +786,16 @@ Due to the use of the Tailwind CSS framework on the Gear Addict project, there i
 
 ### ESLint Javascript
 
-All JavaScript files in the Gear Addict project have been run through the JavaScript ESLinter. All errors and warnings have been corrected. Orginally the linter was throwing an error for react prop-types not being validated. As these weren't covered in the course a change was made to the ESLinter settings to ignore prop types.
+All JavaScript files in the Gear Addict project have been run through the JavaScript ESLinter. Originally the linter was throwing an error for React prop-types not being validated. As these weren't covered in the course a change was made to the ESLinter settings to ignore the prop types error.
+
+Some errors raised by ESLint have been intentionally ignored as they are either incorrect or in relation to code provided in the Code Institute React walkthrough project. 
+
+These errors are as follows - 
+
+1. Form data fields being assigned values but never used - these fields are used, but they are just not being called directly
+2. Do not pass children as props - this is based off of code provided by Code Institute
+
+All other errors were corrected.
 
 [Back to top](<#contents>)
 
