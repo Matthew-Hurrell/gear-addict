@@ -54,7 +54,7 @@ const GearCard = (props) => {
 
                 {/* Condition */}
                 <div className='absolute bottom-2 left-2'>
-                    {condition && <p className='bg-amber-500 text-white px-2 py-1 text-white px-2 py-1 text-lg lg:text-xl'>{condition}</p>}
+                    {condition && <p className='bg-amber-400 text-black px-2 py-1 text-lg lg:text-xl'>{condition}</p>}
                 </div>
 
                 {/* Category */}
