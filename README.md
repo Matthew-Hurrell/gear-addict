@@ -786,7 +786,7 @@ Due to the use of the Tailwind CSS framework on the Gear Addict project, there i
 
 ### ESLint Javascript
 
-All JavaScript files in the Gear Addict project have been run through the JavaScript ESLinter. Originally the linter was throwing an error for React prop-types not being validated. As these weren't covered in the course a change was made to the ESLinter settings to ignore the prop types error.
+All JavaScript files in the Gear Addict project have been run through the [JavaScript ESLinter](https://eslint.org/). Originally the linter was throwing an error for React prop-types not being validated. As these weren't covered in the course a change was made to the ESLinter settings to ignore the prop types error.
 
 Some errors raised by ESLint have been intentionally ignored as they are either incorrect or in relation to code provided in the Code Institute React walkthrough project. 
 
