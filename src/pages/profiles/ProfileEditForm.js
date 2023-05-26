@@ -106,7 +106,7 @@ const ProfileEditForm = () => {
                 ...profileData,
                 [inputName]: URL.createObjectURL(event.target.files[0]),
             });
-        };
+        }
     };
 
     const handleSubmit = async (event) => {

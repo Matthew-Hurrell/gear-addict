@@ -1,3 +1,4 @@
+import React from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import { axiosReq, axiosRes } from '../api/axiosDefaults';
@@ -37,7 +38,7 @@ export const CurrentUserProvider = ({ children }) => {
             setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
                 history.push('/signin');
-              };
+              }
               return null;
             });
             removeTokenTimestamp();
@@ -61,7 +62,7 @@ export const CurrentUserProvider = ({ children }) => {
             setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
                 history.push('/signin');
-              };
+              }
               return null;
             });
             removeTokenTimestamp();

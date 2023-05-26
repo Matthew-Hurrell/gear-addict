@@ -1,3 +1,4 @@
+import React from 'react';
 import FadeLoader from "react-spinners/FadeLoader";
 
 const Asset = ({ spinner, src, message }) => {

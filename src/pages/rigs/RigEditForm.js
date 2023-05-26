@@ -101,7 +101,7 @@ const RigEditForm = () => {
                 ...rigData,
                 [inputName]: URL.createObjectURL(event.target.files[0]),
             });
-        };
+        }
     };
 
     const featuredImageInput = useRef(null);

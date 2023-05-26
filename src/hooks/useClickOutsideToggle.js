@@ -6,7 +6,7 @@ const useClickOutsideToggle = () => {
 
     const ref = useRef(null);
 
-    const handleClick = (event) => {
+    const handleClick = () => {
         setIsActive(current => !current);
     };
 

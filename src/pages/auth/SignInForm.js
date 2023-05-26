@@ -98,7 +98,7 @@ const SignInForm = () => {
               ))}
 
               <div className='flex flex-col sm:flex-row items-center justify-between text-white mt-2'>
-                <p className='mb-1 text-base md:text-lg'>Don't have an account?
+                <p className='mb-1 text-base md:text-lg'>Don&apos;t have an account?
                   <Link className="text-base md:text-lg text-center ml-1 sm:ml-1.5 hover:underline underline-offset-4 decoration-2 text-amber-500" to="/signup">Sign Up</Link>
                 </p>
 

@@ -106,7 +106,7 @@ const GearEditForm = () => {
                 ...gearData,
                 [inputName]: URL.createObjectURL(event.target.files[0]),
             });
-        };
+        }
     };
 
     const imageInput = useRef(null);

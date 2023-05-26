@@ -84,6 +84,6 @@ export function ProfileEditDropdown({ id }) {
             </div>
         </div>
     );
-};
+}
 
 export default DropdownMenu

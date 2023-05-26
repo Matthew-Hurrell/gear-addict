@@ -59,7 +59,7 @@ const GearCreateForm = () => {
                 ...gearData,
                 [inputName]: URL.createObjectURL(event.target.files[0]),
             });
-        };
+        }
     };
 
     const imageInput = useRef(null);
@@ -84,7 +84,7 @@ const GearCreateForm = () => {
         formData.append('insured', insured);
 
         try {
-            const { data } = await axiosReq.post('/gear/', formData);
+            await axiosReq.post('/gear/', formData);
             history.push(`/gear`);
         } catch (err) {
             // console.log(err);
