@@ -53,7 +53,6 @@ Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com
         * [Responsive Tests](<#responsive-tests>)
         * [Browser Tests](<#browser-tests>)
         * [Lighthouse Tests](<#lighthouse-tests>)
-        * [Wave Accessibility Tests](<#wave-accessibility-tests>)
     * [**Bugs**](<#bugs>)
         * [Resolved](<#resolved>)
         * [Unresolved](<#unresolved>)
@@ -1360,43 +1359,92 @@ The Gear Addict site has been tested using the [Chrome Dev Tools](https://develo
 
 [Back to top](<#contents>)
 
-### Wave Accessibility Tests
-
-[Back to top](<#contents>)
-
 ## Bugs
+
+A number of bugs presented themselves during the Gear Addict development process. Most of these bugs were resolved, but unfortunately due to time constraints, some of them weren't. This section will list the resolved and unresolved bugs.
 
 [Back to top](<#contents>)
 
 ### Resolved
 
+1. When the create rig form was first implemented, the image fields were not submitting unless all the fields had an image attached. The bug was caused by the image form data appends inside the on submit function not containing conditionals to check for an image. The bug was resolved by adding turnary conditionals into the image append methods to check for current files.
+
+2. During development of the users profiles, there was a temporary bug when becoming a fan of another user through the popular profiles component. Becoming a fan of a user while on a user page was working as expected, but becoming a fan of a user while on the owner profile page was incrementing the idols count on the profile rather than the fan count. This bug was caused by incrementing the wrong field in the utils fanhelper and fanunhelper functions. The bug was resolved by incrementing the idols count in the profile is owner conditional instead of the fans count. 
+
+[Click here to view the bug fix commit](https://github.com/Matthew-Hurrell/gear-addict/commit/6d634a89e13b897c77b6b55552fa177a15181a2f)
+
+3. Later in development, a bug was discovered in the profile details edit form where the header image was overwriting the profile image field. This meant that when a header image was added and submitted in the profile edit form the profile header was being added into the profile image section. This was caused by a typo in the profile edit form appending the header image field to the profile image form data. The bug was resolved by simply changing the form data name to header_image to match the header field name. 
+
+[Click here to view the bug fix commit](https://github.com/Matthew-Hurrell/gear-addict/commit/806779b6aef73a818ec7f124546f523eeea8ff1f)
+
+4. A bug was also discovered on the homepage hottest rigs list. During development there was a duplicate rig being displayed within the list. Originally it was thought that the bug was being caused by the slice method, but it was discovered that this was originating from the axios response, which was returning two of the same rig. This issue was only visible when there were limited rigs on the database. To resolve this I changed the query to display rigs in descending like count order and then added more rigs. This seemed to resolve the problem. 
+
 [Back to top](<#contents>)
 
 ### Unresolved
+
+1. There is currently an ongoing issue with the Gear Addict project on Safari, which unfortunately hasn't been resolved. This is a problem which has been inherited form the Code Institute walkthrough Moments project. Regretfully, Safari blocks cross-domain cookies and prevents cross-site tracking, and as the back and front-end of this project are on different domains, the site relies on cookies for communication. This prevents communication between the front and back-end of this project on Safari and impedes the site functioning correctly. The issue can be temporarily fixed by turning off the prevent cross site tracking and cookie options within Safari, but obviously this isn't ideal as users cannot be expected to do this for the site to function correctly. As I intend to use this project for my portfolio, I will seek to resolve this issue moving forward by combining both repositories and deploying them both to one domain. This should resolve the issue in the future. 
 
 [Back to top](<#contents>)
 
 # Technologies Used
 
-Here you will find a complete list of all the technologies used to help create and develop the Gear Addict application.
+Here you will find a complete list of all the technologies used to help create and develop the Gear Addict front-end application.
+For more information on the back-end technologies used, please view the [Gear Addict API README](https://github.com/Matthew-Hurrell/gear-addict-api/blob/main/README.md).
 
 [Back to top](<#contents>)
 
 ## Languages
 
-
+* [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) - Provided the basic content and structure for the site.
+* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) - Provided the styling for the site.
+* [JavaScript (ES6)](https://www.javascript.com/) - Provided the interactivity and front-end functionality for the site.
+* [Git](https://git-scm.com/) - Provided the version control system for the site.
 
 [Back to top](<#contents>)
 
 ## Frameworks
 
+* [React](https://react.dev/) - A free and open-source front-end JavaScript library for building user interfaces based on components.
+* [Tailwind React](https://tailwindcss.com/) - An open-source utility-first CSS framework.
+
 [Back to top](<#contents>)
 
 ## Software
 
+* [Balsamiq](https://balsamiq.com/) - An online cloud based software used for creating the site wireframes
+* [GitHub](https://github.com/) - An internet hosting service used for version control. Used to host the Gear Addict repositories and for the project board used for project management and user stories
+* [GitPod](https://www.gitpod.io/) - A cloud development environment used as the primary site code editor
+* [Heroku](https://dashboard.heroku.com/) - A cloud platform used to host the Gear Addict application
+* [ElephantSQL](https://www.elephantsql.com/) - A free cloud based PostgreSQL database system used for the application database
+* [Cloudinary](https://cloudinary.com/) - A cloud-based video and image management platform used to store the site images
+* [Slack](https://slack.com/intl/en-gb/) - An online instant messaging program used for site feedback and guidance from the [Code Institute](https://codeinstitute.net/) community
+* [Draw.io](https://app.diagrams.net/) - An online diagram software used for the database schemas
+* [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - A set of web developer tools built directly into the chrome browser. Used for responsiveness tests and further testing
+* [Google Fonts](https://fonts.google.com/) - A web based font service by Google used to supply the site typography
+* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - An open source automated testing tool used for site tests
+* [Responsive Design Checker](https://responsivedesignchecker.com/) - An online testing tool used for responsive site testing
+* [Am I Responsive](https://ui.dev/amiresponsive) - An online testing tool used for responsive site testing
+* [Colour Contrast Checker](https://colourcontrast.cc/) - An online tool used to test background and text colour contrast
+
 [Back to top](<#contents>)
 
 ## Libraries
+
+* testing-library/jest-dom v5.16.5 - Custom jest matchers to test the state of the DOM
+* testing-library/react v11.2.7 - React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components
+* testing-library/user-event v12.8.3 - A companion library for Testing Library that provides more advanced simulation of browser interactions than the built-in fireEvent method
+* axios v0.21.4 - A promise based HTTP client for the browser and node.js
+* fslightbox-react v1.7.4 - A React component for displaying images and videos in a clean overlying box - this library improved user experience by allowing a full screen gallery for rig images. Users can click the view image gallery button and see the rig images in full quality. They can also use the arrow buttons to navigate between images
+* jwt-decode v3.1.2 - A small browser library that helps decoding JWTs token which are Base64Url encoded
+* react v17.0.2 - A JavaScript library for creating user interfaces. This library / framework improved user experience greatly. The React library renders content faster for improved load times for the user, and because of the reuse of components, more content was developed in a shorter amount of time, which meant more features were available to the site users by the project deadline
+* react-boostrap v1.6.6 - An open-source css framework components built with React
+* react-dom v17.0.2 - An entry point to the DOM and server renderers for React
+* react-infinite-scroll-component v6.1.0 - An infinite scroll component for React - this library improved user experience by allowing users to continue scrolling to load more content, rather than having to navigate to another page and wait for the page to load
+* react-router-dom v5.3.0 - Contains bindings for using React Router in web applications
+* react-scripts v5.0.1 - Scripts and configuration used by Create React App
+* react-spinners v0.13.8 - A collection of loading spinners with React.js based on Halogen. This library enhanced the user experience by providing a visual loading spinner to display to the user when content is loading, so they are not left looking at a blank page
+* web-vitals v1.1.2 - A modular library for measuring all the web vitals metrics on real users
 
 [Back to top](<#contents>)
 
