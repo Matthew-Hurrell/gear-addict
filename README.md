@@ -1076,47 +1076,140 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 
 | Status | **Edit Gear Page**
 |:-------:|:--------|
-| &check; | 
+| &check; | Page has correct URL
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Page is only visible to authenticated users who own the gear
+| &check; | Non-authenticated users are redirected to the home page
+| &check; | Form fields are pre-populated with the correct instance of gear
+| &check; | Form fields handle change correctly
+| &check; | Field input errors are displayed to the user
+| &check; | Successful submission updates the correct instance of gear and returns the user to the gear page
+| &check; | The cancel button redirects the user to the last page they were on
+| &check; | The submit button submits the form
+| &check; | All fields are successfully submitted 
+| &check; | Blank fields are handled correctly
+| &check; | All fields that aren't changed remain the same
+| &check; | Updating the image field changes the image
 
 | Status | **Edit Rig Page**
 |:-------:|:--------|
-| &check; | 
+| &check; | Page has correct URL
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Page is only visible to authenticated users who own the rig
+| &check; | Non-authenticated users are redirected to the home page
+| &check; | Form fields are pre-populated with the correct instance of rig
+| &check; | Form fields handle change correctly
+| &check; | Field input errors are displayed to the user
+| &check; | Successful submission updates the correct instance of rig and returns the user to the rig details page
+| &check; | The cancel button redirects the user to the last page they were on
+| &check; | The submit button submits the form
+| &check; | All fields are successfully submitted 
+| &check; | Blank fields are handled correctly
+| &check; | All fields that aren't changed remain the same
+| &check; | Updating the image fields changes the images
 
 | Status | **Delete Gear**
 |:-------:|:--------|
-| &check; | 
+| &check; | The delete button is only visible in the gear dropdown menu to authenticated users who own the gear
+| &check; | Clicking the delete button deletes the correct instance of gear and re-renders the gear list with the gear removed
 
 | Status | **Delete Rig**
 |:-------:|:--------|
-| &check; | 
+| &check; | The delete button is only visible in the rig dropdown menu to authenticated users who own the rig
+| &check; | Clicking the delete button deletes the correct instance of rig and redirects the user to the last page they were on
 
 | Status | **Edit Profile Page**
 |:-------:|:--------|
-| &check; | 
+| &check; | Page has correct URL
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Page is only visible to authenticated users who own the profile
+| &check; | Non-authenticated users are redirected to the home page
+| &check; | Form fields are pre-populated with the correct user profile
+| &check; | Form fields handle change correctly
+| &check; | Field input errors are displayed to the user
+| &check; | Successful submission updates the correct user profile and returns the user to the last page they were on
+| &check; | The cancel button redirects the user to the last page they were on
+| &check; | The submit button submits the form
+| &check; | All fields are successfully submitted 
+| &check; | Blank fields are handled correctly
+| &check; | All fields that aren't changed remain the same
+| &check; | Updating the image fields changes the images
+| &check; | Updated profile details are immediately reflected on the user profile page
 
 | Status | **Edit Username Page**
 |:-------:|:--------|
-| &check; | 
+| &check; | Page has correct URL
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Page is only visible to authenticated users who own the profile
+| &check; | Non-authenticated users are redirected to the home page
+| &check; | Form fields are pre-populated with the correct user profile username
+| &check; | Form fields handle change correctly
+| &check; | Field input errors are displayed to the user
+| &check; | Successful submission updates the correct user profile username and returns the user to the last page they were on
+| &check; | The cancel button redirects the user to the last page they were on
+| &check; | The submit button submits the form
+| &check; | All fields are successfully submitted 
+| &check; | Blank fields are handled correctly
+| &check; | All fields that aren't changed remain the same
+| &check; | Updated profile usernames are immediately reflected on the user profile page
 
 | Status | **Edit Password Page**
 |:-------:|:--------|
-| &check; | 
+| &check; | Page has correct URL
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Page is only visible to authenticated users who own the profile
+| &check; | Non-authenticated users are redirected to the home page
+| &check; | Form fields handle change correctly
+| &check; | Field input errors are displayed to the user
+| &check; | Successful submission updates the correct user password and returns the user to the last page they were on
+| &check; | The cancel button redirects the user to the last page they were on
+| &check; | The submit button submits the form
+| &check; | All fields are successfully submitted 
+| &check; | Blank fields are handled correctly
 
 | Status | **404 Page**
 |:-------:|:--------|
-| &check; | 
+| &check; | The 404 page is triggered by an incorrect site URL
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
 
 | Status | **Search Functionality**
 |:-------:|:--------|
-| &check; | 
+| &check; | Rigs can be searched for usernames
+| &check; | Rigs can be searched for categories
+| &check; | Rigs can be searched for attributes
+| &check; | Rigs can be searched for genres
+| &check; | Rigs can be searched for rig names
+| &check; | Gear can be searched for gear names
+| &check; | Gear can be searched for categories
+| &check; | Gear can be searched for brands
+| &check; | Gear can be searched for models
+| &check; | Gear can be searched for descriptions
 
 | Status | **Like / Unlike**
 |:-------:|:--------|
-| &check; | 
+| &check; | When a rig is liked the like button is hidden and the unlike button appears
+| &check; | When a rig is unliked the unlike button is hidden and the like button appears
+| &check; | Liking a rig adds one to the rig like count
+| &check; | Unliking a rig subtracts one from the rig like count
+| &check; | Like and unlike buttons are only visible to authenticated users
+| &check; | Like and unlike buttons are hidden on rigs that are owned by the authenticated user
 
 | Status | **Save / Unsave**
 |:-------:|:--------|
-| &check; | 
+| &check; | When a rig is saved the save button is hidden and the unsave button appears
+| &check; | When a rig is unsaved the unsave button is hidden and the save button appears
+| &check; | Saving a rig adds one to the rig star count
+| &check; | Unsaving a rig subtracts one from the rig star count
+| &check; | Save and unsave buttons are only visible to authenticated users
+| &check; | Save and unsave buttons are hidden on rigs that are owned by the authenticated user
+| &check; | Saving a rig adds it to the users saved list
+| &check; | Unsaving a rig removes it from the users saved list
 
 [Back to top](<#contents>)
 
