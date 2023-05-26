@@ -125,11 +125,11 @@ const Rig = (props) => {
 
                     {/* Attributes */}
                     <div className='flex gap-3 flex-wrap md:hidden'>
-                        {attribute_1 && <p className='bg-amber-500 text-white px-2 py-1 text-lg'>{attribute_1}</p>}
-                        {attribute_2 && <p className='bg-amber-500 text-white px-2 py-1 text-lg'>{attribute_2}</p>}
-                        {genre_1 && <p className='bg-green-700 text-white px-2 py-1 text-lg'>{genre_1}</p>}
-                        {genre_2 && <p className='bg-green-700 text-white px-2 py-1 text-lg'>{genre_2}</p>}
-                        {budget && <p className='bg-red-700 text-white px-2 py-1 text-lg'>{budget}</p>}
+                        {attribute_1 && <p className='bg-amber-400 text-black px-2 py-1 text-lg'>{attribute_1}</p>}
+                        {attribute_2 && <p className='bg-amber-400 text-black px-2 py-1 text-lg'>{attribute_2}</p>}
+                        {genre_1 && <p className='bg-green-500 text-black px-2 py-1 text-lg'>{genre_1}</p>}
+                        {genre_2 && <p className='bg-green-500 text-black px-2 py-1 text-lg'>{genre_2}</p>}
+                        {budget && <p className='bg-red-400 text-black px-2 py-1 text-lg'>{budget}</p>}
                     </div>
 
                     <div className='lg:col-span-2 h-80 sm:h-96 md:h-[600px] w-full relative'>
@@ -149,11 +149,11 @@ const Rig = (props) => {
 
                         {/* Attributes */}
                         <div className='absolute top-2.5 left-3 gap-5 hidden md:flex'>
-                            {attribute_1 && <p className='bg-amber-500 text-white px-2 py-1 text-xl'>{attribute_1}</p>}
-                            {attribute_2 && <p className='bg-amber-500 text-white px-2 py-1 text-xl'>{attribute_2}</p>}
-                            {genre_1 && <p className='bg-green-700 text-white px-2 py-1 text-xl'>{genre_1}</p>}
-                            {genre_2 && <p className='bg-green-700 text-white px-2 py-1 text-xl'>{genre_2}</p>}
-                            {budget && <p className='bg-red-700 text-white px-2 py-1 text-xl'>{budget}</p>}
+                            {attribute_1 && <p className='bg-amber-400 text-black px-2 py-1 text-xl'>{attribute_1}</p>}
+                            {attribute_2 && <p className='bg-amber-400 text-black px-2 py-1 text-xl'>{attribute_2}</p>}
+                            {genre_1 && <p className='bg-green-500 text-black px-2 py-1 text-xl'>{genre_1}</p>}
+                            {genre_2 && <p className='bg-green-500 text-black px-2 py-1 text-xl'>{genre_2}</p>}
+                            {budget && <p className='bg-red-400 text-black px-2 py-1 text-xl'>{budget}</p>}
                         </div>
 
                         {/* Edit / Delete */}
