@@ -46,7 +46,7 @@ Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com
     * [**Validator Tests**](<#validator-tests>)
         * [W3C (HTML)](<#w3c-html>)
         * [W3C (CSS)](<#w3c-css>)
-        * [JSHint (JavaScript)](<#jshint-javascript>)
+        * [ESLint (JavaScript)](<#eslint-javascript>)
     * [**Input Validation Tests**](<#input-validation-tests>)
     * [**Additional Tests**](<#additional-tests>)
         * [Manual Tests](<#manual-tests>)
@@ -730,15 +730,63 @@ The Gear Addict application has been tested rigorously throughout the developmen
 
 ### W3C HTML
 
+All the pages of the Gear Addict site have been passed through the [W3C HTML Markup Validation Service](https://validator.w3.org/), with minor errors rectified. No errors or warnings are now showing.
 
+#### Homepage
+![HTML Validator Homepage](readme/images/html-validator-homepage.png)
+
+#### Gear Detail Page
+![HTML Validator Gear Detail Page](readme/images/html-validator-gear-detail-page.png)
+
+#### Latest Page
+![HTML Validator Latest Page](readme/images/html-validator-latest-page.png)
+
+#### Feed Page
+![HTML Validator Feed Page](readme/images/html-validator-feed-page.png)
+
+#### Gear Page
+![HTML Validator Gear Page](readme/images/html-validator-gear-page.png)
+
+#### Rigs Page
+![HTML Validator Rigs Page](readme/images/html-validator-rigs-page.png)
+
+#### Saved Page
+![HTML Validator Saved Page](readme/images/html-validator-saved-page.png)
+
+#### Rig Create Page
+![HTML Validator Rig Create Page](readme/images/html-validator-rig-create-page.png)
+
+#### Gear Create Page
+![HTML Validator Gear Create Page](readme/images/html-validator-gear-create-page.png)
+
+#### Sign-In Page
+![HTML Validator Sign-In Page](readme/images/html-validator-sign-in-page.png)
+
+#### Sign-Up Page
+![HTML Validator Sign-Up Page](readme/images/html-validator-sign-up-page.png)
+
+#### Profile Page
+![HTML Validator Profile Page](readme/images/html-validator-profile-page.png)
+
+#### Edit Profile Page
+![HTML Validator Edit Profile Page](readme/images/html-validator-edit-profile-page.png)
+
+#### 404 Page
+![HTML Validator 404 Page](readme/images/html-validator-404-page.png)
 
 [Back to top](<#contents>)
 
 ### W3C CSS
 
+![CSS Validator](readme/images/css-validator.png)
+
+Due to the use of the Tailwind CSS framework on the Gear Addict project, there is only one small file of custom CSS. This file was passed through the [Jigsaw W3C CSS Validation Service](https://validator.w3.org/) and the only errors found were for the tailwind selectors at the top of the file, which are currently unrecognised by the validator.
+
 [Back to top](<#contents>)
 
-### JShint Javascript
+### ESLint Javascript
+
+All JavaScript files in the Gear Addict project have been run through the JavaScript ESLinter. All errors and warnings have been corrected. Orginally the linter was throwing an error for react prop-types not being validated. As these weren't covered in the course a change was made to the ESLinter settings to ignore prop types.
 
 [Back to top](<#contents>)
 
