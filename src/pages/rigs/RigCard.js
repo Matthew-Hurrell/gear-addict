@@ -118,6 +118,7 @@ const RigCard = (props) => {
                 ) : like_id ? (
                     <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
                         <button
+                            aria-label="Unlike"
                             onClick={handleUnlike}
                             className='shadow-xl bg-white rounded-full hover:scale-105 border-zinc-800 border h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                         >
@@ -127,6 +128,7 @@ const RigCard = (props) => {
                 ) : currentUser ? (
                     <div className='absolute bottom-1 right-14 md:bottom-2.5 md:right-16 flex'>
                         <button
+                            aria-label="Like"
                             onClick={handleLike}
                             className='shadow-xl bg-white border-zinc-800 hover:scale-105 border group hover:scale-105 rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                         >
@@ -145,6 +147,7 @@ const RigCard = (props) => {
                 ) : star_id ? (
                     <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
                         <button
+                            aria-label="Unsave"
                             onClick={handleUnstar}
                             className='shadow-xl bg-white rounded-full hover:scale-105 border-zinc-800 border h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                         >
@@ -154,6 +157,7 @@ const RigCard = (props) => {
                 ) : currentUser ? (
                     <div className='absolute bottom-1 right-2 md:bottom-2.5 md:right-2.5 flex'>
                         <button
+                            aria-label="Save"
                             onClick={handleStar}
                             className='shadow-xl bg-white group hover:scale-105 border-zinc-800 border rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center'
                         >
