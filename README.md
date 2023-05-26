@@ -1274,6 +1274,8 @@ Gear Addict has been tested on a diverse range of different devices and screen s
 
 ### Browser Tests
 
+The Gear Addict site has been tested on Google Chrome, Apple Safari, Microsoft Edge and Brave. Unfortunately, there is an unresolved error that is present on Safari. Due to Safari blocking cross-site tracking, the cookies used in the project are disabled, therefore preventing communication between the API and the front-end. Turning this setting off in the browser settings does resolve the problem, but this is a temporary fix. This bug is also present in the Code Institute walkthrough project. To resolve this in the future I will combine the front and back-end repositories into one and use a singular URL. But other than this, no browser errors were detected.
+
 [Back to top](<#contents>)
 
 ### Lighthouse Tests
