@@ -25,6 +25,7 @@ const Profile = ({ profile }) => {
 
                     // Unfan Button
                     <button
+                        aria-label="Unfan"
                         onClick={() => handleUnfan(profile)}
                         className='hover:scale-105 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
                     >
@@ -34,6 +35,7 @@ const Profile = ({ profile }) => {
 
                     // Fan Button
                     <button
+                        aria-label="Fan"
                         onClick={() => handleFan(profile)}
                         className='hover:scale-105 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
                     >

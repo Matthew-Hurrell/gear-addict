@@ -79,6 +79,7 @@ const ProfilePage = () => {
 
                                         // Unfan Button
                                         <button
+                                            aria-label='Unfan'
                                             className='hover:scale-105 mb-5 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
                                             onClick={() => handleUnfan(profile)}
                                         >
@@ -88,6 +89,7 @@ const ProfilePage = () => {
 
                                         // Fan Button
                                         <button
+                                            aria-label='Fan'
                                             className='hover:scale-105 mb-5 shadow-md text-zinc-800 h-10 w-10 flex justify-center items-center border border-zinc-800 rounded-full'
                                             onClick={() => handleFan(profile)}
                                         >
