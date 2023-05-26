@@ -1219,6 +1219,57 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 
 ### Responsive Tests
 
+Gear Addict has been tested on a diverse range of different devices and screen sizes to test for style and layout issues. Manual responsive tests were carried out using [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/), [Responsive Design Checker](https://responsivedesignchecker.com/) and [Am I Responsive](https://ui.dev/amiresponsive) as well as on a number of physical devices. All device screen sizes were tested on Chrome Dev Tools as well as Responsive Design Checker and no issues were found.
+
+| Status | **Chrome Dev Tools**
+|:-------:|:--------|
+| &check; | iPhone SE
+| &check; | iPhone XR
+| &check; | iPhone 12 Pro
+| &check; | Pixel 5
+| &check; | Samsung Galaxy S8+
+| &check; | Samsung Galaxy S20 Ultra
+| &check; | iPad Air
+| &check; | iPad Mini
+| &check; | Surface Pro 7
+| &check; | Surface Duo
+| &check; | Galaxy Fold
+| &check; | Samsung Galaxy A51/71
+| &check; | Nest Hub
+| &check; | Nest Hub Max
+| &check; | iPhone 6/7/8
+| &check; | Responsive mode
+
+| Status | **Responsive Design Checker**
+|:-------:|:--------|
+| &check; | 24" Desktop
+| &check; | 23" Desktop
+| &check; | 22" Desktop
+| &check; | 20" Desktop
+| &check; | 19" Desktop
+| &check; | 15" Desktop
+| &check; | 13" Notebook
+| &check; | 10" Notebook
+| &check; | Apple iPad Mini
+| &check; | Apple iPad Retina
+| &check; | Apple iPad Pro
+| &check; | Amazon Kindle Fire
+| &check; | Amazon Kindle Fire HD
+| &check; | Asus Eee 1000
+| &check; | Nexus 7
+| &check; | Nexus 9
+| &check; | Samsung Galaxy Tab 10
+| &check; | Apple iPhone 3/4/4s
+| &check; | Apple iPhone 5/5s
+| &check; | Apple iPhone 6/6s/7
+| &check; | Apple iPhone 6s Plus/7 Plus
+| &check; | Samsung Galaxy S5/S6/S7
+| &check; | Sony Xperia Z2/Z3
+| &check; | Google Pixel
+| &check; | Nexus 4
+| &check; | Nexus 5
+| &check; | Nexus 6
+
 [Back to top](<#contents>)
 
 ### Browser Tests
