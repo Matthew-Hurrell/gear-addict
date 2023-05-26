@@ -171,17 +171,17 @@ const Footer = () => {
             <div className='lg:inline-block mt-1 lg:mt-0'>
 
               {/* GitHub */}
-              <a href="https://github.com/Matthew-Hurrell" target="_blank" rel="noreferrer">
+              <a aria-label="GitHub" href="https://github.com/Matthew-Hurrell" target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-github mx-3 hover:scale-110 transition"></i>
               </a>
 
               {/* LinkedIn */}
-              <a href="https://www.linkedin.com/in/matthew-hobbs-hurrell/" target="_blank" rel="noreferrer">
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/in/matthew-hobbs-hurrell/" target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-linkedin mr-3 hover:scale-110 transition"></i>
               </a>
 
               {/* Facebook */}
-              <a href="https://www.facebook.com/matthewhobbshurrell" target="_blank" rel="noreferrer">
+              <a aria-label="Facebook" href="https://www.facebook.com/matthewhobbshurrell" target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-facebook hover:scale-110 transition"></i>
               </a>
             </div>
