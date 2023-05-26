@@ -244,9 +244,6 @@ This section will detail the features and components present in the Gear Addict 
 
 ## Existing Features
 
-DOCUMENT HOW COMPONENTS AND PAGES RELATE TO USER STORIES
-DOCUMENT HOW FEATURES AND LIBRARIES HAVE IMPROVED USER EXPERIENCE
-
 ### Sign-Up Page
 
 ![Gear Addict Sign Up Page](readme/images/gear-addit-sign-up-page.png)
@@ -459,6 +456,30 @@ The delete rig icon is available via the rig details dropdown menu to authentica
 
 [Back to top](<#contents>)
 
+### Like / Unlike Rig
+
+![Gear Addict Like / Unlike Rig](readme/images/gear-addict-like-rig.png)
+
+The like / unlike rig buttons are only visible to authenticated users. They are also hidden on rigs owned by the user so they cannot like / unlike their own rigs. The buttons are visible on the rig cards and on the rig detail pages. When a user likes a rig, the like button is hidden and replaced with the unlike button to display to the user that the rig has been liked. 
+
+[Click here to view the like a rig user story](https://github.com/Matthew-Hurrell/gear-addict/issues/13)
+
+[Click here to view the unlike a rig user story](https://github.com/Matthew-Hurrell/gear-addict/issues/14)
+
+[Back to top](<#contents>)
+
+### Save / Unsave Rig
+
+![Gear Addict Save / Unsave Rig](readme/images/gear-addict-save-rig.png)
+
+The save / unsave rig buttons are only visible to authenticated users. They are also hidden on rigs owned by the user so they cannot save / unsave their own rigs. The buttons are visible on the rig cards and on the rig detail pages. When a user saves a rig, the save button is hidden and replaced with the unsave button to display to the user that the rig has been saved. Saved rigs appear in a user's saved section so they can be easily accessed at a later date.
+
+[Click here to view the save a rig user story](https://github.com/Matthew-Hurrell/gear-addict/issues/15)
+
+[Click here to view the unsave a rig user story](https://github.com/Matthew-Hurrell/gear-addict/issues/16)
+
+[Back to top](<#contents>)
+
 ### 404 Page
 
 ![Gear Addict 404 Page](readme/images/gear-addict-404-page.png)
@@ -485,7 +506,7 @@ In this section, I will provide a list of potential features that could be imple
 
 ## Components
 
-React components are independent and reusable blocks of code. There are two types of React components - class based and functional. Gear Addict makes use of functional components to avoid repetition. Here you will find a list of custom React components used in the Gear Addict application.
+React components are independent and reusable blocks of code. There are two types of React components - class based and functional. Gear Addict makes use of functional components to avoid code repetition. Here you will find a list of custom React components used in the Gear Addict application.
 
 [Back to top](<#contents>)
 
@@ -493,11 +514,15 @@ React components are independent and reusable blocks of code. There are two type
 
 ![Gear Addict Footer](readme/images/gear-addict-footer.png)
 
+The Gear Addict footer component is visible on every page of the site. It features a site nav menu which also changes state depending on user authentication. It also contains social media links. The footer component is imported into app.js along with the nav bar component so it is displayed on every page of the site.
+
 [Back to top](<#contents>)
 
 ### Homepage Hero
 
 ![Gear Addict Homepage Hero](readme/images/hear-addict-homepage-hero.png)
+
+The homepage hero component is only visible on the homepage. This differs from the standard hero component as it is larger in height. This component is intended to catch a user's attention. It features a large background image and the Gear Addict site title and slogan.
 
 [Back to top](<#contents>)
 
@@ -507,17 +532,19 @@ React components are independent and reusable blocks of code. There are two type
 
 ![Gear Addict Hero 2](readme/images/gear-addict-hero-2.png)
 
+The hero component is a reusable component used for each page on the site other than the homepage. It features a large background image which has a grayscale filter and a page title. The page title can be passed as a prop to change the heading for different pages. The component also accepts a prop called righeader to change the background image to what is used for the rig detail pages. 
+
 [Back to top](<#contents>)
 
 ### Searchbar
 
 ![Gear Addict Searchbar](readme/images/gear-addict-searchbar.png)
 
-[Back to top](<#contents>)
+The search bar component is present across the site whenever there is a list of gear / rigs. The search bar can be used to query rig lists or gear lists. The component accepts the props of query and setQuery which are passed down from the parent element to query the results with a slight delay. The query is then passed to the rigs / gear list components. The component also accepts a gear prop which changes the input field placeholder to 'Search gear' if the search bar is displayed on a gear page. 
 
-### No Results
+[Click here to view the search rigs user story](https://github.com/Matthew-Hurrell/gear-addict/issues/54)
 
-![Gear Addict No Results](readme/images/gear-addict-no-results.png)
+[Click here to view the search gear user story](https://github.com/Matthew-Hurrell/gear-addict/issues/33)
 
 [Back to top](<#contents>)
 
@@ -525,11 +552,15 @@ React components are independent and reusable blocks of code. There are two type
 
 ![Gear Addict Seperator](readme/images/gear-addict-seperator.png)
 
+The seperator component is a simple full-width horizontal line used as a page break between sections. It is used frequently across the site to display a visual separation of content to the user. Its functionality is purely visual.
+
 [Back to top](<#contents>)
 
 ### Icon Seperator
 
 ![Gear Addict Icon Seperator](readme/images/gear-addict-icon-seperator.png)
+
+The icon seperator is similar to the seperator component except it includes a centralised icon in the horizontal line. It is a purely visual component but it is reused frequently across the site to break up page content into clearly defined sections.
 
 [Back to top](<#contents>)
 
@@ -537,17 +568,23 @@ React components are independent and reusable blocks of code. There are two type
 
 ![Gear Addict Asset](readme/images/gear-addict-asset.png)
 
+The asset component is a multi-use component that is used to display the Gear Addict loading spinner but is also used to display images by passing the image URL down to the component as a src prop. This component is used many times across the site to render the loading spinner while content is being processed.
+
 [Back to top](<#contents>)
 
 ### Avatar
 
 ![Gear Addict Avatar](readme/images/gear-addict-avatar.png)
 
+The avatar component user profile images across the site. It is used in the navbar to display the user profile image and also in the comment and comment create form components as well as the profile page. Image src is a prop which is passed down from the parent. It can also take a text prop.
+
 [Back to top](<#contents>)
 
 ### Category Badge
 
 ![Gear Addict Category Badge](readme/images/gear-addict-category-badge.png)
+
+The category badge component is used with a conditional on the gear card component to display a badge with an icon depending on the gear category. The category badge will display a different icon depending on what prop it is passed from the parent element. It provides a different icon for each gear category option.
 
 [Back to top](<#contents>)
 
@@ -557,11 +594,21 @@ React components are independent and reusable blocks of code. There are two type
 
 ![Gear Addict Dropdown Menu 2](readme/images/gear-addict-dropdown-menu-2.png)
 
+The dropdown menu component is used on the comment, gear card, profile page and rig pages. It is used to display a dropdown menu for a variety of different sources. It contains a standard dropdown menu function and a profile edit dropdown option specifically tailored towards the profile menu. It uses ref along with handle click and is active functions and state to open and close on click. The component takes handle edit and handle delete functions as props to change the functionality of the delete and edit functions depending on which parent element it is being used with.
+
 [Back to top](<#contents>)
 
 ### Gear Status Badge
 
 ![Gear Addict Gear Status Badge](readme/images/gear-addict-status-badge.png)
+
+The gear status badge component works in much the same way as the category badge works. The component is passed a prop based on a conditional on the gear card component and returns one or more badges based on the props. Each badge contains a different icon for repair, sale and insured. These badges are used to display the status of user gear items.
+
+[Click here to view the mark gear for repair user story](https://github.com/Matthew-Hurrell/gear-addict/issues/29)
+
+[Click here to view the mark gear for sale user story](https://github.com/Matthew-Hurrell/gear-addict/issues/31)
+
+[Click here to view the mark gear as insured user story](https://github.com/Matthew-Hurrell/gear-addict/issues/30)
 
 [Back to top](<#contents>)
 
@@ -569,11 +616,17 @@ React components are independent and reusable blocks of code. There are two type
 
 ![Gear Addict How To Use](readme/images/gear-addict-how-to-use.png)
 
+The how-to-use section component is just used for the Gear Addict home page. It displays a basic step-by-step guide on some of the features of the site. It is displayed on the home page so new users who are unfamiliar with the site can quickly understand how to use the application.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/61)
+
 [Back to top](<#contents>)
 
 ### Homepage Intro
 
 ![Gear Addict Homepage Intro](readme/images/gear-addict-homepage-intro.png)
+
+The intro home component is only used on the site homepage. It provides new users with a quick summary of the purpose and intention of the site. 
 
 [Back to top](<#contents>)
 
@@ -583,11 +636,19 @@ React components are independent and reusable blocks of code. There are two type
 
 ![Gear Addict Nav Bar 2](readme/images/gear-addict-navbar-2.png)
 
+The nav bar component is a large component which handles the main site nav menu. It contains the handle sign-out function to sign the user out. It also uses the 'click outside' toggle hook and the 'is active' and 'set is active' state as well as 'ref' to handle opening and closing the mobile menu on small screens. Icons are sorted into logged-out and logged-in groups, and the relevant icons are displayed to an authenticated / non-authenticated user using a conditional with 'current user context'.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/50)
+
 [Back to top](<#contents>)
 
 ### Add Comment Form
 
 ![Gear Addict Add Comment Form](readme/images/gear-addict-add-comment-form.png)
+
+The add comment form component is present on the rig detail pages. It is hidden to non-authenticated users. The form contains handle change and handle submit functions. Successful form submission re-renders the comment feed and adds the comment to the comment list. 
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/10)
 
 [Back to top](<#contents>)
 
@@ -595,11 +656,15 @@ React components are independent and reusable blocks of code. There are two type
 
 ![Gear Addict Edit Comment Form](readme/images/gear-addict-edit-comment-form.png)
 
+The edit comment form component is visible via the rig detail pages. The menu to access the form is only visible to authenticated users that own the comment. Clicking the comment edit button within the dropdown menu will render the edit comment form and pre-populate the form field with the user's previous comment. Clicking the submit button removes the form from view and re-renders the comment list with the comment content updated. Clicking the cancel button returns the user to the previous comment list with no changes made. 
+
 [Back to top](<#contents>)
 
 ### Delete Comment
 
 ![Gear Addict Delete Comment](readme/images/gear-addict-delete-comment.png)
+
+A delete comment option is available to authenticated users who own a comment. The delete button is visible in the comment dropdown menu. If a user clicks this button the comment is deleted and the list is re-rendered to display the new comment list without the comment.
 
 [Back to top](<#contents>)
 
@@ -607,11 +672,17 @@ React components are independent and reusable blocks of code. There are two type
 
 ![Gear Addict Comment](readme/images/gear-addict-comment.png)
 
+The comment component is a single instance of comment which is used inside the comment loop to render multiple comments. It is displayed on the rig detail pages. It contains a handle delete function which is passed to the dropdown menu component. It also contains the logic to display and hide the comment edit form. 
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/10)
+
 [Back to top](<#contents>)
 
 ### Gear Card
 
 ![Gear Addict Gear Card](readme/images/gear-addict-gear-card.png)
+
+The gear card component is displayed as part of a loop on the gear page. The gear page is only visible to authenticated users. The gear card accepts an instance of gear as a prop and renders that instance as the card content. It contains a handle edit function to redirect the user to the edit gear page and also a handle delete function to delete the instance of gear.
 
 [Back to top](<#contents>)
 
@@ -619,17 +690,31 @@ React components are independent and reusable blocks of code. There are two type
 
 ![Gear Addict Gear List](readme/images/gear-addict-gear-list.png)
 
+The gear list component is the loop used to render multiple instances of the gear card component. It contains the axios request to fetch the gear list data and uses the React infinite scroll component to continually load more gear as the user scrolls. The asset component is used to display a loading spinner while the content is loading. There is also a conditional to display a no results message and image if no results are found. The gear list component accepts a filter prop to display different lists across the site. It also accepts a query prop for the search bar, as well as title and message for text elements.
+
+[Click here to view the gear list user story](https://github.com/Matthew-Hurrell/gear-addict/issues/32)
+
+[Click here to view the gear infinite scroll user story](https://github.com/Matthew-Hurrell/gear-addict/issues/62)
+
 [Back to top](<#contents>)
 
 ### Rig Card
 
 ![Gear Addict Rig Card](readme/images/gear-addict-rig-card.png)
 
+The rig card component is displayed as part of a loop on the rig page, homepage, latest page, feed page, saved page and profile pages. The rig page, feed page and saved page are only visible to authenticated users. The rig card accepts an instance of rig as a prop and renders that instance as the card content. It contains a handle edit function to redirect the user to the edit rig page and also a handle delete function to delete the instance of rig.
+
 [Back to top](<#contents>)
 
 ### Rigs List
 
 ![Gear Addict Rigs List](readme/images/gear-addict-rigs-list.png)
+
+The rigs list component is the loop used to render multiple instances of the rig card component. It contains the axios request to fetch the rig list data and uses the React infinite scroll component to continually load more rigs as the user scrolls. The asset component is used to display a loading spinner while the content is loading. There is also a conditional to display a no results message and image if no results are found. The rigs list component accepts a filter prop to display different lists across the site. It also accepts a query prop for the search bar, as well as title and message for text elements.
+
+[Click here to view the view all rigs user story](https://github.com/Matthew-Hurrell/gear-addict/issues/42)
+
+[Click here to view the rigs infinite scroll user story](https://github.com/Matthew-Hurrell/gear-addict/issues/51)
 
 [Back to top](<#contents>)
 
