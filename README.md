@@ -1284,29 +1284,79 @@ The Gear Addict site has been tested using the [Chrome Dev Tools](https://develo
 
 #### Homepage
 
+![Lighthouse Test Homepage](readme/images/lighthouse-homepage.png)
+
+[Back to top](<#contents>)
+
 #### Latest Page
+
+![Lighthouse Test Latest Page](readme/images/lighthouse-latest.png)
+
+[Back to top](<#contents>)
 
 #### Feed Page
 
+![Lighthouse Test Feed Page](readme/images/lighthouse-feed.png)
+
+[Back to top](<#contents>)
+
 #### Sign In Page
+
+![Lighthouse Test Sign In Page](readme/images/lighthouse-sign-in.png)
+
+[Back to top](<#contents>)
 
 #### Sign Up Page
 
+![Lighthouse Test Sign Up Page](readme/images/lighthouse-signup.png)
+
+[Back to top](<#contents>)
+
 #### Gear Page
+
+![Lighthouse Test Gear Page](readme/images/lighthouse-gear.png)
+
+[Back to top](<#contents>)
 
 #### Rigs Page
 
+![Lighthouse Test Rigs Page](readme/images/lighthouse-rigs.png)
+
+[Back to top](<#contents>)
+
 #### Saved Page
+
+![Lighthouse Test Saved Page](readme/images/lighthouse-saved.png)
+
+[Back to top](<#contents>)
 
 #### Add Gear Page
 
+![Lighthouse Test Add Gear Page](readme/images/lighthouse-add-gear.png)
+
+[Back to top](<#contents>)
+
 #### Add Rig Page
+
+![Lighthouse Test Add Rig Page](readme/images/lighthouse-add-rig.png)
+
+[Back to top](<#contents>)
 
 #### Rig Details Page
 
+![Lighthouse Test Rig Details Page](readme/images/lighthouse-rig-details.png)
+
+[Back to top](<#contents>)
+
 #### Profile Page
 
+![Lighthouse Profile Page](readme/images/lighthouse-profile.png)
+
+[Back to top](<#contents>)
+
 #### 404 Page
+
+![Lighthouse Test 404 Page](readme/images/lighthouse-404.png)
 
 [Back to top](<#contents>)
 
