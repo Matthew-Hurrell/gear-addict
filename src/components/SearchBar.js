@@ -17,7 +17,7 @@ const SearchBar = ({ query, setQuery, gear }) => {
           ></input>
 
           {/* Search Icon */}
-          <i className="fa-solid fa-magnifying-glass absolute right-2 z-50 top-[50%] translate-y-[-50%] text-zinc-400"></i>
+          <i className="fa-solid fa-magnifying-glass absolute right-2 z-40 top-[50%] translate-y-[-50%] text-zinc-400"></i>
         </form>
       </div>
     </div>
