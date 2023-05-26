@@ -1,5 +1,5 @@
 import React from 'react';
-import header from '../assets/gear-addict-home-hero.jpeg';
+import header from '../assets/gear-addict-home-hero.jpg';
 
 const HomeHero = () => {
 
