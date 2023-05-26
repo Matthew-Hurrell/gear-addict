@@ -25,6 +25,7 @@ const GearEditForm = () => {
         insured: '',
     });
 
+    /* eslint-disable */
     const {
         name,
         category,
@@ -41,6 +42,7 @@ const GearEditForm = () => {
         sale,
         insured,
     } = gearData;
+    /* eslint-enable */
 
     const [errors, setErrors] = useState({});
     const history = useHistory();

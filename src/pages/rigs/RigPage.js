@@ -59,6 +59,7 @@ const RigPage = () => {
 
                         {/* Comments Loop */}
                         {comments.results.length ? (
+                            /* eslint-disable */
                             <div className='divide-y divide-zinc-800'>
                                 <InfiniteScroll
                                     children={
@@ -77,6 +78,7 @@ const RigPage = () => {
                                     next={() => fetchMoreData(comments, setComments)}
                                 />
                             </div>
+                            /* eslint-enable */
                         ) : currentUser ? (
                             <p className='text-left mt-3 lg:mt-5 text-lg'>No comments yet, be the first to comment!</p>
                         ) : (

@@ -24,6 +24,7 @@ const RigEditForm = () => {
         image_4: '',
     });
 
+    /* eslint-disable */
     const {
         name,
         budget,
@@ -39,6 +40,7 @@ const RigEditForm = () => {
         image_3,
         image_4
     } = rigData;
+    /* eslint-enable */
 
     const [errors, setErrors] = useState({});
     const history = useHistory();

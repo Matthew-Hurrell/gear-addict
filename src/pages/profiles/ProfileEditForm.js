@@ -30,6 +30,7 @@ const ProfileEditForm = () => {
         expertise: '',
     });
 
+    /* eslint-disable */
     const {
         name,
         bio,
@@ -44,6 +45,7 @@ const ProfileEditForm = () => {
         genre_3,
         expertise,
     } = profileData;
+    /* eslint-enable */
 
     const [errors, setErrors] = useState({});
 

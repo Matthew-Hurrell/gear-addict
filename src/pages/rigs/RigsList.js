@@ -55,6 +55,7 @@ const RigsList = ({ message, filter = "", title, slice_num, query, saved }) => {
             {hasLoaded ? (
                 <>
                     {rigs.results.length ? (
+                        /* eslint-disable */
                         <InfiniteScroll
                             children={
                                 slice_num ? (
@@ -77,6 +78,7 @@ const RigsList = ({ message, filter = "", title, slice_num, query, saved }) => {
                             next={() => fetchMoreData(rigs, setRigs)}
                             className='container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10'
                         />
+                        /* eslint-enable */
                     ) : (
 
                         // No Rigs Display

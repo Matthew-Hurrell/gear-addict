@@ -55,6 +55,7 @@ const GearList = ({ message, filter = "", title, query }) => {
             {hasLoaded ? (
                 <>
                     {gear.results.length ? (
+                        /* eslint-disable */
                         <InfiniteScroll
                             children={
                                 gear.results.map(gear => (
@@ -67,6 +68,7 @@ const GearList = ({ message, filter = "", title, query }) => {
                             next={() => fetchMoreData(gear, setGear)}
                             className='container mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'
                         />
+                        /* eslint-enable */
                     ) : (
                         <div className='container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10'>
                             <div className='bg-zinc-800 flex justify-center items-center py-10 px-10'>
