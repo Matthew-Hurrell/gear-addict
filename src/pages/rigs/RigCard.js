@@ -165,7 +165,7 @@ const RigCard = (props) => {
                     </div>
                 )}
             </div>
-            <div className="bg-white text-black py-5 px-10 flex flex-col justify-between grow">
+            <div className="bg-white text-black py-5 px-5 lg:px-10 flex flex-col justify-between grow">
 
                 {/* Name */}
                 <h3 className="mb-3 text-2xl lg:text-3xl">{name}</h3>
