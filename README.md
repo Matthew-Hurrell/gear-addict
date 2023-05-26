@@ -1302,7 +1302,9 @@ The Gear Addict site has been tested using the [Chrome Dev Tools](https://develo
 
 #### Add Rig Page
 
+#### Rig Details Page
 
+#### Profile Page
 
 #### 404 Page
 
