@@ -49,6 +49,7 @@ export function ProfileEditDropdown({ id }) {
 
             {/* Dropdown Toggle */}
             <button
+                aria-label="Dropdown Menu"
                 onClick={handleClick}
                 className='text-2xl rounded-full bg-white text-gray-600 h-10 w-10 lg:h-12 lg:w-12 flex items-center justify-center'
             >
@@ -61,7 +62,7 @@ export function ProfileEditDropdown({ id }) {
                 {/* Edit Profile */}
                 <button
                     onClick={() => history.push(`/profiles/${id}/edit`)}
-                    aria-label="edit-profile"
+                    aria-label="edit profile"
                 >
                     <i className="hover:scale-105 fa-solid fa-pen-to-square text-2xl text-zinc-800"></i>
                 </button>
@@ -69,7 +70,7 @@ export function ProfileEditDropdown({ id }) {
                 {/* Edit Username */}
                 <button
                     onClick={() => history.push(`/profiles/${id}/edit/username`)}
-                    aria-label="edit-username"
+                    aria-label="edit username"
                 >
                     <i className="fa-solid fa-user-pen hover:scale-105 text-2xl text-zinc-800"></i>
                 </button>
@@ -77,7 +78,7 @@ export function ProfileEditDropdown({ id }) {
                 {/* Edit Password */}
                 <button
                     onClick={() => history.push(`/profiles/${id}/edit/password`)}
-                    aria-label="edit-password"
+                    aria-label="edit password"
                 >
                     <i className="fa-solid fa-lock-keyhole hover:scale-105 text-2xl text-zinc-800"></i>
                 </button>
