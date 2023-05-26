@@ -47,7 +47,6 @@ Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com
         * [W3C (HTML)](<#w3c-html>)
         * [W3C (CSS)](<#w3c-css>)
         * [ESLint (JavaScript)](<#eslint-javascript>)
-    * [**Input Validation Tests**](<#input-validation-tests>)
     * [**Additional Tests**](<#additional-tests>)
         * [Manual Tests](<#manual-tests>)
         * [Automated Tests](<#automated-tests>)
@@ -733,45 +732,85 @@ The Gear Addict application has been tested rigorously throughout the developmen
 All the pages of the Gear Addict site have been passed through the [W3C HTML Markup Validation Service](https://validator.w3.org/), with minor errors rectified. No errors or warnings are now showing.
 
 #### Homepage
+
 ![HTML Validator Homepage](readme/images/html-validator-homepage.png)
 
+[Back to top](<#contents>)
+
 #### Gear Detail Page
+
 ![HTML Validator Gear Detail Page](readme/images/html-validator-gear-detail-page.png)
 
+[Back to top](<#contents>)
+
 #### Latest Page
+
 ![HTML Validator Latest Page](readme/images/html-validator-latest-page.png)
 
+[Back to top](<#contents>)
+
 #### Feed Page
+
 ![HTML Validator Feed Page](readme/images/html-validator-feed-page.png)
 
+[Back to top](<#contents>)
+
 #### Gear Page
+
 ![HTML Validator Gear Page](readme/images/html-validator-gear-page.png)
 
+[Back to top](<#contents>)
+
 #### Rigs Page
+
 ![HTML Validator Rigs Page](readme/images/html-validator-rigs-page.png)
 
+[Back to top](<#contents>)
+
 #### Saved Page
+
 ![HTML Validator Saved Page](readme/images/html-validator-saved-page.png)
 
+[Back to top](<#contents>)
+
 #### Rig Create Page
+
 ![HTML Validator Rig Create Page](readme/images/html-validator-rig-create-page.png)
 
+[Back to top](<#contents>)
+
 #### Gear Create Page
+
 ![HTML Validator Gear Create Page](readme/images/html-validator-gear-create-page.png)
 
+[Back to top](<#contents>)
+
 #### Sign-In Page
+
 ![HTML Validator Sign-In Page](readme/images/html-validator-sign-in-page.png)
 
+[Back to top](<#contents>)
+
 #### Sign-Up Page
+
 ![HTML Validator Sign-Up Page](readme/images/html-validator-sign-up-page.png)
 
+[Back to top](<#contents>)
+
 #### Profile Page
+
 ![HTML Validator Profile Page](readme/images/html-validator-profile-page.png)
 
+[Back to top](<#contents>)
+
 #### Edit Profile Page
+
 ![HTML Validator Edit Profile Page](readme/images/html-validator-edit-profile-page.png)
 
+[Back to top](<#contents>)
+
 #### 404 Page
+
 ![HTML Validator 404 Page](readme/images/html-validator-404-page.png)
 
 [Back to top](<#contents>)
@@ -799,15 +838,285 @@ All other errors were corrected.
 
 [Back to top](<#contents>)
 
-## Input Validation Tests
-
-[Back to top](<#contents>)
-
 ## Additional Tests
 
-[Back to top](<#contents>)
-
 ### Manual Tests
+
+Here you will find a comprehensive list of all the manual tests that were carried out on the Gear Addict front-end interface.
+
+| Status | **Home Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Hottest rigs displays four rigs
+| &check; | Hottest rigs displays rigs ordered by most liked
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | All links work correctly and navigate to the correct page
+
+| Status | **Navbar**
+|:-------:|:--------|
+| &check; | Content is responsive
+| &check; | Current page displays active class
+| &check; | Logged-in nav items are displayed correctly to logged-in users
+| &check; | Logged-out nav items are displayed correctly to logged-out users
+| &check; | Profile image and link is correct to current authenticated user
+| &check; | All links work correctly and navigate to the correct page
+| &check; | Mobile menu is displayed on small screens
+| &check; | Mobile nav menu opens and closes correctly
+| &check; | Mobile menu is closed when a user clicks away
+| &check; | Mobile menu is closed when a user clicks a nav link
+| &check; | Mobile menu nav toggle menu button opens and closes the mobile menu
+| &check; | Nav items change styling on hover
+
+| Status | **Footer**
+|:-------:|:--------|
+| &check; | Content is responsive
+| &check; | Current page displays active class
+| &check; | Logged-in nav items are displayed correctly to logged-in users
+| &check; | Logged-out nav items are displayed correctly to logged-out users
+| &check; | All links work correctly and navigate to the correct page
+| &check; | Nav items change styling on hover
+
+| Status | **Latest Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | All links work correctly and navigate to the correct page
+| &check; | Search functionality is working
+| &check; | Rigs are ordered from newest to oldest
+| &check; | Rigs list infinite scroll functionality is working
+| &check; | Correct content is displayed on rig cards
+| &check; | Like / unlike functionality is working
+| &check; | Save / unsave functionality is working
+| &check; | Rig links link to correct rigs
+| &check; | Profile links link to correct profiles
+| &check; | No results found is displayed when there are no rigs in the list
+
+| Status | **Feed Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Page is only visible to authenticated users
+| &check; | Non-authenticated users are redirected to the home page
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | All links work correctly and navigate to the correct page
+| &check; | Search functionality is working
+| &check; | Rigs list infinite scroll functionality is working
+| &check; | Correct content is displayed on rig cards
+| &check; | Like / unlike functionality is working
+| &check; | Save / unsave functionality is working
+| &check; | Rig links link to correct rigs
+| &check; | Profile links link to correct profiles
+| &check; | Becoming a fan of a user adds their rigs to the feed page
+| &check; | Unfanning a user removes their rigs from the feed page
+| &check; | No results found is displayed when there are no rigs in the list
+
+| Status | **Gear Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Page is only visible to authenticated users
+| &check; | Non-authenticated users are redirected to the home page
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Search functionality is working
+| &check; | Gear list infinite scroll functionality is working
+| &check; | Users can only see gear that is owned by them
+| &check; | Correct content is displayed on gear cards
+| &check; | Delete functionality is working
+| &check; | The edit button redirects the user to the correct edit gear page
+| &check; | Dropdown menu functionality is working
+| &check; | No results found is displayed when there is no gear in the list
+| &check; | Category badge displays correctly
+| &check; | Gear status badges display correctly
+
+| Status | **Rigs Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Page is only visible to authenticated users
+| &check; | Non-authenticated users are redirected to the home page
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Search functionality is working
+| &check; | Rig list infinite scroll functionality is working
+| &check; | Users can only see rigs that are owned by them
+| &check; | Correct content is displayed on rig cards
+| &check; | Like / Save buttons are not visible
+| &check; | No results found is displayed when there are no rigs in the list
+| &check; | Rig links link to correct rigs
+
+| Status | **Saved Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Page is only visible to authenticated users
+| &check; | Non-authenticated users are redirected to the home page
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Search functionality is working
+| &check; | Rigs list infinite scroll functionality is working
+| &check; | Correct content is displayed on rig cards
+| &check; | Like / unlike functionality is working
+| &check; | Save / unsave functionality is working
+| &check; | Saving a rig adds it to the list
+| &check; | Unsaving a rig removes it from the list
+| &check; | Users can only see their own saved rigs
+| &check; | Rig links link to correct rigs
+| &check; | Profile links link to correct profiles
+| &check; | No results found is displayed when there are no rigs in the list
+
+| Status | **Profile Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Page dropdown menu is only visible to authenticated users who own the profile
+| &check; | Profile edit button redirects the user to the profile edit page
+| &check; | Username edit button redirects the user to the username edit page
+| &check; | Password edit button redirects the user to the password edit page
+| &check; | User profile content is displaying correctly
+| &check; | Updated profile content is displaying correctly
+| &check; | Content is responsive
+| &check; | Search functionality is working
+| &check; | Rigs list infinite scroll functionality is working
+| &check; | Correct content is displayed on rig cards
+| &check; | Like / unlike functionality is working
+| &check; | Save / unsave functionality is working
+| &check; | Rig links link to correct rigs
+| &check; | Profile links like to correct profiles
+| &check; | Fan count is correct
+| &check; | Idol count is correct
+| &check; | Rig count is correct
+| &check; | Gear count is correct
+| &check; | Fan and idol counts increment correctly when becoming a fan and unfanning another user
+| &check; | Popular profiles is displaying correctly
+| &check; | Fan button is not displayed on the users own profile or on popular profiles 
+| &check; | Fan button is working correctly
+| &check; | Unfan button is working correctly
+
+| Status | **Sign In Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Page is only visible to non-authenticated users
+| &check; | Authenticated users are redirected to the home page
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Form fields handle change correctly
+| &check; | Field input errors are displayed to the user
+| &check; | Successful submission signs the user in successfully and redirects the user back to their previous page
+| &check; | Sign up link redirects the user to the sign up page
+
+| Status | **Sign Up Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Page is only visible to non-authenticated users
+| &check; | Authenticated users are redirected to the home page
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Form fields handle change correctly
+| &check; | Field input errors are displayed to the user
+| &check; | Successful submission saves the users details and redirects the user to the sign in page
+| &check; | Sign in link redirects the user to the sign in page
+
+| Status | **Sign Out**
+|:-------:|:--------|
+| &check; | The sign-out button link is displayed on both site navs
+| &check; | The sign-out button is only displayed to authenticated users
+| &check; | Sign out functionality works correctly
+| &check; | On successful sign out the user is redirected to the home page
+
+| Status | **Add Gear Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Page is only visible to authenticated users
+| &check; | Non-authenticated users are redirected to the home page
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Form fields handle change correctly
+| &check; | Field input errors are displayed to the user
+| &check; | Successful submission creates a new instance of gear and redirects the user to the gear page
+| &check; | The cancel button redirects the user to the last page they were on
+| &check; | The submit button submits the form
+| &check; | All fields are successfully submitted 
+| &check; | Blank fields are handled correctly
+
+| Status | **Add Rig Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Page is only visible to authenticated users
+| &check; | Non-authenticated users are redirected to the home page
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Form fields handle change correctly
+| &check; | Field input errors are displayed to the user
+| &check; | Successful submission creates a new instance of rig and redirects the user to the rig details page
+| &check; | The cancel button redirects the user to the last page they were on
+| &check; | The submit button submits the form
+| &check; | All fields are successfully submitted 
+| &check; | Blank fields are handled correctly
+
+| Status | **Rig Detail Page**
+|:-------:|:--------|
+| &check; | Page has correct URL
+| &check; | Content is displaying correctly
+| &check; | Content is responsive
+| &check; | Image gallery is working correctly
+| &check; | Dropdown menu is only displayed to authenticated users who own the rig
+| &check; | Edit rig button redirects user to correct edit rig page
+| &check; | Rig delete button deletes the rig and redirects the user to the last page they were on
+| &check; | Profile link links to correct profile
+| &check; | No comments yet message displays when there are no comments
+| &check; | Comment form only displays to authenticated users
+| &check; | A list of comments ordered from newest to oldest appears in a list on the correct rig
+| &check; | Comment is assigned to correct user
+| &check; | Comment form field handles change correctly
+| &check; | Comment field input errors are displayed to the user
+| &check; | Successful comment submission creates a new comment which appears at the top of the comment list
+| &check; | The post button submits the comment
+| &check; | The comment dropdown menu is only visible to users who are authenticated and own the comment
+| &check; | The comment edit button opens the edit comment form
+| &check; | The comment delete button deletes the comment and re-renders the comment list with the comment removed
+
+| Status | **Edit Gear Page**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Edit Rig Page**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Delete Gear**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Delete Rig**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Edit Profile Page**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Edit Username Page**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Edit Password Page**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **404 Page**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Search Functionality**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Like / Unlike**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Save / Unsave**
+|:-------:|:--------|
+| &check; | 
 
 [Back to top](<#contents>)
 
