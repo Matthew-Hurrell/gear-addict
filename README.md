@@ -1280,6 +1280,10 @@ The Gear Addict site has been tested on Google Chrome, Apple Safari, Microsoft E
 
 ### Lighthouse Tests
 
+The Gear Addict site has been tested using the [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) [Lighthouse Tester](https://developer.chrome.com/docs/lighthouse/overview/) and has returned very good results. Performance ratings on the first lighthouse tests were lower due to large images. This was resolved by resizing and compressing the images. The final page test results can be found below.
+
+###
+
 [Back to top](<#contents>)
 
 ### Wave Accessibility Tests
