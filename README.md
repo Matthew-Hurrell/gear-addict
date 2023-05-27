@@ -49,6 +49,7 @@ Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com
         * [ESLint (JavaScript)](<#eslint-javascript>)
     * [**Additional Tests**](<#additional-tests>)
         * [Manual Tests](<#manual-tests>)
+        * [Input Validation Tests](<#input-validation-tests>)
         * [Automated Tests](<#automated-tests>)
         * [Responsive Tests](<#responsive-tests>)
         * [Browser Tests](<#browser-tests>)
@@ -1209,6 +1210,52 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Save and unsave buttons are hidden on rigs that are owned by the authenticated user
 | &check; | Saving a rig adds it to the users saved list
 | &check; | Unsaving a rig removes it from the users saved list
+
+[Back to top](<#contents>)
+
+### Input Validation Tests
+
+This section will detail the input validation tests carried out on the Gear Addict application.
+
+| Status | **Sign In Form**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Sign Up Form**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Add Rig Form**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Edit Rig Form**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Add Gear Form**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Edit Gear Form**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Add Rig Form**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Edit Profile Form**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Edit Username Form**
+|:-------:|:--------|
+| &check; | 
+
+| Status | **Edit Password Form**
+|:-------:|:--------|
+| &check; | 
 
 [Back to top](<#contents>)
 
