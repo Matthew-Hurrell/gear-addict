@@ -27,18 +27,26 @@ const UsernameForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        try {
-            await axiosRes.put("/dj-rest-auth/user/", {
-                username,
-            });
-            setCurrentUser((prevUser) => ({
-                ...prevUser,
-                username,
-            }));
-            history.goBack();
-        } catch (err) {
-            // console.log(err);
-            setErrors(err.response?.data);
+
+        // Username Form Validation
+        if (( username == "" ) || ( username.trim().length == 0 )) {
+            alert('Form error - Username field cannot be empty');
+        } else if ( username.length > 30 ) {
+            alert('Form error - Username cannot be above 30 characters');
+        } else {
+            try {
+                await axiosRes.put("/dj-rest-auth/user/", {
+                    username,
+                });
+                setCurrentUser((prevUser) => ({
+                    ...prevUser,
+                    username,
+                }));
+                history.goBack();
+            } catch (err) {
+                // console.log(err);
+                setErrors(err.response?.data);
+            }
         }
     };
 
@@ -65,7 +73,7 @@ const UsernameForm = () => {
 
                                 {/* Username */}
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Username:
+                                    <span>Username<span className='text-red-500 mx-0.5'>*</span>:</span>
                                     <input
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         type="text"
