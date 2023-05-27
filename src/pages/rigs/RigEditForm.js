@@ -113,37 +113,55 @@ const RigEditForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const formData = new FormData();
 
-        formData.append('name', name);
-        formData.append('category', category);
-        formData.append('description', description);
-        formData.append('gear_list', gear_list);
-        if (featuredImageInput?.current?.files?.[0]) {
-            formData.append('featured_image', featuredImageInput.current?.files?.[0] ?? "");
-        }
-        if (imageTwoInput?.current?.files?.[0]) {
-            formData.append('image_2', imageTwoInput.current?.files?.[0] ?? "");
-        }
-        if (imageThreeInput?.current?.files?.[0]) {
-            formData.append('image_3', imageThreeInput.current?.files?.[0] ?? "");
-        }
-        if (imageFourInput?.current?.files?.[0]) {
-            formData.append('image_4', imageFourInput.current?.files?.[0] ?? "");
-        }
-        formData.append('attribute_1', attribute_1);
-        formData.append('attribute_2', attribute_2);
-        formData.append('budget', budget);
-        formData.append('genre_1', genre_1);
-        formData.append('genre_2', genre_2);
+        // Rig Form Validation
+        if (( name == "" ) || ( name.trim().length == 0 )) {
+            alert('Form error - Name field cannot be empty');
+        } else if ( name.length > 50 ) {
+            alert('Form error - Name field cannot be above 50 characters');
+        } else if (( category == "" ) || ( category.trim().length == 0 )) {
+            alert('Form error - Category field cannot be empty');
+        } else if (( budget == "" ) || ( budget.trim().length == 0 )) {
+            alert('Form error - Budget field cannot be empty');
+        } else if (( attribute_1 == "" ) || ( attribute_1.trim().length == 0 )) {
+            alert('Form error - Attribute 1 field cannot be empty');
+        } else if (( genre_1 == "" ) || ( genre_1.trim().length == 0 )) {
+            alert('Form error - Genre 1 field cannot be empty');
+        } else if (( description == "" ) || ( description.trim().length == 0 )) {
+            alert('Form error - Description field cannot be empty');
+        } else {
+            const formData = new FormData();
 
-        try {
-            await axiosReq.put(`/rigs/${id}/`, formData);
-            history.push(`/rigs/${id}`);
-        } catch (err) {
-            // console.log(err);
-            if (err.response?.status !== 401) {
-                setErrors(err.response?.data);
+            formData.append('name', name);
+            formData.append('category', category);
+            formData.append('description', description);
+            formData.append('gear_list', gear_list);
+            if (featuredImageInput?.current?.files?.[0]) {
+                formData.append('featured_image', featuredImageInput.current?.files?.[0] ?? "");
+            }
+            if (imageTwoInput?.current?.files?.[0]) {
+                formData.append('image_2', imageTwoInput.current?.files?.[0] ?? "");
+            }
+            if (imageThreeInput?.current?.files?.[0]) {
+                formData.append('image_3', imageThreeInput.current?.files?.[0] ?? "");
+            }
+            if (imageFourInput?.current?.files?.[0]) {
+                formData.append('image_4', imageFourInput.current?.files?.[0] ?? "");
+            }
+            formData.append('attribute_1', attribute_1);
+            formData.append('attribute_2', attribute_2);
+            formData.append('budget', budget);
+            formData.append('genre_1', genre_1);
+            formData.append('genre_2', genre_2);
+
+            try {
+                await axiosReq.put(`/rigs/${id}/`, formData);
+                history.push(`/rigs/${id}`);
+            } catch (err) {
+                // console.log(err);
+                if (err.response?.status !== 401) {
+                    setErrors(err.response?.data);
+                }
             }
         }
     };
@@ -170,7 +188,7 @@ const RigEditForm = () => {
                             {/* Name */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Rig Name:
+                                    <span>Rig Name<span className='text-red-500 mx-0.5'>*</span>:</span>
                                     <input
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         type="text"
@@ -187,7 +205,7 @@ const RigEditForm = () => {
                             {/* Category */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Category:
+                                    <span>Category<span className='text-red-500 mx-0.5'>*</span>:</span>
                                     <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="category"
@@ -215,7 +233,7 @@ const RigEditForm = () => {
                             {/* Budget */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Budget:
+                                    <span>Budget<span className='text-red-500 mx-0.5'>*</span>:</span>
                                     <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="budget"
@@ -239,7 +257,7 @@ const RigEditForm = () => {
                             {/* Attribute 1 */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Attribute 1:
+                                    <span>Attribute 1<span className='text-red-500 mx-0.5'>*</span>:</span>
                                     <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="attribute_1"
@@ -301,7 +319,7 @@ const RigEditForm = () => {
                             {/* Genre 1 */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Genre 1:
+                                    <span>Genre 1<span className='text-red-500 mx-0.5'>*</span>:</span>
                                     <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="genre_1"
@@ -413,8 +431,7 @@ const RigEditForm = () => {
                             {/* Description */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Description:
-
+                                    <span>Description<span className='text-red-500 mx-0.5'>*</span>:</span>
                                     <textarea
                                         id="description"
                                         name="description"
@@ -435,7 +452,6 @@ const RigEditForm = () => {
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
                                     Gear List:
-
                                     <textarea
                                         id="gear_list"
                                         name="gear_list"
