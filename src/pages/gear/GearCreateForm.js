@@ -68,7 +68,6 @@ const GearCreateForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(value);
 
         // Gear Form Validation
         if (( name == "" ) || ( name.trim().length == 0 )) {
