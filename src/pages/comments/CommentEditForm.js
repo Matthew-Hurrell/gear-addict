@@ -12,25 +12,31 @@ function CommentEditForm(props) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        try {
-            await axiosRes.put(`/comments/${id}/`, {
-                content: formContent.trim(),
-            });
-            setComments((prevComments) => ({
-                ...prevComments,
-                results: prevComments.results.map((comment) => {
-                    return comment.id === id
-                        ? {
-                            ...comment,
-                            content: formContent.trim(),
-                            updated_at: "now",
-                        }
-                        : comment;
-                }),
-            }));
-            setShowEditForm(false);
-        } catch (err) {
-            // console.log(err);
+
+        // Comment Content Field Form Validation
+        if ( ( formContent == "" ) || ( formContent.trim().length == 0 ) ) {
+            alert('Form error - Comment cannot be empty');
+        } else {
+            try {
+                await axiosRes.put(`/comments/${id}/`, {
+                    content: formContent.trim(),
+                });
+                setComments((prevComments) => ({
+                    ...prevComments,
+                    results: prevComments.results.map((comment) => {
+                        return comment.id === id
+                            ? {
+                                ...comment,
+                                content: formContent.trim(),
+                                updated_at: "now",
+                            }
+                            : comment;
+                    }),
+                }));
+                setShowEditForm(false);
+            } catch (err) {
+                // console.log(err);
+            }
         }
     };
 

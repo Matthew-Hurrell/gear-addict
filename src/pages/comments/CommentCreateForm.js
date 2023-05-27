@@ -17,8 +17,7 @@ const CommentCreateForm = (props) => {
 
         // Comment Content Field Form Validation
         if ( ( content == "" ) || ( content.trim().length == 0 ) ) {
-            event.preventDefault();
-            alert('Form error - Please enter valid comment body text');
+            alert('Form error - Comment cannot be empty');
         } else {
             try {
                 const { data } = await axiosRes.post("/comments/", {
