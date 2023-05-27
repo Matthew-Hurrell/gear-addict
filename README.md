@@ -1294,6 +1294,10 @@ This section will detail the input validation tests carried out on the Gear Addi
 
 ### Automated Tests
 
+Automated tests were run on the Gear Addict project using the [Jest Dom Testing Library](https://testing-library.com/docs/ecosystem-jest-dom/). 
+
+[Click this link to view the testing directory](https://github.com/Matthew-Hurrell/gear-addict/tree/main/src/components/__tests__)
+
 [Back to top](<#contents>)
 
 ### Responsive Tests
