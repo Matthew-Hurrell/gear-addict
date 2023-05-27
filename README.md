@@ -1486,7 +1486,7 @@ For more information on the back-end technologies used, please view the [Gear Ad
 ## Frameworks
 
 * [React](https://react.dev/) - A free and open-source front-end JavaScript library for building user interfaces based on components.
-* [Tailwind React](https://tailwindcss.com/) - An open-source utility-first CSS framework.
+* [Tailwind CSS React](https://tailwindcss.com/) - An open-source utility-first CSS framework.
 
 [Back to top](<#contents>)
 
@@ -1507,6 +1507,7 @@ For more information on the back-end technologies used, please view the [Gear Ad
 * [Am I Responsive](https://ui.dev/amiresponsive) - An online testing tool used for responsive site testing
 * [Colour Contrast Checker](https://colourcontrast.cc/) - An online tool used to test background and text colour contrast
 * [Font Awesome](https://fontawesome.com/) - A font and icon toolkit used for the Gear Addict icons
+* [NPM JS](https://www.npmjs.com/) - The npm registry website used for information on npm libraries
 
 [Back to top](<#contents>)
 
@@ -1526,6 +1527,10 @@ For more information on the back-end technologies used, please view the [Gear Ad
 * [react-scripts](https://www.npmjs.com/package/react-scripts) v5.0.1 - Scripts and configuration used by Create React App
 * [react-spinners](https://www.npmjs.com/package/react-spinners) v0.13.8 - A collection of loading spinners with React.js based on Halogen. This library enhanced the user experience by providing a visual loading spinner to display to the user when content is loading, so they are not left looking at a blank page
 * [web-vitals](https://www.npmjs.com/package/web-vitals) v1.1.2 - A modular library for measuring all the web vitals metrics on real users
+* [eslint](https://www.npmjs.com/package/eslint) v8.41.0 - A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
+* [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) v7.32.2 - React specific linting rules for eslint
+* [msw](https://www.npmjs.com/package/msw) v0.35.0 - A seamless REST/GraphQL API mocking library for browser and Node.js
+* [tailwindcss](https://www.npmjs.com/package/tailwindcss) v3.3.2 - A utility-first CSS framework for rapidly building custom user interfaces
 
 [Back to top](<#contents>)
 
