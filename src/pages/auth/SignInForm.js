@@ -31,13 +31,21 @@ const SignInForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const { data } = await axios.post('/dj-rest-auth/login/', signInData);
-      setCurrentUser(data.user);
-      setTokenTimestamp(data);
-      history.goBack();
-    } catch (err) {
-      setErrors(err.response?.data);
+
+    // Sign In Form Validation
+    if (( username == "" ) || ( username.trim().length == 0 )) {
+      alert('Form error - Username field cannot be empty');
+    } else if (( password == "" ) || ( password.trim().length == 0 )) {
+        alert('Form error - Password field cannot be empty');
+    } else {
+      try {
+        const { data } = await axios.post('/dj-rest-auth/login/', signInData);
+        setCurrentUser(data.user);
+        setTokenTimestamp(data);
+        history.goBack();
+      } catch (err) {
+        setErrors(err.response?.data);
+      }
     }
   };
 
@@ -64,7 +72,7 @@ const SignInForm = () => {
               {/* Username */}
               <div>
                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                  Username:
+                  <span>Username<span className='text-red-500 mx-0.5'>*</span>:</span>
                   <input
                     className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                     type="text"
@@ -82,7 +90,7 @@ const SignInForm = () => {
               {/* Password */}
               <div>
                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                  Password:
+                  <span>Password<span className='text-red-500 mx-0.5'>*</span>:</span>
                   <input
                     className='mt-1 sm:mt-0 border-zinc-400 border w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                     type="password"
