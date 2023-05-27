@@ -113,31 +113,39 @@ const ProfileEditForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const formData = new FormData();
 
-        formData.append('name', name);
-        formData.append('bio', bio);
-        if (imageInput?.current?.files?.[0]) {
-            formData.append('image', imageInput.current?.files?.[0] ?? "");
-        }
-        if (headerImageInput?.current?.files?.[0]) {
-            formData.append('header_image', headerImageInput.current?.files?.[0] ?? "");
-        }
-        formData.append('location', location);
-        formData.append('instrument_1', instrument_1);
-        formData.append('instrument_2', instrument_2);
-        formData.append('instrument_3', instrument_3);
-        formData.append('genre_1', genre_1);
-        formData.append('genre_2', genre_2);
-        formData.append('genre_3', genre_3);
-        formData.append('expertise', expertise);
-        try {
-            await axiosReq.put(`/profiles/${id}/`, formData);
-            history.push(`/profiles/${id}`);
-        } catch (err) {
-            // console.log(err);
-            if (err.response?.status !== 401) {
-                setErrors(err.response?.data);
+        // Sign Up Form Validation
+        if ( name.length > 20 ) {
+            alert('Form error - Name field cannot be above 20 characters');
+        } else if ( location.length > 30 ) {
+            alert('Form error - Location cannot be above 30 characters');
+        } else {
+            const formData = new FormData();
+
+            formData.append('name', name);
+            formData.append('bio', bio);
+            if (imageInput?.current?.files?.[0]) {
+                formData.append('image', imageInput.current?.files?.[0] ?? "");
+            }
+            if (headerImageInput?.current?.files?.[0]) {
+                formData.append('header_image', headerImageInput.current?.files?.[0] ?? "");
+            }
+            formData.append('location', location);
+            formData.append('instrument_1', instrument_1);
+            formData.append('instrument_2', instrument_2);
+            formData.append('instrument_3', instrument_3);
+            formData.append('genre_1', genre_1);
+            formData.append('genre_2', genre_2);
+            formData.append('genre_3', genre_3);
+            formData.append('expertise', expertise);
+            try {
+                await axiosReq.put(`/profiles/${id}/`, formData);
+                history.push(`/profiles/${id}`);
+            } catch (err) {
+                // console.log(err);
+                if (err.response?.status !== 401) {
+                    setErrors(err.response?.data);
+                }
             }
         }
     };
