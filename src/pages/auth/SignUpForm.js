@@ -27,12 +27,20 @@ const SignUpForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      await axios.post('/dj-rest-auth/registration/', signUpData);
-      history.push('/signin');
-    } catch (err) {
-      setErrors(err.response?.data);
-      // console.log(err.response?.data);
+
+    // Sign Up Form Validation
+    if (( username == "" ) || ( username.trim().length == 0 )) {
+        alert('Form error - Username field cannot be empty');
+    } else if ( username.length > 30 ) {
+        alert('Form error - Username cannot be above 30 characters');
+    } else {
+      try {
+        await axios.post('/dj-rest-auth/registration/', signUpData);
+        history.push('/signin');
+      } catch (err) {
+        setErrors(err.response?.data);
+        // console.log(err.response?.data);
+      }
     }
   };
 
