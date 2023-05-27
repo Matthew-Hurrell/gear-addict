@@ -14,30 +14,37 @@ const CommentCreateForm = (props) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        try {
-            const { data } = await axiosRes.post("/comments/", {
-                content,
-                rig,
-            });
 
-            setComments((prevComments) => ({
-                ...prevComments,
-                results: [data, ...prevComments.results],
-            }));
-
-            setRig((prevRig) => ({
-                results: [
-                    {
-                        ...prevRig.results[0],
-                        comments_count: prevRig.results[0].comments_count + 1,
-                    },
-                ],
-            }));
-
-            setContent("");
-
-        } catch (err) {
-            // console.log(err);
+        // Comment Content Field Form Validation
+        if ( ( content == "" ) || ( content.trim().length == 0 ) ) {
+            event.preventDefault();
+            alert('Form error - Please enter valid comment body text');
+        } else {
+            try {
+                const { data } = await axiosRes.post("/comments/", {
+                    content,
+                    rig,
+                });
+    
+                setComments((prevComments) => ({
+                    ...prevComments,
+                    results: [data, ...prevComments.results],
+                }));
+    
+                setRig((prevRig) => ({
+                    results: [
+                        {
+                            ...prevRig.results[0],
+                            comments_count: prevRig.results[0].comments_count + 1,
+                        },
+                    ],
+                }));
+    
+                setContent("");
+    
+            } catch (err) {
+                // console.log(err);
+            }
         }
     };
 
