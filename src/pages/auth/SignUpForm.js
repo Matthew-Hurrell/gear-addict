@@ -30,9 +30,13 @@ const SignUpForm = () => {
 
     // Sign Up Form Validation
     if (( username == "" ) || ( username.trim().length == 0 )) {
-        alert('Form error - Username field cannot be empty');
+      alert('Form error - Username field cannot be empty');
     } else if ( username.length > 30 ) {
-        alert('Form error - Username cannot be above 30 characters');
+      alert('Form error - Username cannot be above 30 characters');
+    } else if (( password1 == "" ) || ( password1.trim().length == 0 )) {
+      alert('Form error - Password field cannot be empty');
+    } else if (( password2 == "" ) || ( password2.trim().length == 0 )) {
+      alert('Form error - Confirm password field cannot be empty');
     } else {
       try {
         await axios.post('/dj-rest-auth/registration/', signUpData);
@@ -67,7 +71,7 @@ const SignUpForm = () => {
               {/* Username */}
               <div>
                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                  Username:
+                  <span>Username<span className='text-red-500 mx-0.5'>*</span>:</span>
                   <input
                     className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                     type="text"
@@ -85,7 +89,7 @@ const SignUpForm = () => {
               {/* Password */}
               <div>
                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                  Password:
+                  <span>Password<span className='text-red-500 mx-0.5'>*</span>:</span>
                   <input
                     className='mt-1 sm:mt-0 border-zinc-400 border w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                     type="password"
@@ -103,7 +107,7 @@ const SignUpForm = () => {
               {/* Password 2 */}
               <div>
                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                  Confirm Password:
+                  <span>Confirm Password<span className='text-red-500 mx-0.5'>*</span>:</span>
                   <input
                     className='mt-1 sm:mt-0 border-zinc-400 border w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                     type="password"
