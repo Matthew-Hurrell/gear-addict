@@ -1,7 +1,10 @@
+import React from 'react';
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom/cjs/react-router-dom.min";
 import NavBar from "../NavBar";
 import { CurrentUserProvider } from "../../contexts/CurrentUserContext";
+
+/* eslint-disable */
 
 test('Renders sign in link', () => {
     render(
@@ -118,3 +121,5 @@ test('Renders sign in and sign up buttons again on log out', async () => {
     expect(signInLink).toBeInTheDocument();
     expect(signUpLink).toBeInTheDocument();
 });
+
+/* eslint-enable */
