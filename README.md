@@ -1426,52 +1426,115 @@ For more information on the back-end technologies used, please view the [Gear Ad
 * [Responsive Design Checker](https://responsivedesignchecker.com/) - An online testing tool used for responsive site testing
 * [Am I Responsive](https://ui.dev/amiresponsive) - An online testing tool used for responsive site testing
 * [Colour Contrast Checker](https://colourcontrast.cc/) - An online tool used to test background and text colour contrast
+* [Font Awesome](https://fontawesome.com/) - A font and icon toolkit used for the Gear Addict icons
 
 [Back to top](<#contents>)
 
 ## Libraries
 
-* testing-library/jest-dom v5.16.5 - Custom jest matchers to test the state of the DOM
-* testing-library/react v11.2.7 - React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components
-* testing-library/user-event v12.8.3 - A companion library for Testing Library that provides more advanced simulation of browser interactions than the built-in fireEvent method
-* axios v0.21.4 - A promise based HTTP client for the browser and node.js
-* fslightbox-react v1.7.4 - A React component for displaying images and videos in a clean overlying box - this library improved user experience by allowing a full screen gallery for rig images. Users can click the view image gallery button and see the rig images in full quality. They can also use the arrow buttons to navigate between images
-* jwt-decode v3.1.2 - A small browser library that helps decoding JWTs token which are Base64Url encoded
-* react v17.0.2 - A JavaScript library for creating user interfaces. This library / framework improved user experience greatly. The React library renders content faster for improved load times for the user, and because of the reuse of components, more content was developed in a shorter amount of time, which meant more features were available to the site users by the project deadline
-* react-boostrap v1.6.6 - An open-source css framework components built with React
-* react-dom v17.0.2 - An entry point to the DOM and server renderers for React
-* react-infinite-scroll-component v6.1.0 - An infinite scroll component for React - this library improved user experience by allowing users to continue scrolling to load more content, rather than having to navigate to another page and wait for the page to load
-* react-router-dom v5.3.0 - Contains bindings for using React Router in web applications
-* react-scripts v5.0.1 - Scripts and configuration used by Create React App
-* react-spinners v0.13.8 - A collection of loading spinners with React.js based on Halogen. This library enhanced the user experience by providing a visual loading spinner to display to the user when content is loading, so they are not left looking at a blank page
-* web-vitals v1.1.2 - A modular library for measuring all the web vitals metrics on real users
+* [testing-library/jest-dom](https://testing-library.com/docs/ecosystem-jest-dom/) v5.16.5 - Custom jest matchers to test the state of the DOM
+* [testing-library/react](https://testing-library.com/docs/react-testing-library/intro/) v11.2.7 - React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components
+* [testing-library/user-event](https://testing-library.com/docs/ecosystem-user-event/) v12.8.3 - A companion library for Testing Library that provides more advanced simulation of browser interactions than the built-in fireEvent method
+* [axios](https://axios-http.com/docs/intro) v0.21.4 - A promise based HTTP client for the browser and node.js
+* [fslightbox-react](https://fslightbox.com/react) v1.7.4 - A React component for displaying images and videos in a clean overlying box - this library improved user experience by allowing a full screen gallery for rig images. Users can click the view image gallery button and see the rig images in full quality. They can also use the arrow buttons to navigate between images
+* [jwt-decode](https://www.npmjs.com/package/jwt-decode) v3.1.2 - A small browser library that helps decoding JWTs token which are Base64Url encoded
+* [react](https://www.npmjs.com/package/react) v17.0.2 - A JavaScript library for creating user interfaces. This library / framework improved user experience greatly. The React library renders content faster for improved load times for the user, and because of the reuse of components, more content was developed in a shorter amount of time, which meant more features were available to the site users by the project deadline
+* [react-boostrap](https://www.npmjs.com/package/react-bootstrap) v1.6.6 - An open-source css framework components built with React
+* [react-dom](https://www.npmjs.com/package/react-dom) v17.0.2 - An entry point to the DOM and server renderers for React
+* [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component) v6.1.0 - An infinite scroll component for React - this library improved user experience by allowing users to continue scrolling to load more content, rather than having to navigate to another page and wait for the page to load
+* [react-router-dom](https://www.npmjs.com/package/react-router-dom) v5.3.0 - Contains bindings for using React Router in web applications
+* [react-scripts](https://www.npmjs.com/package/react-scripts) v5.0.1 - Scripts and configuration used by Create React App
+* [react-spinners](https://www.npmjs.com/package/react-spinners) v0.13.8 - A collection of loading spinners with React.js based on Halogen. This library enhanced the user experience by providing a visual loading spinner to display to the user when content is loading, so they are not left looking at a blank page
+* [web-vitals](https://www.npmjs.com/package/web-vitals) v1.1.2 - A modular library for measuring all the web vitals metrics on real users
 
 [Back to top](<#contents>)
 
 # Deployment
 
+This section is a written guide on how to deploy a front-end React application to Heroku.
+
 [Back to top](<#contents>)
 
 ## Project Deployment Via Heroku
+
+1. Create a new repository on [GitHub](https://github.com/)
+
+2. Name the repository
+
+3. Click the Gitpod button to open the new repository in [GitPod](https://www.gitpod.io/)
+
+4. Once the IDE has loaded, run the terminal command `npx create-react-app . --use-npm` to install React 
+
+5. After it has finished installing run the command `npm start` to check the app is working
+
+6. Add a Procfile in the root directory
+
+7. Add the following code into the Procfile - `web: serve -s build`
+
+8. In the root package.json file in the scripts section, add the following code - `"heroku-prebuild": "npm install -g serve"`
+
+9. Git add, commit and push changes to GitHub
+
+10. Log-in or sign-up to [Heroku](https://dashboard.heroku.com/) and open the dashboard
+
+11. Click on the 'New' button to add a new app
+
+12. Name the app (it must be unique) and choose a region closest to your location
+
+13. Click the 'Create app' button to create the app
+
+14. Once the app is created, click the deploy tab on the app menu
+
+15. Scroll down to deployment method and click the GitHub option
+
+16. Make sure your profile is selected and search for the React GitHub repository name
+
+17. Once the correct repository appears below the searchbar - click the 'Connect' button
+
+18. Once the repository is connected, click the 'Deploy branch' button - make sure the master / main branch is selected
+
+19. Optional - view the build logs as the app builds
+
+20. If the build is successful, click the 'Open app' button to view the deployed app on Heroku
 
 [Back to top](<#contents>)
 
 # Credits
 
+In this final section, I would like to credit the various sources that were used throughout the development of the Gear Addict project.
+
 [Back to top](<#contents>)
 
 ## Content
+
+* Dummy rig text copy was sourced from various posts across the [Instagram](https://www.instagram.com/) platform
+* My mentor at Code Institute [Martina](https://www.linkedin.com/in/martinaterlevic/) provided much appreciated guidance on application features and content
 
 [Back to top](<#contents>)
 
 ## Media
 
+* Dummy image post content was sourced from various posts across the [Instagram](https://www.instagram.com/) platform
+* The Gear Addict logo was created by [Anna](https://www.linkedin.com/in/anna-appleton-claydon-ba10a215/) at [We Create Digital](https://wecreate.digital/)
+* Page header images were acquired from [Shutterstock](https://www.shutterstock.com/)
+* Other assorted image content was acquired from [Adobe Stock](https://stock.adobe.com/uk/)
+
 [Back to top](<#contents>)
 
 ## Code
 
+* Code Institute's Advanced Front-end [Moments](https://moments-ci-react.herokuapp.com/) walkthrough project was used as an inspiration and template for this project. Code from the Moments application was customised and expanded on to create further features and functionality for Gear Addict.
+
 [Back to top](<#contents>)
 
 # Acknowledgements
+
+This application was created as a final portfolio project submission for the Code Institute Higher National Diploma in Software Development. The course has lasted a year and has consisted of five major projects spread out throughout the year. It has been a very intense but rewarding year and I couldn't be more thankful to the Code Institute team for making my re-entry back into education a great experience. I have learnt more than I thought was possible over the last year, and I have fallen in love with my career and the tech industry. I am now working full time as a developer and I am happy to say, I do really love my job. 
+
+I would like to take this opportunity to thank everyone who has encouraged and supported me over the last year. It has certainly been a challenging year, but I wouldn't change anything. Thank you very much to Code Institute for helping and supporting career changers like myself to get into the tech industry. Thank you to my incredibly talented mentor [Martina](https://www.linkedin.com/in/martinaterlevic/) for all your help and advice with the last project. Thank you to the Slack community for guidance and support and allowing me to occasionally vent my stress in an understanding and empathetic environment! Finally, thank you to my family and my incredibly patient girlfriend for your belief in me and encouragement to pursue my aspirations. I love and appreciate you all.
+
+Best wishes and happy coding,
+
+Matthew Hobbs-Hurrell
 
 [Back to top](<#contents>)
