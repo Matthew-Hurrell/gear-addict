@@ -164,10 +164,9 @@ const Footer = () => {
       {/* Copyright and Socials */}
       <div className='bg-zinc-950 flex items-center justify-center lg:justify-end w-full'>
         <div className='flex px-5 py-4 gap-5 flex-col lg:flex-row'>
-          <p>Copyright Gear Addict 2023 <i className="fa-regular fa-copyright ml-1"></i>
-          </p>
-          <p>
-            Designed and Developed by Matthew Hobbs-Hurrell
+          <p>Copyright Gear Addict 2023 <i className="fa-regular fa-copyright ml-1"></i></p>
+          <div className='flex flex-col lg:flex-row'>
+            <p>Designed and Developed by Matthew Hobbs-Hurrell</p>
             <div className='lg:inline-block mt-1 lg:mt-0'>
 
               {/* GitHub */}
@@ -185,7 +184,7 @@ const Footer = () => {
                 <i className="fa-brands fa-facebook hover:scale-110 transition"></i>
               </a>
             </div>
-          </p>
+          </div>
         </div>
       </div>
     </section>
