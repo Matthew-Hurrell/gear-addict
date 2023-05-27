@@ -1219,43 +1219,76 @@ This section will detail the input validation tests carried out on the Gear Addi
 
 | Status | **Sign In Form**
 |:-------:|:--------|
-| &check; | 
+| &check; | Form cannot be submitted without a username
+| &check; | Form cannot be submitted without a password
 
 | Status | **Sign Up Form**
 |:-------:|:--------|
-| &check; | 
+| &check; | Form cannot be submitted without a username
+| &check; | Form cannot be submitted without a password
+| &check; | Form cannot be submitted without confirming password
+| &check; | Username cannot be over 30 characters in length
+| &check; | Form cannot be submitted without matching password fields
 
 | Status | **Add Rig Form**
 |:-------:|:--------|
-| &check; | 
+| &check; | Form cannot be submitted without a rig name
+| &check; | Rig name cannot be over 50 characters in length
+| &check; | Form cannot be submitted without a category
+| &check; | Form cannot be submitted without a budget
+| &check; | Form cannot be submitted without an attribute 1
+| &check; | Form cannot be submitted without a genre 1
+| &check; | Form cannot be submitted without a description
 
 | Status | **Edit Rig Form**
 |:-------:|:--------|
-| &check; | 
+| &check; | Form cannot be submitted without a rig name
+| &check; | Rig name cannot be over 50 characters in length
+| &check; | Form cannot be submitted without a category
+| &check; | Form cannot be submitted without a budget
+| &check; | Form cannot be submitted without an attribute 1
+| &check; | Form cannot be submitted without a genre 1
+| &check; | Form cannot be submitted without a description
 
 | Status | **Add Gear Form**
 |:-------:|:--------|
-| &check; | 
+| &check; | Form cannot be submitted without a gear name
+| &check; | Gear name cannot be over 50 characters in length
+| &check; | Form cannot be submitted without a category
+| &check; | Form cannot be submitted without a value
+| &check; | Value cannot be less than or equal to zero
 
 | Status | **Edit Gear Form**
 |:-------:|:--------|
-| &check; | 
-
-| Status | **Add Rig Form**
-|:-------:|:--------|
-| &check; | 
+| &check; | Form cannot be submitted without a gear name
+| &check; | Gear name cannot be over 50 characters in length
+| &check; | Form cannot be submitted without a category
+| &check; | Form cannot be submitted without a value
+| &check; | Value cannot be less than or equal to zero
 
 | Status | **Edit Profile Form**
 |:-------:|:--------|
-| &check; | 
+| &check; | Name cannot be over 20 characters in length
+| &check; | Location cannot be over 30 characters in length
 
 | Status | **Edit Username Form**
 |:-------:|:--------|
-| &check; | 
+| &check; | Form cannot be submitted without a username
+| &check; | Username cannot be over 30 characters in length
 
 | Status | **Edit Password Form**
 |:-------:|:--------|
-| &check; | 
+| &check; | Form cannot be submitted without a password
+| &check; | Form cannot be submitted without confirming password
+| &check; | Form cannot be submitted without matching password fields
+
+| Status | **Add Comment Form**
+|:-------:|:--------|
+| &check; | Form cannot be submitted if the content field is empty
+
+| Status | **Edit Comment Form**
+|:-------:|:--------|
+| &check; | Form cannot be submitted if the content field is empty
 
 [Back to top](<#contents>)
 
