@@ -68,30 +68,45 @@ const GearCreateForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const formData = new FormData();
+        console.log(value);
 
-        formData.append('name', name);
-        formData.append('category', category);
-        formData.append('brand', brand);
-        formData.append('model', model);
-        formData.append('serial', serial);
-        formData.append('year', year);
-        formData.append('condition', condition);
-        formData.append('value', value);
-        formData.append('location', location);
-        formData.append('description', description);
-        formData.append('image', imageInput.current?.files?.[0] ?? "");
-        formData.append('repair', repair);
-        formData.append('sale', sale);
-        formData.append('insured', insured);
+        // Gear Form Validation
+        if (( name == "" ) || ( name.trim().length == 0 )) {
+            alert('Form error - Name field cannot be empty');
+        } else if ( name.length > 50 ) {
+            alert('Form error - Name field cannot be above 50 characters');
+        } else if (( category == "" ) || ( category.trim().length == 0 )) {
+            alert('Form error - Category field cannot be empty');
+        } else if (( value == "" ) || ( value.trim().length == 0 )) {
+            alert('Form error - Value field cannot be empty');
+        } else if ( value <= 0 ) {
+            alert('Form error - Value field cannot be equal to or less than zero');
+        } else {
+            const formData = new FormData();
 
-        try {
-            await axiosReq.post('/gear/', formData);
-            history.push(`/gear`);
-        } catch (err) {
-            // console.log(err);
-            if (err.response?.status !== 401) {
-                setErrors(err.response?.data);
+            formData.append('name', name);
+            formData.append('category', category);
+            formData.append('brand', brand);
+            formData.append('model', model);
+            formData.append('serial', serial);
+            formData.append('year', year);
+            formData.append('condition', condition);
+            formData.append('value', value);
+            formData.append('location', location);
+            formData.append('description', description);
+            formData.append('image', imageInput.current?.files?.[0] ?? "");
+            formData.append('repair', repair);
+            formData.append('sale', sale);
+            formData.append('insured', insured);
+
+            try {
+                await axiosReq.post('/gear/', formData);
+                history.push(`/gear`);
+            } catch (err) {
+                // console.log(err);
+                if (err.response?.status !== 401) {
+                    setErrors(err.response?.data);
+                }
             }
         }
     };
@@ -118,7 +133,7 @@ const GearCreateForm = () => {
                             {/* Name */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Gear Name:
+                                    <span>Gear Name<span className='text-red-500 mx-0.5'>*</span>:</span>
                                     <input
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         type="text"
@@ -135,7 +150,7 @@ const GearCreateForm = () => {
                             {/* Category */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Category:
+                                    <span>Category<span className='text-red-500 mx-0.5'>*</span>:</span>
                                     <select
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         name="category"
@@ -260,7 +275,7 @@ const GearCreateForm = () => {
                             {/* Value */}
                             <div>
                                 <label className='flex flex-col sm:flex-row justify-between items-center text-white font-bold'>
-                                    Value:
+                                    <span>Value<span className='text-red-500 mx-0.5'>*</span>:</span>
                                     <input
                                         className='mt-1 sm:mt-0 border-zinc-400 border-2 w-full sm:w-7/12 px-2 py-0.5 font-normal text-black'
                                         type="number"
