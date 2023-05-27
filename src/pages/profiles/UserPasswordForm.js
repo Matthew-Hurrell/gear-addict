@@ -36,12 +36,22 @@ const UserPasswordForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        try {
-            await axiosRes.post("/dj-rest-auth/password/change/", userData);
-            history.goBack();
-        } catch (err) {
-            // console.log(err);
-            setErrors(err.response?.data);
+
+        // Password Form Validation
+        if (( new_password1 == "" ) || ( new_password1.trim().length == 0 )) {
+            alert('Form error - Password field cannot be empty');
+        } else if (( new_password2 == "" ) || ( new_password2.trim().length == 0 )) {
+            alert('Form error - Confirm password field cannot be empty');
+        } else if ( new_password1 !== new_password2 ) {
+            alert('Form error - Password fields must match');
+        } else {
+            try {
+                await axiosRes.post("/dj-rest-auth/password/change/", userData);
+                history.goBack();
+            } catch (err) {
+                // console.log(err);
+                setErrors(err.response?.data);
+            }
         }
     };
 
