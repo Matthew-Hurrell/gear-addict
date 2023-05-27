@@ -37,6 +37,8 @@ const SignUpForm = () => {
       alert('Form error - Password field cannot be empty');
     } else if (( password2 == "" ) || ( password2.trim().length == 0 )) {
       alert('Form error - Confirm password field cannot be empty');
+    } else if (password1 !== password2 ) {
+      alert('Form error - Password fields must match');
     } else {
       try {
         await axios.post('/dj-rest-auth/registration/', signUpData);
