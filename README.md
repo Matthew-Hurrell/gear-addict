@@ -80,7 +80,7 @@ Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com
     * [Gear Card](<#gear-card>)
     * [Gear List](<#gear-list>)
     * [Rig Card](<#rig-card>)
-    * [Rig List](<#rig-list>)
+    * [Rigs List](<#rigs-list>)
 * [**Testing**](<#testing>)
     * [**Validator Tests**](<#validator-tests>)
         * [W3C (HTML)](<#w3c-html>)
