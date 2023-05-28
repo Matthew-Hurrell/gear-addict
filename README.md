@@ -705,6 +705,8 @@ The add comment form component is present on the rig detail pages. It is hidden 
 
 The edit comment form component is visible via the rig detail pages. The menu to access the form is only visible to authenticated users that own the comment. Clicking the comment edit button within the dropdown menu will render the edit comment form and pre-populate the form field with the user's previous comment. Clicking the submit button removes the form from view and re-renders the comment list with the comment content updated. Clicking the cancel button returns the user to the previous comment list with no changes made. 
 
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/11)
+
 [Back to top](<#contents>)
 
 ### Delete Comment
@@ -712,6 +714,8 @@ The edit comment form component is visible via the rig detail pages. The menu to
 ![Gear Addict Delete Comment](readme/images/gear-addict-delete-comment.png)
 
 A delete comment option is available to authenticated users who own a comment. The delete button is visible in the comment dropdown menu. If a user clicks this button the comment is deleted and the list is re-rendered to display the new comment list without the comment.
+
+[Click here to view the user story](https://github.com/Matthew-Hurrell/gear-addict/issues/12)
 
 [Back to top](<#contents>)
 
