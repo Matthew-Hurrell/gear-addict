@@ -1293,7 +1293,31 @@ This section will detail the input validation tests carried out on the Gear Addi
 
 ### Automated Tests
 
-Automated tests were run on the Gear Addict project using the [Jest Dom Testing Library](https://testing-library.com/docs/ecosystem-jest-dom/). 
+Automated tests were run on the Gear Addict project using the [Jest Dom Testing Library](https://testing-library.com/docs/ecosystem-jest-dom/). Both the nav bar and footer components were tested to check that they were rendering the correct elements for logged in and logged out users. Details of the tests and a link to the test directory can be found below.
+
+| Status | **Nav Bar Tests**
+|:-------:|:--------|
+| &check; | Renders sign in link
+| &check; | Renders sign up link
+| &check; | Renders latest link
+| &check; | Renders home link
+| &check; | Renders link to gear page for logged in user
+| &check; | Renders link to rig page for logged in user
+| &check; | Renders link to feed page for logged in user
+| &check; | Renders link to saved page for logged in user
+| &check; | Renders sign in and sign up buttons again on user log out
+
+| Status | **Footer Tests**
+|:-------:|:--------|
+| &check; | Renders sign in link
+| &check; | Renders sign up link
+| &check; | Renders latest link
+| &check; | Renders home link
+| &check; | Renders link to gear page for logged in user
+| &check; | Renders link to rig page for logged in user
+| &check; | Renders link to feed page for logged in user
+| &check; | Renders link to saved page for logged in user
+| &check; | Renders sign in and sign up buttons again on user log out
 
 [Click this link to view the testing directory](https://github.com/Matthew-Hurrell/gear-addict/tree/main/src/components/__tests__)
 
