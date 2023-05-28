@@ -532,13 +532,21 @@ The Gear Addict 404 page is triggered when a user navigates to a site URL which 
 In this section, I will provide a list of potential features that could be implemented in the future.
 
 1. Further profile statistics could be added to the profile pages. This section would only be visible to profile owners on their own profiles. The stats could include a profile view count, total value of gear, and most liked rig along with further rig/gear statistics.
+
 2. A user could have the functionality to completely delete their account along with any related content. 
+
 3. Adding profile contact details could be an option for users who wish to add their contact details to their profiles for networking purposes.
+
 4. Adding profile social media links could also be an optional choice for users.
+
 5. Sound/video fields could be added to rigs to allow users to attach recordings of what the rigs sound like live.
+
 6. An events section could be added so users can post gig details and share them with other users.
+
 7. Rig reviews could be added so users can rate and post rig reviews.
+
 8. The ability for a user to draft a rig could be added so a user could save but not publish a rig.
+
 9. A for-sale section could be added so that when users mark gear for sale, it's automatically added to the sale list for other users to view.
 
 [Back to top](<#contents>)
