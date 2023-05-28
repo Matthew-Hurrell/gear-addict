@@ -173,11 +173,15 @@ This section will detail the planning and design choices for the Gear Addict app
 
 Wireframes for the Gear Addict project were created using [Balsamiq](https://balsamiq.com/). All wireframes were completed pre-development. These wireframes were used as the basis for the Gear Addict page and component designs. Some minor changes were made during the development process.
 
+[Click here to view the wireframes in Balsamiq cloud](https://balsamiq.cloud/srvvszi/p3877mo)
+
 [Back to top](<#contents>)
 
 ### Home Page Wireframe
 
 ![Gear Addict Home Page](readme/images/home-page-wireframe.png)
+
+![Gear Addict Home Page Mobile](readme/images/wireframe-mobile-homepage.png)
 
 [Back to top](<#contents>)
 
@@ -185,11 +189,15 @@ Wireframes for the Gear Addict project were created using [Balsamiq](https://bal
 
 ![Gear Addict Sign Up Page](readme/images/sign-up-wireframe.png)
 
+![Gear Addict Sign Up Page Mobile](readme/images/wireframe-mobile-sign-up.png)
+
 [Back to top](<#contents>)
 
 ### Sign-In Page Wireframe
 
 ![Gear Addict Sign In Page](readme/images/sign-in-wireframe.png)
+
+![Gear Addict Sign In Page Mobile](readme/images/wireframe-mobile-sign-in.png)
 
 [Back to top](<#contents>)
 
@@ -197,11 +205,15 @@ Wireframes for the Gear Addict project were created using [Balsamiq](https://bal
 
 ![Gear Addict All Rigs Page](readme/images/all-rigs-wireframe.png)
 
+![Gear Addict All Rigs Page Mobile](readme/images/wireframe-mobile-all-rigs.png)
+
 [Back to top](<#contents>)
 
 ### Rig Details Page Wireframe
 
 ![Gear Addict Rig Details Page](readme/images/rig-details-wireframe.png)
+
+![Gear Addict Rig Details Page Mobile](readme/images/wireframe-mobile-rig-full-details.png)
 
 [Back to top](<#contents>)
 
@@ -209,11 +221,15 @@ Wireframes for the Gear Addict project were created using [Balsamiq](https://bal
 
 ![Gear Addict Saved Rigs Page](readme/images/saved-rigs-wireframe.png)
 
+![Gear Addict Saved Rigs Page Mobile](readme/images/wireframe-mobile-saved-rigs.png)
+
 [Back to top](<#contents>)
 
 ### Add Rig Page Wireframe
 
 ![Gear Addict Add Rig Page](readme/images/add-rig-wireframe.png)
+
+![Gear Addict Add Rig Page Mobile](readme/images/wireframe-mobile-add-rig.png)
 
 [Back to top](<#contents>)
 
@@ -221,11 +237,15 @@ Wireframes for the Gear Addict project were created using [Balsamiq](https://bal
 
 ![Gear Addict Add Gear Page](readme/images/add-gear-wireframe.png)
 
+![Gear Addict Add Gear Page Mobile](readme/images/wireframe-mobile-add-gear.png)
+
 [Back to top](<#contents>)
 
 ### My Gear Page Wireframe
 
 ![Gear Addict My Gear Page](readme/images/my-gear-wireframe.png)
+
+![Gear Addict My Gear Page Mobile](readme/images/wireframe-mobile-my-gear.png)
 
 [Back to top](<#contents>)
 
@@ -233,11 +253,15 @@ Wireframes for the Gear Addict project were created using [Balsamiq](https://bal
 
 ![Gear Addict Profile Page](readme/images/profile-wireframe.png)
 
+![Gear Addict Profile Page Mobile](readme/images/wireframe-mobile-profile.png)
+
 [Back to top](<#contents>)
 
 ### 404 Page Wireframe
 
 ![Gear Addict 404 Page](readme/images/404-wireframe.png)
+
+![Gear Addict 404 Page Mobile](readme/images/wireframe-mobile-404.png)
 
 [Back to top](<#contents>)
 
@@ -871,7 +895,7 @@ All the pages of the Gear Addict site have been passed through the [W3C HTML Mar
 
 ![CSS Validator](readme/images/css-validator.png)
 
-Due to the use of the Tailwind CSS framework on the Gear Addict project, there is only one small file of custom CSS. This file was passed through the [Jigsaw W3C CSS Validation Service](https://validator.w3.org/) and the only errors found were for the tailwind selectors at the top of the file, which are currently unrecognised by the validator.
+Due to the use of the Tailwind CSS framework on the Gear Addict project, there is only one small file of custom CSS. This file was passed through the [Jigsaw W3C CSS Validation Service](https://validator.w3.org/) via direct input and the only errors found were for the tailwind selectors at the top of the file, which are currently unrecognised by the validator. The site was also passed through the validator via URI. Unfortunately there are some parsing errors showing from this, but they originate from the tailwind output file and are not caused by custom css from within the project.
 
 [Back to top](<#contents>)
 
