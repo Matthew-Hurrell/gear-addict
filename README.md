@@ -175,67 +175,67 @@ Wireframes for the Gear Addict project were created using [Balsamiq](https://bal
 
 [Back to top](<#contents>)
 
-### Home Page
+### Home Page Wireframe
 
 ![Gear Addict Home Page](readme/images/home-page-wireframe.png)
 
 [Back to top](<#contents>)
 
-### Sign Up Page
+### Sign Up Page Wireframe
 
 ![Gear Addict Sign Up Page](readme/images/sign-up-wireframe.png)
 
 [Back to top](<#contents>)
 
-### Sign-In Page
+### Sign-In Page Wireframe
 
 ![Gear Addict Sign In Page](readme/images/sign-in-wireframe.png)
 
 [Back to top](<#contents>)
 
-### All Rigs Page
+### All Rigs Page Wireframe
 
 ![Gear Addict All Rigs Page](readme/images/all-rigs-wireframe.png)
 
 [Back to top](<#contents>)
 
-### Rig Details Page
+### Rig Details Page Wireframe
 
 ![Gear Addict Rig Details Page](readme/images/rig-details-wireframe.png)
 
 [Back to top](<#contents>)
 
-### Saved Rigs Page
+### Saved Rigs Page Wireframe
 
 ![Gear Addict Saved Rigs Page](readme/images/saved-rigs-wireframe.png)
 
 [Back to top](<#contents>)
 
-### Add Rig Page
+### Add Rig Page Wireframe
 
 ![Gear Addict Add Rig Page](readme/images/add-rig-wireframe.png)
 
 [Back to top](<#contents>)
 
-### Add Gear Page
+### Add Gear Page Wireframe
 
 ![Gear Addict Add Gear Page](readme/images/add-gear-wireframe.png)
 
 [Back to top](<#contents>)
 
-### My Gear Page
+### My Gear Page Wireframe
 
 ![Gear Addict My Gear Page](readme/images/my-gear-wireframe.png)
 
 [Back to top](<#contents>)
 
-### Profile Page
+### Profile Page Wireframe
 
 ![Gear Addict Profile Page](readme/images/profile-wireframe.png)
 
 [Back to top](<#contents>)
 
-### 404 Page
+### 404 Page Wireframe
 
 ![Gear Addict 404 Page](readme/images/404-wireframe.png)
 
