@@ -531,7 +531,7 @@ The homepage hero component is only visible on the homepage. This differs from t
 
 ![Gear Addict Hero 2](readme/images/gear-addict-hero-2.png)
 
-The hero component is a reusable component used for each page on the site other than the homepage. It features a large background image which has a grayscale filter and a page title. The page title can be passed as a prop to change the heading for different pages. The component also accepts a prop called righeader to change the background image to what is used for the rig detail pages. 
+The hero component is a reusable component used for each page of the site other than the homepage. It features a large background image which has a grayscale filter and a page title. The page title can be passed as a prop to change the heading for different pages. The component also accepts a prop called righeader to change the background image to what is used for the rig detail pages. 
 
 [Back to top](<#contents>)
 
@@ -559,7 +559,7 @@ The seperator component is a simple full-width horizontal line used as a page br
 
 ![Gear Addict Icon Seperator](readme/images/gear-addict-icon-seperator.png)
 
-The icon seperator is similar to the seperator component except it includes a centralised icon in the horizontal line. It is a purely visual component but it is reused frequently across the site to break up page content into clearly defined sections.
+The icon seperator is similar to the seperator component except it includes a centralised icon in the horizontal line. It is a purely visual component, but it is reused frequently across the site to break up page content into clearly defined sections.
 
 [Back to top](<#contents>)
 
@@ -583,7 +583,7 @@ The avatar component user profile images across the site. It is used in the navb
 
 ![Gear Addict Category Badge](readme/images/gear-addict-category-badge.png)
 
-The category badge component is used with a conditional on the gear card component to display a badge with an icon depending on the gear category. The category badge will display a different icon depending on what prop it is passed from the parent element. It provides a different icon for each gear category option.
+The category badge component is used with a conditional on the gear card component to display a badge with an icon depending on the gear category. The category badge displays a different icon depending on what prop it is passed from the parent element. It provides a different icon for each gear category option.
 
 [Back to top](<#contents>)
 
@@ -625,7 +625,7 @@ The how-to-use section component is just used for the Gear Addict home page. It 
 
 ![Gear Addict Homepage Intro](readme/images/gear-addict-homepage-intro.png)
 
-The intro home component is only used on the site homepage. It provides new users with a quick summary of the purpose and intention of the site. 
+The intro home component is only used on the site homepage. It provides new users with a quick summary of the purpose and intention of the site. In the future this component could be refactored into a reusable text box component by passing it text content as props. 
 
 [Back to top](<#contents>)
 
@@ -709,7 +709,7 @@ The rig card component is displayed as part of a loop on the rig page, homepage,
 
 ![Gear Addict Rigs List](readme/images/gear-addict-rigs-list.png)
 
-The rigs list component is the loop used to render multiple instances of the rig card component. It contains the axios request to fetch the rig list data and uses the React infinite scroll component to continually load more rigs as the user scrolls. The asset component is used to display a loading spinner while the content is loading. There is also a conditional to display a no results message and image if no results are found. The rigs list component accepts a filter prop to display different lists across the site. It also accepts a query prop for the search bar, as well as title and message for text elements.
+The rigs list component is the loop used to render multiple instances of the rig card component. It contains the axios request to fetch the rig list data and uses the React infinite scroll component to continually load more rigs as the user scrolls. The asset component is used to display a loading spinner while the content is loading. There is also a conditional to display a no results message and image if no results are found. The rigs list component accepts a filter prop to display different lists across the site. It also accepts a query prop for the search bar, as well as title and message for text elements. The rigs list component is reused frequently across the site including on the home page, feed page, profile pages, rigs page and saved page. The rigs list component is filtered in different ways on each page to display different results.
 
 [Click here to view the view all rigs user story](https://github.com/Matthew-Hurrell/gear-addict/issues/42)
 
