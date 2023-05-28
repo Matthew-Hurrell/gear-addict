@@ -36,7 +36,7 @@ Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com
     * [**Existing Features**](<#existing-features>)
         * [Sign-Up Page](<#sign-up-page>)
         * [Sign-In Page](<#sign-in-page>)
-        * [Sign Out Page](<#sign-out>)
+        * [Sign Out](<#sign-out>)
         * [Home Page](<#home-page>)
         * [Latest Rigs Page](<#latest-rigs-page>)
         * [Feed Page](<#feed-page>)
