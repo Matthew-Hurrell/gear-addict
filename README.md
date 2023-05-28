@@ -773,11 +773,11 @@ The Gear Addict application has been tested rigorously throughout the developmen
 
 ## Validator Tests
 
-[Back to top](<#contents>)
-
 ### W3C HTML
 
 All the pages of the Gear Addict site have been passed through the [W3C HTML Markup Validation Service](https://validator.w3.org/), with minor errors rectified. No errors or warnings are now showing.
+
+[Back to top](<#contents>)
 
 #### Homepage
 
@@ -901,6 +901,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Content is responsive
 | &check; | All links work correctly and navigate to the correct page
 
+[Back to top](<#contents>)
+
 | Status | **Navbar**
 |:-------:|:--------|
 | &check; | Content is responsive
@@ -916,6 +918,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Mobile menu nav toggle menu button opens and closes the mobile menu
 | &check; | Nav items change styling on hover
 
+[Back to top](<#contents>)
+
 | Status | **Footer**
 |:-------:|:--------|
 | &check; | Content is responsive
@@ -924,6 +928,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Logged-out nav items are displayed correctly to logged-out users
 | &check; | All links work correctly and navigate to the correct page
 | &check; | Nav items change styling on hover
+
+[Back to top](<#contents>)
 
 | Status | **Latest Page**
 |:-------:|:--------|
@@ -940,6 +946,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Rig links link to correct rigs
 | &check; | Profile links link to correct profiles
 | &check; | No results found is displayed when there are no rigs in the list
+
+[Back to top](<#contents>)
 
 | Status | **Feed Page**
 |:-------:|:--------|
@@ -960,6 +968,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Unfanning a user removes their rigs from the feed page
 | &check; | No results found is displayed when there are no rigs in the list
 
+[Back to top](<#contents>)
+
 | Status | **Gear Page**
 |:-------:|:--------|
 | &check; | Page has correct URL
@@ -978,6 +988,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Category badge displays correctly
 | &check; | Gear status badges display correctly
 
+[Back to top](<#contents>)
+
 | Status | **Rigs Page**
 |:-------:|:--------|
 | &check; | Page has correct URL
@@ -992,6 +1004,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Like / Save buttons are not visible
 | &check; | No results found is displayed when there are no rigs in the list
 | &check; | Rig links link to correct rigs
+
+[Back to top](<#contents>)
 
 | Status | **Saved Page**
 |:-------:|:--------|
@@ -1011,6 +1025,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Rig links link to correct rigs
 | &check; | Profile links link to correct profiles
 | &check; | No results found is displayed when there are no rigs in the list
+
+[Back to top](<#contents>)
 
 | Status | **Profile Page**
 |:-------:|:--------|
@@ -1039,6 +1055,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Fan button is working correctly
 | &check; | Unfan button is working correctly
 
+[Back to top](<#contents>)
+
 | Status | **Sign In Page**
 |:-------:|:--------|
 | &check; | Page has correct URL
@@ -1050,6 +1068,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Field input errors are displayed to the user
 | &check; | Successful submission signs the user in successfully and redirects the user back to their previous page
 | &check; | Sign up link redirects the user to the sign up page
+
+[Back to top](<#contents>)
 
 | Status | **Sign Up Page**
 |:-------:|:--------|
@@ -1063,12 +1083,16 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Successful submission saves the users details and redirects the user to the sign in page
 | &check; | Sign in link redirects the user to the sign in page
 
+[Back to top](<#contents>)
+
 | Status | **Sign Out**
 |:-------:|:--------|
 | &check; | The sign-out button link is displayed on both site navs
 | &check; | The sign-out button is only displayed to authenticated users
 | &check; | Sign out functionality works correctly
 | &check; | On successful sign out the user is redirected to the home page
+
+[Back to top](<#contents>)
 
 | Status | **Add Gear Page**
 |:-------:|:--------|
@@ -1085,6 +1109,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | All fields are successfully submitted 
 | &check; | Blank fields are handled correctly
 
+[Back to top](<#contents>)
+
 | Status | **Add Rig Page**
 |:-------:|:--------|
 | &check; | Page has correct URL
@@ -1099,6 +1125,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | The submit button submits the form
 | &check; | All fields are successfully submitted 
 | &check; | Blank fields are handled correctly
+
+[Back to top](<#contents>)
 
 | Status | **Rig Detail Page**
 |:-------:|:--------|
@@ -1122,6 +1150,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | The comment edit button opens the edit comment form
 | &check; | The comment delete button deletes the comment and re-renders the comment list with the comment removed
 
+[Back to top](<#contents>)
+
 | Status | **Edit Gear Page**
 |:-------:|:--------|
 | &check; | Page has correct URL
@@ -1139,6 +1169,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Blank fields are handled correctly
 | &check; | All fields that aren't changed remain the same
 | &check; | Updating the image field changes the image
+
+[Back to top](<#contents>)
 
 | Status | **Edit Rig Page**
 |:-------:|:--------|
@@ -1158,15 +1190,21 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | All fields that aren't changed remain the same
 | &check; | Updating the image fields changes the images
 
+[Back to top](<#contents>)
+
 | Status | **Delete Gear**
 |:-------:|:--------|
 | &check; | The delete button is only visible in the gear dropdown menu to authenticated users who own the gear
 | &check; | Clicking the delete button deletes the correct instance of gear and re-renders the gear list with the gear removed
 
+[Back to top](<#contents>)
+
 | Status | **Delete Rig**
 |:-------:|:--------|
 | &check; | The delete button is only visible in the rig dropdown menu to authenticated users who own the rig
 | &check; | Clicking the delete button deletes the correct instance of rig and redirects the user to the last page they were on
+
+[Back to top](<#contents>)
 
 | Status | **Edit Profile Page**
 |:-------:|:--------|
@@ -1187,6 +1225,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Updating the image fields changes the images
 | &check; | Updated profile details are immediately reflected on the user profile page
 
+[Back to top](<#contents>)
+
 | Status | **Edit Username Page**
 |:-------:|:--------|
 | &check; | Page has correct URL
@@ -1205,6 +1245,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | All fields that aren't changed remain the same
 | &check; | Updated profile usernames are immediately reflected on the user profile page
 
+[Back to top](<#contents>)
+
 | Status | **Edit Password Page**
 |:-------:|:--------|
 | &check; | Page has correct URL
@@ -1220,11 +1262,15 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | All fields are successfully submitted 
 | &check; | Blank fields are handled correctly
 
+[Back to top](<#contents>)
+
 | Status | **404 Page**
 |:-------:|:--------|
 | &check; | The 404 page is triggered by an incorrect site URL
 | &check; | Content is displaying correctly
 | &check; | Content is responsive
+
+[Back to top](<#contents>)
 
 | Status | **Search Functionality**
 |:-------:|:--------|
@@ -1239,6 +1285,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Gear can be searched for models
 | &check; | Gear can be searched for descriptions
 
+[Back to top](<#contents>)
+
 | Status | **Like / Unlike**
 |:-------:|:--------|
 | &check; | When a rig is liked the like button is hidden and the unlike button appears
@@ -1247,6 +1295,8 @@ Here you will find a comprehensive list of all the manual tests that were carrie
 | &check; | Unliking a rig subtracts one from the rig like count
 | &check; | Like and unlike buttons are only visible to authenticated users
 | &check; | Like and unlike buttons are hidden on rigs that are owned by the authenticated user
+
+[Back to top](<#contents>)
 
 | Status | **Save / Unsave**
 |:-------:|:--------|
@@ -1270,6 +1320,8 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without a username
 | &check; | Form cannot be submitted without a password
 
+[Back to top](<#contents>)
+
 | Status | **Sign Up Form**
 |:-------:|:--------|
 | &check; | Form cannot be submitted without a username
@@ -1277,6 +1329,8 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without confirming password
 | &check; | Username cannot be over 30 characters in length
 | &check; | Form cannot be submitted without matching password fields
+
+[Back to top](<#contents>)
 
 | Status | **Add Rig Form**
 |:-------:|:--------|
@@ -1288,6 +1342,8 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without a genre 1
 | &check; | Form cannot be submitted without a description
 
+[Back to top](<#contents>)
+
 | Status | **Edit Rig Form**
 |:-------:|:--------|
 | &check; | Form cannot be submitted without a rig name
@@ -1298,6 +1354,8 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without a genre 1
 | &check; | Form cannot be submitted without a description
 
+[Back to top](<#contents>)
+
 | Status | **Add Gear Form**
 |:-------:|:--------|
 | &check; | Form cannot be submitted without a gear name
@@ -1305,6 +1363,8 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without a category
 | &check; | Form cannot be submitted without a value
 | &check; | Value cannot be less than or equal to zero
+
+[Back to top](<#contents>)
 
 | Status | **Edit Gear Form**
 |:-------:|:--------|
@@ -1314,15 +1374,21 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without a value
 | &check; | Value cannot be less than or equal to zero
 
+[Back to top](<#contents>)
+
 | Status | **Edit Profile Form**
 |:-------:|:--------|
 | &check; | Name cannot be over 20 characters in length
 | &check; | Location cannot be over 30 characters in length
 
+[Back to top](<#contents>)
+
 | Status | **Edit Username Form**
 |:-------:|:--------|
 | &check; | Form cannot be submitted without a username
 | &check; | Username cannot be over 30 characters in length
+
+[Back to top](<#contents>)
 
 | Status | **Edit Password Form**
 |:-------:|:--------|
@@ -1330,9 +1396,13 @@ This section will detail the input validation tests carried out on the Gear Addi
 | &check; | Form cannot be submitted without confirming password
 | &check; | Form cannot be submitted without matching password fields
 
+[Back to top](<#contents>)
+
 | Status | **Add Comment Form**
 |:-------:|:--------|
 | &check; | Form cannot be submitted if the content field is empty
+
+[Back to top](<#contents>)
 
 | Status | **Edit Comment Form**
 |:-------:|:--------|
@@ -1355,6 +1425,8 @@ Automated tests were run on the Gear Addict project using the [Jest Dom Testing 
 | &check; | Renders link to feed page for logged in user
 | &check; | Renders link to saved page for logged in user
 | &check; | Renders sign in and sign up buttons again on user log out
+
+[Back to top](<#contents>)
 
 | Status | **Footer Tests**
 |:-------:|:--------|
@@ -1394,6 +1466,8 @@ Gear Addict has been tested on a diverse range of different devices and screen s
 | &check; | Nest Hub Max
 | &check; | iPhone 6/7/8
 | &check; | Responsive mode
+
+[Back to top](<#contents>)
 
 | Status | **Responsive Design Checker**
 |:-------:|:--------|
