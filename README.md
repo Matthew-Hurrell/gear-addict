@@ -1520,7 +1520,7 @@ For more information on the back-end technologies used, please view the [Gear Ad
 * [testing-library/react](https://testing-library.com/docs/react-testing-library/intro/) v11.2.7 - React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components
 * [testing-library/user-event](https://testing-library.com/docs/ecosystem-user-event/) v12.8.3 - A companion library for Testing Library that provides more advanced simulation of browser interactions than the built-in fireEvent method
 * [axios](https://axios-http.com/docs/intro) v0.21.4 - A promise based HTTP client for the browser and node.js
-* [fslightbox-react](https://fslightbox.com/react) v1.7.4 - A React component for displaying images and videos in a clean overlying box - this library improved user experience by allowing a full screen gallery for rig images. Users can click the view image gallery button and see the rig images in full quality. They can also use the arrow buttons to navigate between images
+* [fslightbox-react](https://fslightbox.com/react) v1.7.4 - A React component for displaying images and videos in a clean overlying box - this library improved user experience by allowing a full screen gallery for rig images. Users can click the view image gallery button and see the rig images in full quality. They can also use the arrow buttons to navigate between images. This library was chosen as I have previously used it multiple times in professional projects and it is reliable and user friendly
 * [jwt-decode](https://www.npmjs.com/package/jwt-decode) v3.1.2 - A small browser library that helps decoding JWTs token which are Base64Url encoded
 * [react](https://www.npmjs.com/package/react) v17.0.2 - A JavaScript library for creating user interfaces. This library / framework improved user experience greatly. The React library renders content faster for improved load times for the user, and because of the reuse of components, more content was developed in a shorter amount of time, which meant more features were available to the site users by the project deadline
 * [react-boostrap](https://www.npmjs.com/package/react-bootstrap) v1.6.6 - An open-source css framework components built with React
@@ -1533,7 +1533,7 @@ For more information on the back-end technologies used, please view the [Gear Ad
 * [eslint](https://www.npmjs.com/package/eslint) v8.41.0 - A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
 * [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) v7.32.2 - React specific linting rules for eslint
 * [msw](https://www.npmjs.com/package/msw) v0.35.0 - A seamless REST/GraphQL API mocking library for browser and Node.js
-* [tailwindcss](https://www.npmjs.com/package/tailwindcss) v3.3.2 - A utility-first CSS framework for rapidly building custom user interfaces
+* [tailwindcss](https://www.npmjs.com/package/tailwindcss) v3.3.2 - A utility-first CSS framework for rapidly building custom user interfaces. I decided to work with the tailwind library rather than bootstrap because I am a big fan of the tailwind utility framework and I am very familiar with using it in a professional environment. I personally feel that it has more flexibility than bootstrap and allows for further customisation of elements. Using this framework increased my productivity throughout the project
 
 [Back to top](<#contents>)
 
