@@ -1,10 +1,10 @@
 # **Gear Addict**
 
-Gear Addict is an online application that allows users to add and categorise their music gear, and also share details about their live rigs with the community. Users can interact with other users by becoming a fan, as well as liking, commenting and saving rigs.
+Gear Addict is an online application that allows users to add and categorise their music gear and share details about their live rigs with the community. Users can interact with other users by becoming a fan, as well as liking, commenting and saving rigs.
 
 This project was built as the final portfolio submission for the [Code Institute](https://codeinstitute.net/) Higher National Diploma in Full Stack Software Development. 
 
-The project has been split into two parts - the front-end built with [React](https://react.dev/), and the back-end API powered by the [Django REST Framework](https://www.django-rest-framework.org/). 
+The project has been split into two parts - the front-end, built with [React](https://react.dev/), and the back-end API, powered by [Django REST Framework](https://www.django-rest-framework.org/). 
 
 More information on the back-end of the site can be found in the back-end [README](https://github.com/Matthew-Hurrell/gear-addict-api/blob/main/README.md).
 
@@ -34,11 +34,28 @@ Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com
     * [Typography](<#typography>)
 * [**Features**](<#features>)
     * [**Existing Features**](<#existing-features>)
-        * [**Homepage**](<#homepage>)
-        * [**Authorisation**](<#authorisation>)
-            * [Sign Up](<#sign-up>)
-            * [Log In](<#log-in>)
-            * [Log Out](<#log-out>)
+        * [**Sign-Up Page**](<#sign-up-page>)
+        * [**Sign-In Page**](<#sign-in-page>)
+        * [**Sign Out Page**](<#sign-out>)
+        * [**Home Page**](<#home-page>)
+        * [**Latest Rigs Page**](<#latest-rigs-page>)
+        * [**Feed Page**](<#feed-page>)
+        * [**Gear Page**](<#gear-page>)
+        * [**Rigs Page**](<#rigs-page>)
+        * [**Saved Page**](<#saved-page>)
+        * [**Add Rig Form**](<#add-rig-form>)
+        * [**Add Gear Form**](<#add-gear-form>)
+        * [**Profile Page**](<#profile-page>)
+        * [**Rig Detail Page**](<#rig-detail-page>)
+        * [**Edit Profile Details Form**](<#edit-profile-details-form>)
+        * [**Edit Username Form**](<#edit-username-form>)
+        * [**Edit Password Form**](<#edit-password-form>)
+        * [**Edit Gear Form**](<#edit-gear-form>)
+        * [**Edit Rig Form**](<#edit-rig-form>)
+        * [**Delete Gear**](<#delete-gear>)
+        * [**Delete Rig**](<#delete-rig>)
+        * [**Like / Unlike Rig**](<#like--/--unlike-rig>)
+        * [**Save / Unsave Rig**](<#save--/--unsave-rig>)
         * [**404 Page**](<#404-page>)
     * [**Future Features**](<#future-features>)
 * [**Components**](<#components>)
@@ -72,7 +89,7 @@ Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com
 
 # Project
 
-In this section I will detail the projects purpose and goals, as well as the project management methodologies used throughout the development process.
+In this section I will detail the purpose and goals of the project, as well as the project management methodologies used throughout the development process.
 
 [Back to top](<#contents>)
 
@@ -133,6 +150,8 @@ This section will detail the planning and design choices for the Gear Addict app
 ## Wireframes
 
 Wireframes for the Gear Addict project were created using [Balsamiq](https://balsamiq.com/). All wireframes were completed pre-development. These wireframes were used as the basis for the Gear Addict page and component designs. Some minor changes were made during the development process.
+
+[Back to top](<#contents>)
 
 ### Home Page
 
