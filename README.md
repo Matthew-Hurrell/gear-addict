@@ -54,8 +54,8 @@ Link to the back-end repository - [Gear Addict Back-End Repo](https://github.com
         * [Edit Rig Form](<#edit-rig-form>)
         * [Delete Gear](<#delete-gear>)
         * [Delete Rig](<#delete-rig>)
-        * [Like / Unlike Rig](<#like--/--unlike-rig>)
-        * [Save / Unsave Rig](<#save--/--unsave-rig>)
+        * [Like / Unlike Rig](<#like/unlike-rig>)
+        * [Save / Unsave Rig](<#save/unsave-rig>)
         * [404 Page](<#404-page>)
     * [**Future Features**](<#future-features>)
 * [**Components**](<#components>)
@@ -495,7 +495,7 @@ The delete rig icon is available via the rig details dropdown menu to authentica
 
 [Back to top](<#contents>)
 
-### Like / Unlike Rig
+### Like/Unlike Rig
 
 ![Gear Addict Like / Unlike Rig](readme/images/gear-addict-like-rig.png)
 
@@ -507,7 +507,7 @@ The like / unlike rig buttons are only visible to authenticated users. They are 
 
 [Back to top](<#contents>)
 
-### Save / Unsave Rig
+### Save/Unsave Rig
 
 ![Gear Addict Save / Unsave Rig](readme/images/gear-addict-save-rig.png)
 
